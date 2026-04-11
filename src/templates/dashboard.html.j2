@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research Feed</title>
+<title>Simon Cai's Personalised Research Feed</title>
 <style>
   :root {
     --bg: #fafafa;
@@ -100,7 +100,10 @@
     border-radius: 0.5rem;
     padding: 1.25rem;
     margin-bottom: 1rem;
+    transition: opacity 0.15s;
   }
+  .paper.read { opacity: 0.55; }
+  .paper.read .paper-title a { text-decoration: line-through; color: var(--muted); }
   .paper-head {
     display: flex;
     justify-content: space-between;
@@ -112,9 +115,29 @@
     margin: 0;
     font-size: 1.1rem;
     line-height: 1.35;
+    flex: 1;
   }
   .paper-title a { color: var(--text); text-decoration: none; }
   .paper-title a:hover { color: var(--accent); text-decoration: underline; }
+  .paper-actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .read-toggle {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    border-radius: 0.375rem;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .read-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  .paper.read .read-toggle { color: var(--accent); border-color: var(--accent); }
   .tier-badge {
     flex-shrink: 0;
     padding: 0.2rem 0.6rem;
@@ -126,6 +149,16 @@
   .tier-badge.high { background: var(--tier-high-bg); color: var(--tier-high-fg); }
   .tier-badge.medium { background: var(--tier-medium-bg); color: var(--tier-medium-fg); }
   .tier-badge.low { background: var(--tier-low-bg); color: var(--tier-low-fg); }
+  .hide-read-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    cursor: pointer;
+    user-select: none;
+  }
+  .hide-read-wrap input { cursor: pointer; }
   .paper-meta {
     color: var(--muted);
     font-size: 0.85rem;
@@ -168,6 +201,16 @@
     color: var(--muted);
     margin-top: 0.5rem;
   }
+  .llm-reason {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    border-left: 3px solid var(--accent);
+    background: var(--chip-bg);
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
   #empty {
     text-align: center;
     padding: 3rem 1rem;
@@ -184,19 +227,20 @@
 <body>
 <header>
   <div class="container">
-    <h1>Research Feed</h1>
+    <h1>Simon Cai's Personalised Research Feed</h1>
     <div class="meta" id="meta-line">
-      Updated {{ updated_human }} &middot; {{ count }} papers
-      &middot; {{ tier_counts.high }} must-read
-      &middot; {{ tier_counts.medium }} worth scanning
-      &middot; {{ tier_counts.low }} on the radar
+      Updated {{ updated_human }} &middot;
+      <span id="meta-counts">{{ count }} papers</span>
       &middot; scored against {{ library_size }} library papers
     </div>
     <div class="controls">
-      <button class="tier-btn active" data-tier="all">All ({{ count }})</button>
-      <button class="tier-btn" data-tier="high">Must-read ({{ tier_counts.high }})</button>
-      <button class="tier-btn" data-tier="medium">Worth scanning ({{ tier_counts.medium }})</button>
-      <button class="tier-btn" data-tier="low">On the radar ({{ tier_counts.low }})</button>
+      <button class="tier-btn active" data-tier="all">All</button>
+      <button class="tier-btn" data-tier="high">Must-read</button>
+      <button class="tier-btn" data-tier="medium">Worth scanning</button>
+      <button class="tier-btn" data-tier="low">On the radar</button>
+      <label class="hide-read-wrap">
+        <input type="checkbox" id="hide-read"> Hide read
+      </label>
       <input id="search" type="search" placeholder="Search title, abstract, authors, journal...">
     </div>
   </div>
@@ -220,9 +264,52 @@
   const list = document.getElementById('paper-list');
   const empty = document.getElementById('empty');
   const search = document.getElementById('search');
+  const hideReadCheckbox = document.getElementById('hide-read');
+  const metaCounts = document.getElementById('meta-counts');
   let activeTier = 'all';
   let searchTerm = '';
 
+  // ---------- read-state (localStorage) ----------
+  const READ_KEY = 'srrss.readPapers';
+  const HIDE_READ_KEY = 'srrss.hideRead';
+
+  function getReadSet() {
+    try {
+      const stored = localStorage.getItem(READ_KEY);
+      return new Set(stored ? JSON.parse(stored) : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+  function saveReadSet(set) {
+    try { localStorage.setItem(READ_KEY, JSON.stringify(Array.from(set))); }
+    catch (e) { /* quota or disabled */ }
+  }
+  function isRead(id) { return readSet.has(id); }
+  function toggleRead(id) {
+    if (readSet.has(id)) readSet.delete(id);
+    else readSet.add(id);
+    saveReadSet(readSet);
+  }
+  // Garbage-collect localStorage entries whose IDs aren't in the current feed.
+  function gcReadSet(currentIds) {
+    const next = new Set();
+    readSet.forEach(function (id) { if (currentIds.has(id)) next.add(id); });
+    if (next.size !== readSet.size) {
+      readSet = next;
+      saveReadSet(readSet);
+    }
+  }
+  let readSet = getReadSet();
+  const allIds = new Set(papers.map(function (p) { return p.id; }));
+  gcReadSet(allIds);
+
+  // restore hide-read preference
+  const savedHideRead = localStorage.getItem(HIDE_READ_KEY) === 'true';
+  hideReadCheckbox.checked = savedHideRead;
+  let hideRead = savedHideRead;
+
+  // ---------- helpers ----------
   function escapeHtml(s) {
     return String(s || '')
       .replace(/&/g, '&amp;')
@@ -231,17 +318,43 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
-
   function formatAuthors(authors) {
     if (!authors || !authors.length) return '';
     if (authors.length <= 3) return authors.join(', ');
     return authors.slice(0, 3).join(', ') + ' et al.';
   }
 
+  // ---------- counts shown in header + tier buttons ----------
+  function recomputeCounts() {
+    const total = papers.length;
+    const unreadTotal = papers.filter(function (p) { return !isRead(p.id); }).length;
+    const tierTotals = { high: 0, medium: 0, low: 0 };
+    const tierUnread = { high: 0, medium: 0, low: 0 };
+    papers.forEach(function (p) {
+      if (tierTotals[p.tier] !== undefined) {
+        tierTotals[p.tier] += 1;
+        if (!isRead(p.id)) tierUnread[p.tier] += 1;
+      }
+    });
+    metaCounts.textContent = total + ' papers (' + unreadTotal + ' unread)';
+    document.querySelectorAll('.tier-btn').forEach(function (btn) {
+      const t = btn.dataset.tier;
+      const label = t === 'all' ? 'All'
+        : t === 'high' ? 'Must-read'
+        : t === 'medium' ? 'Worth scanning'
+        : 'On the radar';
+      const u = t === 'all' ? unreadTotal : tierUnread[t];
+      const a = t === 'all' ? total : tierTotals[t];
+      btn.textContent = label + ' (' + u + ' / ' + a + ')';
+    });
+  }
+
+  // ---------- render ----------
   function render() {
     const term = searchTerm.toLowerCase();
     const filtered = papers.filter(function (p) {
       if (activeTier !== 'all' && p.tier !== activeTier) return false;
+      if (hideRead && isRead(p.id)) return false;
       if (!term) return true;
       const hay = (
         (p.title || '') + ' ' +
@@ -266,11 +379,27 @@
       const authorLine = formatAuthors(p.authors);
       const journalLine = escapeHtml(p.journal || '');
       const publishedLine = p.published ? new Date(p.published).toLocaleDateString() : '';
+      const idAttr = escapeHtml(p.id);
+      const readClass = isRead(p.id) ? ' read' : '';
+      const readLabel = isRead(p.id) ? '✓ Read' : '↺ Mark read';
+      const topYear = p.top_match_added_year ? ' &middot; top match added ' + p.top_match_added_year : '';
+      const cosLine = (typeof p.max_cosine_weighted === 'number')
+        ? ' &middot; weighted cosine ' + p.max_cosine_weighted.toFixed(3)
+        : '';
+      const llmLine = (typeof p.llm_score === 'number')
+        ? ' &middot; LLM ' + p.llm_score.toFixed(0) + ' (stage1 ' + (p.stage1_score != null ? p.stage1_score.toFixed(0) : '?') + ')'
+        : '';
+      const llmReasonHtml = p.llm_reason
+        ? '<div class="llm-reason">' + escapeHtml(p.llm_reason) + '</div>'
+        : '';
       return ''
-        + '<article class="paper">'
+        + '<article class="paper' + readClass + '" data-id="' + idAttr + '">'
         +   '<div class="paper-head">'
         +     '<h2 class="paper-title"><a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener">' + escapeHtml(p.title) + '</a></h2>'
-        +     '<span class="tier-badge ' + p.tier + '">' + p.final_score.toFixed(0) + '</span>'
+        +     '<div class="paper-actions">'
+        +       '<button class="read-toggle" data-action="toggle-read">' + readLabel + '</button>'
+        +       '<span class="tier-badge ' + p.tier + '">' + p.final_score.toFixed(0) + '</span>'
+        +     '</div>'
         +   '</div>'
         +   '<div class="paper-meta">'
         +     (authorLine ? '<span>' + escapeHtml(authorLine) + '</span>' : '')
@@ -278,9 +407,10 @@
         +     (journalLine ? '<span class="journal">' + journalLine + '</span>' : '')
         +     (publishedLine ? '<span class="dot">&middot;</span><span>' + publishedLine + '</span>' : '')
         +   '</div>'
+        +   llmReasonHtml
         +   (p.abstract ? '<div class="paper-abstract">' + escapeHtml(p.abstract) + '</div>' : '')
         +   (chips ? '<div class="chips">' + chips + '</div>' : '')
-        +   '<div class="score-detail">embedding ' + p.embedding_score.toFixed(0) + ' &middot; keywords ' + p.keyword_score.toFixed(0) + ' &middot; max cosine ' + p.max_cosine.toFixed(3) + '</div>'
+        +   '<div class="score-detail">embedding ' + p.embedding_score.toFixed(0) + ' &middot; keywords ' + p.keyword_score.toFixed(0) + cosLine + llmLine + topYear + '</div>'
         + '</article>';
     }).join('');
     list.innerHTML = html;
@@ -288,6 +418,24 @@
     // enable abstract expand on click
     list.querySelectorAll('.paper-abstract').forEach(function (el) {
       el.addEventListener('click', function () { el.classList.toggle('expanded'); });
+    });
+
+    // wire read-toggle buttons
+    list.querySelectorAll('[data-action="toggle-read"]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const card = btn.closest('.paper');
+        const id = card.getAttribute('data-id');
+        toggleRead(id);
+        const nowRead = isRead(id);
+        card.classList.toggle('read', nowRead);
+        btn.textContent = nowRead ? '✓ Read' : '↺ Mark read';
+        recomputeCounts();
+        if (hideRead && nowRead) {
+          // remove from view immediately
+          card.style.display = 'none';
+        }
+      });
     });
   }
 
@@ -300,6 +448,12 @@
     });
   });
 
+  hideReadCheckbox.addEventListener('change', function (e) {
+    hideRead = e.target.checked;
+    localStorage.setItem(HIDE_READ_KEY, hideRead ? 'true' : 'false');
+    render();
+  });
+
   let searchTimer = null;
   search.addEventListener('input', function (e) {
     clearTimeout(searchTimer);
@@ -309,6 +463,7 @@
     }, 120);
   });
 
+  recomputeCounts();
   render();
 })();
 </script>

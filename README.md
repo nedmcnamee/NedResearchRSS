@@ -4,16 +4,19 @@ A personalised academic paper feed that runs daily via GitHub Actions, scores in
 
 ## How it works
 
-1. **Reference index** — `data/library.json` (your Paperpile export, 991 papers, 898 with abstracts) is encoded once with `sentence-transformers/all-MiniLM-L6-v2` and cached to `data/reference.npz`.
+1. **Reference index** — `data/library.json` (your Paperpile export, 991 papers, 898 with abstracts) is encoded once with `sentence-transformers/all-MiniLM-L6-v2` and cached to `data/reference.npz`. The "added to Paperpile" timestamp is captured for recency weighting.
 2. **Fetch** — daily, pull RSS feeds listed in `config.yaml` (Nature/Cell family journals + bioRxiv subject feeds).
 3. **Dedupe** — drop any paper already in your library (matched by DOI, arXiv ID, or normalised title).
 4. **Score** — for each candidate paper:
-   - `embedding_score` = max cosine similarity to any paper in your library, mapped to 0–100
+   - `embedding_score` = **recency-weighted** max cosine similarity to your library, mapped to 0–100. Each library paper's contribution is multiplied by `max(0.5 ** (years_since_added / half_life), floor)`, so recent additions count more than old ones.
    - `keyword_score`  = weighted substring match against Tier1 (30 pts) / Tier2 (15) / Tier3 (7) keywords, capped at 100
    - `final_score`    = 0.7 × embedding_score + 0.3 × keyword_score
    - Tier: high (≥60), medium (≥30), low (<30)
-5. **Render** — write `docs/papers.json` and a self-contained `docs/index.html` with tier filter + text search.
-6. **Deploy** — commit changes to main and publish `docs/` via GitHub Pages.
+5. **(Optional) LLM rerank** — when enabled, papers above the medium tier are re-scored by the Anthropic API for cleaner ranking and a one-sentence justification. Cached by paper ID. See "Optional: LLM second-stage scoring" below.
+6. **Render** — write `docs/papers.json` and a self-contained `docs/index.html` with tier filter, text search, and read/unread tracking (localStorage).
+7. **Deploy** — commit changes to main and publish `docs/` via GitHub Pages.
+
+The dashboard supports marking papers as read (✓ button on each card) and hiding read papers ("Hide read" checkbox). Read state is stored in your browser's localStorage and survives daily updates because paper IDs are stable.
 
 ## Setup
 
@@ -43,13 +46,78 @@ First run downloads the ~90 MB sentence-transformers model into `~/.cache/huggin
 
 ## Customising
 
-- **Research profile keywords** — edit `config.yaml` → `research_profile` → `tier1_keywords` / `tier2_keywords` / `tier3_keywords`.
-- **Feeds** — edit `config.yaml` → `feeds` (list of `{name, url}` objects). See note on URL verification below.
-- **Scoring thresholds** — edit `config.yaml` → `scoring`:
-  - `nn_sim_low` / `nn_sim_high`: cosine range that maps to 0–100. Raise the floor if irrelevant papers score too high.
+All knobs live in `config.yaml`:
+
+- **Research profile keywords** — `research_profile.tier1_keywords` (30 pts each), `tier2_keywords` (15 pts), `tier3_keywords` (7 pts). Used for the keyword score component.
+- **Scoring thresholds** — `scoring`:
+  - `nn_sim_low` / `nn_sim_high`: weighted-cosine range that maps to 0–100. Raise the floor if irrelevant papers score too high.
   - `weights.nn` / `weights.keyword`: blend between semantic similarity and keyword matching.
   - `tiers.high` / `tiers.medium`: tier cutoffs.
-- **Lookback window** — `config.yaml` → `fetch.lookback_days` (default 14).
+- **Recency weighting** — `scoring.recency_half_life_years` (default 5) and `scoring.recency_floor` (default 0.2). Library papers added more recently count more; older ones decay exponentially with this half-life and never fall below the floor.
+- **Lookback window** — `fetch.lookback_days` (default 14).
+
+### Managing feeds
+
+Feeds live in `config.yaml` → `feeds:` block. Each entry is one line:
+
+```yaml
+feeds:
+  - {name: Nature, url: "https://www.nature.com/nature.rss"}
+```
+
+To **add a feed**: append a new line with the journal's RSS URL (find it on the publisher's site, often at `/<journal-slug>.rss` or linked from the homepage). To **remove a feed**: delete its line. To **rename**: edit the `name` field. The pipeline picks up changes on the next workflow run — no code changes needed.
+
+**Currently fetching 15 feeds**:
+
+| # | Feed | URL |
+|---|---|---|
+| 1 | Nature | `https://www.nature.com/nature.rss` |
+| 2 | Nature Methods | `https://www.nature.com/nmeth.rss` |
+| 3 | Nature Biotechnology | `https://www.nature.com/nbt.rss` |
+| 4 | Nature Medicine | `https://www.nature.com/nm.rss` |
+| 5 | Nature Communications | `https://www.nature.com/ncomms.rss` |
+| 6 | Nature Machine Intelligence | `https://www.nature.com/natmachintell.rss` |
+| 7 | Nature Cancer | `https://www.nature.com/natcancer.rss` |
+| 8 | Nature Reviews Cancer | `https://www.nature.com/nrc.rss` |
+| 9 | Cell | `https://www.cell.com/cell/inpress.rss` |
+| 10 | Cancer Cell | `https://www.cell.com/cancer-cell/inpress.rss` |
+| 11 | Molecular Cell | `https://www.cell.com/molecular-cell/inpress.rss` |
+| 12 | bioRxiv Cancer Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=cancer_biology` |
+| 13 | bioRxiv Bioinformatics | `https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics` |
+| 14 | bioRxiv Systems Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=systems_biology` |
+| 15 | bioRxiv Biochemistry | `https://connect.biorxiv.org/biorxiv_xml.php?subject=biochemistry` |
+
+**Suggested additions** you may want:
+- arXiv q-bio.QM — `http://export.arxiv.org/rss/q-bio.QM`
+- arXiv cs.LG — `http://export.arxiv.org/rss/cs.LG`
+- Mol. Cell. Proteomics, Bioinformatics, Nucleic Acids Res. (URLs change periodically — check the publisher's site)
+
+**If a feed returns 0 entries**: the URL has likely moved. `fetch_and_score.py` logs `got N entries` per feed every run, so dead feeds are easy to spot. Visit the publisher's site, find the new RSS link, update `config.yaml`, push.
+
+### Optional: LLM second-stage scoring
+
+The default pipeline (embeddings + keywords + recency) scores papers cheaply on CPU. You can optionally enable a second pass that re-scores shortlisted papers (those above the medium tier) using the Anthropic API. This produces a much cleaner medium-tier ranking plus a one-sentence justification per paper, at very low cost (~$3.60/month with Sonnet 4.6 default; ~$1.20/month with Haiku 4.5). Cached by paper ID across runs.
+
+**One-time setup**:
+
+1. Get an API key from https://console.anthropic.com/settings/keys
+2. Add it to GitHub secrets:
+   - Repo → **Settings → Secrets and variables → Actions → New repository secret**
+   - Name: `ANTHROPIC_API_KEY`
+   - Value: `sk-ant-...`
+3. Edit `config.yaml`:
+   ```yaml
+   scoring:
+     llm_rerank:
+       enabled: true                # flip this on
+       model: claude-sonnet-4-6     # or claude-haiku-4-5 for ~3x cheaper
+   ```
+4. (Optional) Tune `scoring.llm_rerank.profile_brief` — a 2–3 sentence summary of your interests that the LLM uses as context.
+5. Push and trigger the workflow manually.
+
+**For local runs**: `export ANTHROPIC_API_KEY=sk-ant-...` before running `python src/fetch_and_score.py`.
+
+If the API key is missing or `enabled: false`, the pipeline gracefully skips the LLM stage and produces a valid `papers.json` with the embedding+keyword scores.
 
 ## Refreshing your Paperpile library
 

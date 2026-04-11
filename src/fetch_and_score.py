@@ -201,9 +201,36 @@ def is_duplicate(paper: dict, dois: set[str], arxiv_ids: set[str], titles: set[s
     return False
 
 
+def compute_recency_weights(
+    reference_papers: list[dict],
+    half_life_years: float,
+    floor: float,
+    now: datetime | None = None,
+) -> np.ndarray:
+    """Per-library-paper weight in [floor, 1.0] based on when the user added it."""
+    if now is None:
+        now = datetime.now(timezone.utc)
+    weights = np.empty(len(reference_papers), dtype=np.float32)
+    for i, p in enumerate(reference_papers):
+        ts = p.get("added_ts")
+        if not ts:
+            weights[i] = floor
+            continue
+        try:
+            added_dt = datetime.fromtimestamp(float(ts), tz=timezone.utc)
+        except (ValueError, OSError):
+            weights[i] = floor
+            continue
+        years_old = (now - added_dt).total_seconds() / (365.25 * 86400)
+        w = 0.5 ** (years_old / half_life_years)
+        weights[i] = max(w, floor)
+    return weights
+
+
 def score_papers(
     papers: list[dict],
     reference_vectors: np.ndarray,
+    reference_meta: dict,
     config: dict,
 ) -> list[dict]:
     if not papers:
@@ -216,11 +243,21 @@ def score_papers(
     kw_w = float(scoring["weights"]["keyword"])
     high_tier = float(scoring["tiers"]["high"])
     medium_tier = float(scoring["tiers"]["medium"])
+    half_life = float(scoring.get("recency_half_life_years", 5))
+    floor = float(scoring.get("recency_floor", 0.2))
 
     profile = config["research_profile"]
     tier1 = [k.lower() for k in profile.get("tier1_keywords") or []]
     tier2 = [k.lower() for k in profile.get("tier2_keywords") or []]
     tier3 = [k.lower() for k in profile.get("tier3_keywords") or []]
+
+    reference_papers = reference_meta.get("papers", [])
+    recency_weights = compute_recency_weights(reference_papers, half_life, floor)
+    print(
+        f"recency weights: half_life={half_life}y floor={floor}  "
+        f"min={recency_weights.min():.3f}  median={float(np.median(recency_weights)):.3f}  "
+        f"max={recency_weights.max():.3f}"
+    )
 
     # --- embedding score ---
     from sentence_transformers import SentenceTransformer
@@ -238,8 +275,10 @@ def score_papers(
     ).astype(np.float32)
     # cosine similarity == dot product since both sides are L2-normalised
     sims = vectors @ reference_vectors.T  # [n_papers, n_reference]
-    max_sims = sims.max(axis=1)
-    nn_scores = np.clip((max_sims - low) / max(high - low, 1e-9), 0.0, 1.0) * 100.0
+    weighted_sims = sims * recency_weights[None, :]
+    max_weighted = weighted_sims.max(axis=1)
+    argmax = weighted_sims.argmax(axis=1)
+    nn_scores = np.clip((max_weighted - low) / max(high - low, 1e-9), 0.0, 1.0) * 100.0
 
     # --- keyword score ---
     scored: list[dict] = []
@@ -270,6 +309,18 @@ def score_papers(
         else:
             tier = "low"
 
+        # Top library match diagnostics
+        top_idx = int(argmax[i])
+        top_ref = reference_papers[top_idx] if 0 <= top_idx < len(reference_papers) else {}
+        top_added_year: int | None = None
+        if top_ref.get("added_ts"):
+            try:
+                top_added_year = datetime.fromtimestamp(
+                    float(top_ref["added_ts"]), tz=timezone.utc
+                ).year
+            except (ValueError, OSError):
+                top_added_year = None
+
         scored.append(
             {
                 "id": paper.get("doi") or paper.get("arxiv_id") or paper.get("url") or paper["title"],
@@ -284,7 +335,11 @@ def score_papers(
                 "final_score": final,
                 "embedding_score": round(nn_score, 2),
                 "keyword_score": round(float(kw_score), 2),
-                "max_cosine": round(float(max_sims[i]), 4),
+                "max_cosine_raw": round(float(sims[i, top_idx]), 4),
+                "max_cosine_weighted": round(float(max_weighted[i]), 4),
+                "recency_weight_used": round(float(recency_weights[top_idx]), 3),
+                "top_match_added_year": top_added_year,
+                "top_match_title": top_ref.get("title", "")[:120],
                 "tier": tier,
                 "matched_keywords": matched,
             }
@@ -362,7 +417,11 @@ def main() -> int:
     print(f"  {len(fresh)} after dedupe against Paperpile library")
 
     # score
-    scored = score_papers(fresh, reference_vectors, cfg)
+    scored = score_papers(fresh, reference_vectors, reference_meta, cfg)
+
+    # optional second-stage LLM rerank (no-op when disabled or API key missing)
+    from llm_rerank import rerank
+    scored = rerank(scored, cfg)
 
     # write output
     out_path = REPO_ROOT / "docs" / "papers.json"

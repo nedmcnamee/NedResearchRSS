@@ -58,6 +58,8 @@ jobs:
         run: python src/build_reference.py
 
       - name: Fetch + score
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python src/fetch_and_score.py
 
       - name: Generate dashboard
@@ -68,6 +70,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/papers.json docs/index.html data/reference.npz data/reference_meta.json
+          # llm_cache.json may not exist if LLM rerank is disabled
+          [ -f data/llm_cache.json ] && git add data/llm_cache.json || true
           if git diff --staged --quiet; then
             echo "no changes to commit"
           else

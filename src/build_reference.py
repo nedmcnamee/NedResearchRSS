@@ -25,6 +25,9 @@ import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# Bump when the meta schema changes so old caches get rebuilt automatically.
+META_VERSION = 2
+
 
 def load_config() -> dict:
     with open(REPO_ROOT / "config.yaml") as f:
@@ -71,6 +74,12 @@ def prepare_entries(library: list[dict]) -> list[dict]:
             continue
         doi, arxiv_id = extract_ids(entry)
         published = entry.get("published") or {}
+        # `created` is a Unix timestamp (float) marking when the user added the
+        # paper to Paperpile — used downstream for recency-weighted scoring.
+        created = entry.get("created")
+        added_ts: float | None = None
+        if isinstance(created, (int, float)):
+            added_ts = float(created)
         kept.append(
             {
                 "title": title,
@@ -81,6 +90,7 @@ def prepare_entries(library: list[dict]) -> list[dict]:
                 "labels": entry.get("labelsNamed") or [],
                 "year": (published.get("year") or "").strip() if isinstance(published, dict) else "",
                 "journal": (entry.get("journal") or "").strip(),
+                "added_ts": added_ts,
             }
         )
     return kept
@@ -95,6 +105,7 @@ def load_cached_sentinel(meta_path: Path) -> dict | None:
         return {
             "library_sha256": data.get("library_sha256"),
             "model": data.get("model"),
+            "meta_version": data.get("meta_version"),
             "count": len(data.get("papers") or []),
         }
     except Exception:
@@ -118,11 +129,12 @@ def main() -> int:
         cached
         and cached.get("library_sha256") == library_hash
         and cached.get("model") == model_name
+        and cached.get("meta_version") == META_VERSION
         and cache_path.exists()
     ):
         print(
             f"reference index up to date ({cached['count']} papers, "
-            f"sha256={library_hash[:12]}); skipping rebuild"
+            f"sha256={library_hash[:12]}, meta_version={META_VERSION}); skipping rebuild"
         )
         return 0
 
@@ -159,6 +171,7 @@ def main() -> int:
     meta = {
         "library_sha256": library_hash,
         "model": model_name,
+        "meta_version": META_VERSION,
         "papers": papers,
     }
     with open(meta_path, "w") as f:

@@ -30,14 +30,37 @@ research_profile:
 
 scoring:
   model: sentence-transformers/all-MiniLM-L6-v2
-  nn_sim_low: 0.25      # cosine floor mapped to 0
-  nn_sim_high: 0.75     # cosine ceiling mapped to 100
+  # Lower than v1 (0.25/0.75) because recency weighting shrinks the per-reference
+  # weighted similarities — we need a lower floor/ceiling to keep the score range usable.
+  nn_sim_low: 0.18      # cosine floor mapped to 0
+  nn_sim_high: 0.65     # cosine ceiling mapped to 100
   weights:
     nn: 0.7
     keyword: 0.3
   tiers:
     high: 60
     medium: 30
+  # Recency weighting: each reference paper's contribution is multiplied by
+  #   max(0.5 ** (years_since_added / half_life), floor)
+  # before taking the max cosine. Uses Paperpile's `created` (added-to-library) date,
+  # not the paper's publication year.
+  recency_half_life_years: 5
+  recency_floor: 0.2
+
+  # Optional second-stage LLM rerank.
+  # Set enabled=true and export ANTHROPIC_API_KEY (locally) or add it as a GitHub
+  # secret (CI). Without the key the pipeline still runs and just skips the LLM stage.
+  llm_rerank:
+    enabled: true                        # opt-in
+    model: claude-sonnet-4-6              # default; switch to claude-haiku-4-5 for ~3x cheaper
+    apply_to_min_score: 30                # only re-score papers above this stage1 score
+    blend_weight: 0.5                     # 0.5 stage1 + 0.5 llm = final
+    cache_path: data/llm_cache.json       # disk cache, keyed by paper id + model
+    max_concurrent: 5                     # limit parallel API calls
+    profile_brief: |
+      DIA mass spectrometry proteomics, cancer cell line and patient drug response,
+      foundation models and multimodal learning for biology and pathology,
+      federated learning, multi-omics integration, synthetic lethality.
 
 library:
   path: data/library.json
