@@ -102,10 +102,40 @@
     .tagline-details summary { display: none; }
     .tagline { margin-top: 0; }
   }
-  /* Mobile: tighten the sticky header so the controls don't dominate. */
+  /* Mobile: tighten the sticky header so the controls don't dominate.
+     Selectors are scoped under header/.controls to out-specify the base
+     rules further down the stylesheet (which would otherwise win on source
+     order when specificity is equal). */
   @media (max-width: 699px) {
     header { padding: 1rem 0.875rem; }
-    h1 { font-size: 1.25rem; }
+    header h1 { font-size: 1.25rem; }
+    header .controls { gap: 0.45rem; margin-top: 0.65rem; }
+    /* Tier buttons become a single horizontally-scrollable row that bleeds
+       to the screen edges. Takes its own line (flex-basis 100%) so the
+       search input + hide-read checkbox sit on the row below. */
+    header .controls .tier-row {
+      flex-basis: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 0.4rem;
+      margin: 0 -0.875rem;
+      padding: 0.15rem 0.875rem 0.25rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    header .controls .tier-row::-webkit-scrollbar { display: none; }
+    header .controls .tier-btn {
+      flex-shrink: 0;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+    }
+    header .controls #search {
+      font-size: 0.85rem;
+      min-width: 0;
+      padding: 0.4rem 0.6rem;
+    }
+    header .controls .hide-read-wrap { font-size: 0.8rem; }
   }
   .meta { color: var(--muted); font-size: 0.875rem; }
   .controls {
@@ -113,6 +143,12 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1rem;
+    align-items: center;
+  }
+  .tier-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     align-items: center;
   }
   .tier-btn {
@@ -124,6 +160,7 @@
     cursor: pointer;
     font-size: 0.875rem;
     transition: all 0.15s;
+    white-space: nowrap;
   }
   .tier-btn:hover { border-color: var(--accent); }
   .tier-btn.active {
@@ -320,10 +357,12 @@
       &middot; scored against {{ library_size }} library papers
     </div>
     <div class="controls">
-      <button class="tier-btn active" data-tier="all">All</button>
-      <button class="tier-btn" data-tier="high">Must-read</button>
-      <button class="tier-btn" data-tier="medium">Worth scanning</button>
-      <button class="tier-btn" data-tier="low">On the radar</button>
+      <div class="tier-row">
+        <button class="tier-btn active" data-tier="all">All</button>
+        <button class="tier-btn" data-tier="high">Must-read</button>
+        <button class="tier-btn" data-tier="medium">Worth scanning</button>
+        <button class="tier-btn" data-tier="low">On the radar</button>
+      </div>
       <label class="hide-read-wrap">
         <input type="checkbox" id="hide-read"> Hide read
       </label>
@@ -452,8 +491,7 @@
         : t === 'medium' ? 'Worth scanning'
         : 'On the radar';
       const u = t === 'all' ? unreadTotal : tierUnread[t];
-      const a = t === 'all' ? total : tierTotals[t];
-      btn.textContent = label + ' (' + u + ' / ' + a + ')';
+      btn.textContent = label + ' (' + u + ')';
     });
   }
 
