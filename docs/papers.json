@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11T05:47:33.096424+00:00",
+  "updated_at": "2026-04-11T06:02:12.993534+00:00",
   "count": 259,
   "tier_counts": {
     "high": 15,
@@ -1389,25 +1389,6 @@
       "matched_keywords": []
     },
     {
-      "id": "10.64898/2026.04.05.716582",
-      "title": "Novel polymeric fluoropyrimidine CF10 demonstrates superior therapeutic index and survival advantage in patient-derived models of 5-fluorouracil-refractory colorectal cancer",
-      "authors": [
-        "Sah, N., Omy, T. R., Kairamkonda, S., Acharya, G., Palle, H., Luna, P., Mani, C., Gmeiner, W., Cheedella, N., Reedy, M., Palle, K."
-      ],
-      "abstract": "BackgroundFluoropyrimidines, specifically 5-fluorouracil (5-FU), remain the cornerstone of colorectal cancer (CRC) therapy. However, intrinsic and acquired resistance, alongside dose-limiting systemic toxicities, often result in treatment failure and disease relapse. There is a pressing clinical need for next-generation fluoropyrimidines that can retain the antitumor activity in 5-FU-refractory CRC models while maintaining a favorable safety profile. MethodsWe evaluated the antitumor efficacy of CF10, a novel polymeric fluoropyrimidine designed for the sustained delivery of FdUMP, against equimolar 5-FU. We utilized a diverse panel of six patient-derived CRC organoid (PDO) models to assess 3D growth inhibition under both normoxic ([~]20% O2) and physioxic (5% O2) conditions. Mechanisms of action were investigated via {gamma}H2AX signaling (DNA damage), Annexin V/PI flow cytometry (death kinetics), and ALDEFLUOR assays (stem-like populations). Functional suppression of metastasis-associated phenotypes was evaluated using 3D Matrigel invasion assays. Finally, the therapeutic index and overall survival were validated in vivo using two independent patient-cell-derived xenograft (PCDX) models (TX-CC-199 and TX-CC-201). ResultsCF10 demonstrated significantly greater suppression of organoid growth compared to equimolar 5-FU across all patient-derived lines, regardless of morphological heterogeneity or oxygen tension. In 3D invasion assays, CF10 achieved superior anti-invasive activity even at a 10-fold lower molar dose than 5-FU. This functional advantage was mirrored by a marked depletion of the ALDH-high stem-like subpopulation, which was largely recalcitrant to 5-FU. Mechanistically, CF10 induced intensified replication stress, DNA damage and repair signaling ({gamma}H2AX, Top1cc/pRPA32, FANCD2), and pushed the CRC to irreversible/terminal, PI-positive death states. In vivo, CF10 treatment resulted in profound tumor growth inhibition and a robust survival advantage in two patient cell-derived xenograft (PCDX) models (Log-rank P<0.01) without inducing systemic weight loss or noticeable toxicity. ConclusionsBy integrating 3D patient-derived modeling with in vivo validation, we demonstrate that CF10 effectively overcomes the biological and pharmacological limitations of 5-FU. CF10 targets the aggressive, invasive, and stem-like subpopulations of CRC that drive clinical relapses. These findings provide a compelling translational rationale for the clinical development of CF10 as a superior alternative to standard fluoropyrimidines in both treatment-naive and refractory CRC. Significance StatementDespite the foundational role of 5-fluorouracil (5-FU) in colorectal cancer (CRC) therapy, resistance and systemic toxicity remain major barriers to curative outcomes. This study identifies CF10, a novel polymeric fluoropyrimidine, as a superior alternative that overcomes 5-FU resistance in biologically diverse patient-derived organoids and xenograft models. Crucially, CF10 demonstrates a unique capacity to suppress the invasive, aldehyde dehydrogenase (ALDH)-high stem-like subpopulations that likely survive standard chemotherapy (5-FU) by maintaining efficacy under physiological oxygen levels and providing a significant survival advantage in vivo with improved tolerability. CF10 represents a promising translational candidate for the treatment of both treatment-naive and refractory CRC.",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.04.05.716582v1?rss=1",
-      "journal": "bioRxiv Cancer Biology",
-      "published": "2026-04-08T00:00:00+00:00",
-      "doi": "10.64898/2026.04.05.716582",
-      "arxiv_id": null,
-      "final_score": 44.6,
-      "embedding_score": 63.71,
-      "keyword_score": 0.0,
-      "max_cosine": 0.5686,
-      "tier": "medium",
-      "matched_keywords": []
-    },
-    {
       "id": "10.64898/2026.04.05.716273",
       "title": "An AI-Assisted Workflow for Reconstruction, Extension, and Calibration of Quantitative Systems Pharmacology Models.",
       "authors": [
@@ -2274,6 +2255,25 @@
       "embedding_score": 51.1,
       "keyword_score": 0.0,
       "max_cosine": 0.5055,
+      "tier": "medium",
+      "matched_keywords": []
+    },
+    {
+      "id": "10.64898/2026.04.08.717301",
+      "title": "CA19-9 promotes liver metastasis of pancreatic cancer through E-selectin mediated extravasation",
+      "authors": [
+        "Ogawa, S., Song, H., Hsu, J., Pantazopoulou, V., Osorio-Vasquez, V., Kubota, C. S., Tremblay, J. R., Bottomley, C. R., Lande, K., Zhu, J., Peck, K. L., Wang, Y., Curtis, K., Keightley, S., Tomita, R., Zou, J., Downes, M., Evans, R. M., Lowy, A. M., Tiriac, H., Engle, D. D."
+      ],
+      "abstract": "Pancreatic ductal adenocarcinoma (PDAC) frequently metastasizes to the liver, which drives patient mortality. CA19-9 is elevated in most PDAC tumors and is widely used as a clinical biomarker. Elevated serum levels are associated with poor outcomes. However, whether CA19-9 functionally contributes to metastatic progression has not been fully defined, in part because mice lack endogenous CA19-9 expression. Here, using syngeneic murine PDAC cells engineered to express CA19-9, we investigated its functional role in liver metastasis. In splenic injection models, CA19-9 expression markedly increased liver metastatic burden by promoting both metastatic seeding and subsequent metastatic outgrowth. In vitro, CA19-9 enhanced tumor cell adhesion to endothelial cells through interaction with E-selectin. Metastatic seeding of CA19-9-expressing cells was reduced by genetic deletion of E-selectin or antibody neutralization of either CA19-9 or E-selectin in vivo. Therapeutic targeting of CA19-9 with a neutralizing antibody markedly reduced liver metastatic burden after metastatic seeding. CA19-9 expression increased AKT signaling in PDAC cells and liver metastases, and CA19-9 levels correlated with AKT activation in human PDAC tissues. These findings show that CA19-9 promotes PDAC liver metastasis through E-selectin-dependent metastatic seeding and AKT-associated metastatic outgrowth, highlighting CA19-9 as a functional mediator of PDAC metastasis and a potential therapeutic target.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.04.08.717301v1?rss=1",
+      "journal": "bioRxiv Cancer Biology",
+      "published": "2026-04-10T00:00:00+00:00",
+      "doi": "10.64898/2026.04.08.717301",
+      "arxiv_id": null,
+      "final_score": 35.49,
+      "embedding_score": 50.7,
+      "keyword_score": 0.0,
+      "max_cosine": 0.5035,
       "tier": "medium",
       "matched_keywords": []
     },
@@ -4606,7 +4606,7 @@
       "doi": "10.1038/s41587-026-03100-9",
       "arxiv_id": null,
       "final_score": 14.51,
-      "embedding_score": 20.73,
+      "embedding_score": 20.72,
       "keyword_score": 0.0,
       "max_cosine": 0.3536,
       "tier": "low",
@@ -4921,28 +4921,6 @@
       "embedding_score": 16.92,
       "keyword_score": 0.0,
       "max_cosine": 0.3346,
-      "tier": "low",
-      "matched_keywords": []
-    },
-    {
-      "id": "10.1038/s41467-026-71649-9",
-      "title": "Structural motifs of gold cluster anions with 17 to 69 atoms",
-      "authors": [
-        "Andrés Aguado",
-        "Pablo Álvarez-Zapatero",
-        "Oleg Kostko",
-        "Bernd von Issendorff"
-      ],
-      "abstract": "Nature Communications, Published online: 10 April 2026; doi:10.1038/s41467-026-71649-9 A combination of DFT calculations, comprehensive structural searches and high-resolution photoelectron spectra unveils a broad variety of often highly symmetric structural motifs of gold cluster anions with a few tens of atoms.",
-      "url": "https://www.nature.com/articles/s41467-026-71649-9",
-      "journal": "Nature Communications",
-      "published": "2026-04-10T00:00:00+00:00",
-      "doi": "10.1038/s41467-026-71649-9",
-      "arxiv_id": null,
-      "final_score": 10.94,
-      "embedding_score": 15.63,
-      "keyword_score": 0.0,
-      "max_cosine": 0.3282,
       "tier": "low",
       "matched_keywords": []
     },
@@ -7959,6 +7937,30 @@
       "embedding_score": 7.5,
       "keyword_score": 0.0,
       "max_cosine": 0.2875,
+      "tier": "low",
+      "matched_keywords": []
+    },
+    {
+      "id": "10.1038/s41467-026-71906-x",
+      "title": "CMOS compatible probabilistic computing hardware with cointegrated reconfigurable p-bits and synapse arrays",
+      "authors": [
+        "Jun-Young Park",
+        "Jae-Hyun Lee",
+        "Jeong-Min Lee",
+        "Ki-Nam Park",
+        "Sungho Kim",
+        "Joon-Kyu Han"
+      ],
+      "abstract": "Nature Communications, Published online: 11 April 2026; doi:10.1038/s41467-026-71906-x Probabilistic computing is increasingly valuable for exploring optimal solutions in data science as data volumes continue to grow, highlighting probabilistic computing as a practical solution. Park et al. report a CMOS-compatible array with transistors that serve as both p-bit and synapse, enabling single-chip probabilistic computing.",
+      "url": "https://www.nature.com/articles/s41467-026-71906-x",
+      "journal": "Nature Communications",
+      "published": "2026-04-11T00:00:00+00:00",
+      "doi": "10.1038/s41467-026-71906-x",
+      "arxiv_id": null,
+      "final_score": 5.19,
+      "embedding_score": 7.41,
+      "keyword_score": 0.0,
+      "max_cosine": 0.2871,
       "tier": "low",
       "matched_keywords": []
     },
