@@ -4,8 +4,9 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from dateutil import parser as dateparser
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -14,6 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = REPO_ROOT / "src" / "templates"
 PAPERS_JSON = REPO_ROOT / "docs" / "papers.json"
 OUT_HTML = REPO_ROOT / "docs" / "index.html"
+DISPLAY_TZ = ZoneInfo("Australia/Melbourne")
 
 
 def main() -> int:
@@ -33,10 +35,14 @@ def main() -> int:
     )
     template = env.get_template("dashboard.html.j2")
 
-    updated_at_raw = data.get("updated_at") or datetime.utcnow().isoformat()
+    updated_at_raw = data.get("updated_at") or datetime.now(timezone.utc).isoformat()
     try:
         updated_dt = dateparser.parse(updated_at_raw)
-        updated_human = updated_dt.strftime("%Y-%m-%d %H:%M UTC")
+        if updated_dt.tzinfo is None:
+            updated_dt = updated_dt.replace(tzinfo=timezone.utc)
+        updated_local = updated_dt.astimezone(DISPLAY_TZ)
+        # %Z resolves to AEST or AEDT depending on daylight saving
+        updated_human = updated_local.strftime("%Y-%m-%d %H:%M %Z (Melbourne)")
     except Exception:
         updated_human = updated_at_raw
 
