@@ -405,6 +405,9 @@
       const llmLine = (typeof p.llm_score === 'number')
         ? ' &middot; LLM ' + p.llm_score.toFixed(0) + ' (stage1 ' + (p.stage1_score != null ? p.stage1_score.toFixed(0) : '?') + ')'
         : '';
+      const sourceWeightLine = (typeof p.source_weight === 'number' && p.source_weight < 1.0 && typeof p.raw_final_score === 'number')
+        ? ' &middot; source×' + p.source_weight.toFixed(2) + ' (raw ' + p.raw_final_score.toFixed(0) + ')'
+        : '';
       const llmReasonHtml = p.llm_reason
         ? '<div class="llm-reason">' + escapeHtml(p.llm_reason) + '</div>'
         : '';
@@ -426,7 +429,7 @@
         +   llmReasonHtml
         +   (p.abstract ? '<div class="paper-abstract">' + escapeHtml(p.abstract) + '</div>' : '')
         +   (chips ? '<div class="chips">' + chips + '</div>' : '')
-        +   '<div class="score-detail">embedding ' + p.embedding_score.toFixed(0) + ' &middot; keywords ' + p.keyword_score.toFixed(0) + cosLine + llmLine + topYear + '</div>'
+        +   '<div class="score-detail">embedding ' + p.embedding_score.toFixed(0) + ' &middot; keywords ' + p.keyword_score.toFixed(0) + cosLine + llmLine + sourceWeightLine + topYear + '</div>'
         + '</article>';
     }).join('');
     list.innerHTML = html;

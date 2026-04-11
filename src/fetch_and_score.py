@@ -162,15 +162,43 @@ def format_authors(entry) -> list[str]:
     return names
 
 
+def _parse_with_retry(url: str, user_agent: str, retries: int = 1):
+    """feedparser.parse with a single retry on transient failure.
+
+    Some feeds (arXiv's query API in particular) occasionally return malformed
+    or truncated XML under load; a 2-second retry usually gets a clean response.
+    """
+    last = None
+    for attempt in range(retries + 1):
+        try:
+            parsed = feedparser.parse(url, request_headers={"User-Agent": user_agent})
+        except Exception as e:
+            last = e
+            if attempt < retries:
+                time.sleep(2)
+                continue
+            raise
+        if parsed.entries:
+            return parsed
+        if parsed.bozo and attempt < retries:
+            time.sleep(2)
+            continue
+        return parsed
+    if last is not None:
+        raise last  # unreachable, keeps type checker happy
+
+
 def fetch_feed(feed: dict, user_agent: str, timeout: int) -> list[dict]:
-    """Pull one feed and normalise its entries."""
+    """Pull one feed and normalise its entries. Tags every paper with the feed's
+    `weight` (default 1.0) so it can be applied to the final score later."""
     name = feed["name"]
     url = feed["url"]
-    print(f"  fetching: {name}  ({url})")
+    feed_weight = float(feed.get("weight", 1.0))
+    print(f"  fetching: {name}  (weight={feed_weight})")
     # feedparser 6 accepts request_headers but no timeout arg; set socket default
     socket.setdefaulttimeout(timeout)
     try:
-        parsed = feedparser.parse(url, request_headers={"User-Agent": user_agent})
+        parsed = _parse_with_retry(url, user_agent, retries=1)
     except Exception as e:
         print(f"    ! error: {e}", file=sys.stderr)
         return []
@@ -193,6 +221,7 @@ def fetch_feed(feed: dict, user_agent: str, timeout: int) -> list[dict]:
                 "authors": format_authors(entry),
                 "url": link,
                 "journal": name,
+                "feed_weight": feed_weight,
                 "published": published.isoformat() if published else None,
                 "published_dt": published,
                 "doi": extract_doi(entry, link),
@@ -385,6 +414,7 @@ def score_papers(
                 "abstract": paper["abstract"],
                 "url": paper["url"],
                 "journal": paper["journal"],
+                "source_weight": float(paper.get("feed_weight", 1.0)),
                 "published": paper["published"],
                 "doi": paper.get("doi"),
                 "arxiv_id": paper.get("arxiv_id"),
@@ -402,6 +432,43 @@ def score_papers(
         )
 
     scored.sort(key=lambda p: p["final_score"], reverse=True)
+    return scored
+
+
+def apply_source_weights(scored: list[dict], config: dict) -> list[dict]:
+    """Multiply each paper's final_score by its source_weight, re-tier, re-sort.
+
+    Called after LLM rerank so the weight is applied to the final blended score,
+    not to the intermediate stage1 or LLM scores. Papers from weighted-down
+    sources (e.g. arXiv) need a higher raw final_score to clear the must-read bar.
+    """
+    if not scored:
+        return scored
+    tiers = (config.get("scoring") or {}).get("tiers") or {}
+    high_tier = float(tiers.get("high", 60))
+    medium_tier = float(tiers.get("medium", 30))
+
+    n_weighted = 0
+    for p in scored:
+        w = float(p.get("source_weight", 1.0))
+        if w != 1.0:
+            n_weighted += 1
+        raw = p["final_score"]
+        p["raw_final_score"] = raw
+        weighted = round(raw * w, 2)
+        p["final_score"] = weighted
+        if weighted >= high_tier:
+            p["tier"] = "high"
+        elif weighted >= medium_tier:
+            p["tier"] = "medium"
+        else:
+            p["tier"] = "low"
+    scored.sort(key=lambda p: p["final_score"], reverse=True)
+    if n_weighted:
+        print(
+            f"  applied source weights to {n_weighted}/{len(scored)} papers "
+            f"(from feeds with weight != 1.0)"
+        )
     return scored
 
 
@@ -439,6 +506,8 @@ def main() -> int:
     all_papers: list[dict] = []
     for feed in cfg["feeds"]:
         entries = fetch_feed(feed, user_agent=ua, timeout=timeout)
+        # per-feed cap overrides the global default
+        feed_cap = int(feed.get("max_papers", max_per_feed))
         # trim to recent + cap
         filtered: list[dict] = []
         for e in entries:
@@ -446,7 +515,7 @@ def main() -> int:
             if dt is not None and dt < cutoff:
                 continue
             filtered.append(e)
-            if len(filtered) >= max_per_feed:
+            if len(filtered) >= feed_cap:
                 break
         all_papers.extend(filtered)
         time.sleep(0.2)  # polite pause between hosts
@@ -478,6 +547,11 @@ def main() -> int:
     # optional second-stage LLM rerank (no-op when disabled or API key missing)
     from llm_rerank import rerank
     scored = rerank(scored, cfg)
+
+    # per-feed source weight — runs after rerank so it applies to the final
+    # blended score. Penalises noisy/firehose sources (like arXiv cs.LG) so
+    # they need a higher raw score to reach must-read tier.
+    scored = apply_source_weights(scored, cfg)
 
     # write output
     out_path = REPO_ROOT / "docs" / "papers.json"

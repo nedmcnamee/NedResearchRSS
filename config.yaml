@@ -83,7 +83,15 @@ fetch:
   request_timeout: 30
 
 feeds:
-  # Tier-1 journals (big venues the user explicitly wants prominent)
+  # Each feed may optionally set:
+  #   weight:     multiplier applied to the paper's final_score before tier
+  #               assignment (default 1.0). Lower weights demote noisy sources
+  #               so they need a higher raw score to reach must-read. With
+  #               high_tier=50 and weight=0.75, an arXiv paper needs raw >= 67
+  #               to clear must-read, vs >= 50 for a weight=1.0 journal.
+  #   max_papers: per-feed entry cap (default fetch.max_papers_per_feed=100).
+
+  # Tier-1 journals (full weight — peer-reviewed, curated by editors)
   - {name: Nature,                      url: "https://www.nature.com/nature.rss"}
   - {name: Nature Methods,              url: "https://www.nature.com/nmeth.rss"}
   - {name: Nature Biotechnology,        url: "https://www.nature.com/nbt.rss"}
@@ -96,8 +104,17 @@ feeds:
   - {name: Cancer Cell,                 url: "https://www.cell.com/cancer-cell/inpress.rss"}
   - {name: Molecular Cell,              url: "https://www.cell.com/molecular-cell/inpress.rss"}
 
-  # bioRxiv subject feeds
+  # bioRxiv subject feeds (biology preprints — full weight, bioRxiv is the
+  # primary preprint channel for this domain)
   - {name: bioRxiv Cancer Biology,   url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=cancer_biology"}
   - {name: bioRxiv Bioinformatics,   url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics"}
   - {name: bioRxiv Systems Biology,  url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=systems_biology"}
   - {name: bioRxiv Biochemistry,     url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=biochemistry"}
+
+  # arXiv CS/quant-biology preprints — weighted DOWN because this is the
+  # cutting-edge ML firehose (transferable techniques) but very noisy and
+  # not peer-reviewed. Papers need a higher raw score to reach must-read.
+  # Using arXiv's query API (the old /rss/ endpoint returns zero entries).
+  - {name: "arXiv cs.LG (machine learning)",   url: "http://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=40", weight: 0.75, max_papers: 40}
+  - {name: "arXiv cs.CV (vision / pathology)", url: "http://export.arxiv.org/api/query?search_query=cat:cs.CV&sortBy=submittedDate&sortOrder=descending&max_results=30", weight: 0.75, max_papers: 30}
+  - {name: "arXiv q-bio.QM (comp biology)",    url: "http://export.arxiv.org/api/query?search_query=cat:q-bio.QM&sortBy=submittedDate&sortOrder=descending&max_results=40", weight: 0.85, max_papers: 40}

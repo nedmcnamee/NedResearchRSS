@@ -13,8 +13,9 @@ A personalised academic paper feed that runs daily via GitHub Actions, scores in
    - `final_score`    = 0.7 × embedding_score + 0.3 × keyword_score
    - Tier: high (≥60), medium (≥30), low (<30)
 5. **(Optional) LLM rerank** — when enabled, papers above the medium tier are re-scored by the Anthropic API for cleaner ranking and a one-sentence justification. Cached by paper ID. See "Optional: LLM second-stage scoring" below.
-6. **Render** — write `docs/papers.json` and a self-contained `docs/index.html` with tier filter, text search, and read/unread tracking (localStorage).
-7. **Deploy** — commit changes to main and publish `docs/` via GitHub Pages.
+6. **Source weighting** — each paper's final score is multiplied by its feed's `weight` (default 1.0). Noisy sources like arXiv use weights of 0.75–0.85, so their papers need a higher raw score to reach must-read tier — this surfaces the transferable gems from the ML firehose without drowning the top tier in preprints.
+7. **Render** — write `docs/papers.json` and a self-contained `docs/index.html` with tier filter, text search, and read/unread tracking (localStorage).
+8. **Deploy** — commit changes to main and publish `docs/` via GitHub Pages.
 
 The dashboard supports marking papers as read (✓ button on each card) and hiding read papers ("Hide read" checkbox). Read state is stored in your browser's localStorage and survives daily updates because paper IDs are stable.
 
@@ -58,39 +59,58 @@ All knobs live in `config.yaml`:
 
 ### Managing feeds
 
-Feeds live in `config.yaml` → `feeds:` block. Each entry is one line:
+Feeds live in `config.yaml` → `feeds:` block. Each entry is one line with optional fields for source weighting:
 
 ```yaml
 feeds:
   - {name: Nature, url: "https://www.nature.com/nature.rss"}
+  - {name: arXiv cs.LG, url: "...", weight: 0.75, max_papers: 40}
 ```
 
-To **add a feed**: append a new line with the journal's RSS URL (find it on the publisher's site, often at `/<journal-slug>.rss` or linked from the homepage). To **remove a feed**: delete its line. To **rename**: edit the `name` field. The pipeline picks up changes on the next workflow run — no code changes needed.
+| Field | Purpose |
+|---|---|
+| `name` | Display label on the dashboard |
+| `url` | RSS/Atom URL |
+| `weight` (optional, default `1.0`) | Multiplier applied to the paper's final score before tier assignment. Lower values demote noisy sources so they need a higher raw score to reach must-read. |
+| `max_papers` (optional, default `fetch.max_papers_per_feed`) | Per-feed entry cap. Useful for high-volume feeds like arXiv. |
 
-**Currently fetching 15 feeds**:
+To **add a feed**: append a new line. The pipeline picks up changes on the next workflow run — no code changes needed.
 
-| # | Feed | URL |
-|---|---|---|
-| 1 | Nature | `https://www.nature.com/nature.rss` |
-| 2 | Nature Methods | `https://www.nature.com/nmeth.rss` |
-| 3 | Nature Biotechnology | `https://www.nature.com/nbt.rss` |
-| 4 | Nature Medicine | `https://www.nature.com/nm.rss` |
-| 5 | Nature Communications | `https://www.nature.com/ncomms.rss` |
-| 6 | Nature Machine Intelligence | `https://www.nature.com/natmachintell.rss` |
-| 7 | Nature Cancer | `https://www.nature.com/natcancer.rss` |
-| 8 | Nature Reviews Cancer | `https://www.nature.com/nrc.rss` |
-| 9 | Cell | `https://www.cell.com/cell/inpress.rss` |
-| 10 | Cancer Cell | `https://www.cell.com/cancer-cell/inpress.rss` |
-| 11 | Molecular Cell | `https://www.cell.com/molecular-cell/inpress.rss` |
-| 12 | bioRxiv Cancer Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=cancer_biology` |
-| 13 | bioRxiv Bioinformatics | `https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics` |
-| 14 | bioRxiv Systems Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=systems_biology` |
-| 15 | bioRxiv Biochemistry | `https://connect.biorxiv.org/biorxiv_xml.php?subject=biochemistry` |
+**Currently fetching 18 feeds**:
 
-**Suggested additions** you may want:
-- arXiv q-bio.QM — `http://export.arxiv.org/rss/q-bio.QM`
-- arXiv cs.LG — `http://export.arxiv.org/rss/cs.LG`
+| # | Feed | URL | Weight | Cap |
+|---|---|---|---|---|
+| 1 | Nature | `https://www.nature.com/nature.rss` | 1.0 | 100 |
+| 2 | Nature Methods | `https://www.nature.com/nmeth.rss` | 1.0 | 100 |
+| 3 | Nature Biotechnology | `https://www.nature.com/nbt.rss` | 1.0 | 100 |
+| 4 | Nature Medicine | `https://www.nature.com/nm.rss` | 1.0 | 100 |
+| 5 | Nature Communications | `https://www.nature.com/ncomms.rss` | 1.0 | 100 |
+| 6 | Nature Machine Intelligence | `https://www.nature.com/natmachintell.rss` | 1.0 | 100 |
+| 7 | Nature Cancer | `https://www.nature.com/natcancer.rss` | 1.0 | 100 |
+| 8 | Nature Reviews Cancer | `https://www.nature.com/nrc.rss` | 1.0 | 100 |
+| 9 | Cell | `https://www.cell.com/cell/inpress.rss` | 1.0 | 100 |
+| 10 | Cancer Cell | `https://www.cell.com/cancer-cell/inpress.rss` | 1.0 | 100 |
+| 11 | Molecular Cell | `https://www.cell.com/molecular-cell/inpress.rss` | 1.0 | 100 |
+| 12 | bioRxiv Cancer Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=cancer_biology` | 1.0 | 100 |
+| 13 | bioRxiv Bioinformatics | `https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics` | 1.0 | 100 |
+| 14 | bioRxiv Systems Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=systems_biology` | 1.0 | 100 |
+| 15 | bioRxiv Biochemistry | `https://connect.biorxiv.org/biorxiv_xml.php?subject=biochemistry` | 1.0 | 100 |
+| 16 | arXiv cs.LG (ML) | `http://export.arxiv.org/api/query?...cs.LG...` | **0.75** | 40 |
+| 17 | arXiv cs.CV (vision, pathology) | `http://export.arxiv.org/api/query?...cs.CV...` | **0.75** | 30 |
+| 18 | arXiv q-bio.QM (comp biology) | `http://export.arxiv.org/api/query?...q-bio.QM...` | **0.85** | 40 |
+
+**About arXiv**: arXiv is the firehose for cutting-edge ML and computational techniques, but it's not peer-reviewed and very high-volume. The three feeds above use arXiv's query API (the old `/rss/` endpoint returns zero entries — it's dead). Weights of 0.75–0.85 mean an arXiv paper needs a raw score of ~59–67 to clear the must-read threshold of 50, vs 50 for a journal paper. This surfaces the genuinely transferable gems (foundation model, multi-omics, vision-language for biology, etc.) without drowning the must-read tier in ML preprints.
+
+**The query API format** lets you filter by any arXiv category:
+```
+http://export.arxiv.org/api/query?search_query=cat:<category>&sortBy=submittedDate&sortOrder=descending&max_results=40
+```
+Useful categories: `cs.LG` (ML), `cs.CV` (vision), `cs.AI` (AI broadly), `stat.ML` (statistical ML), `q-bio.QM` (quantitative methods in biology), `q-bio.GN` (genomics), `q-bio.BM` (biomolecules). You can also combine with `AND`/`OR`: `cat:cs.LG+AND+cat:q-bio.QM` for papers cross-listed between ML and comp biology.
+
+**Suggested additional feeds** you may want:
 - Mol. Cell. Proteomics, Bioinformatics, Nucleic Acids Res. (URLs change periodically — check the publisher's site)
+- arXiv stat.ML — overlap with cs.LG but sometimes has unique papers
+- OpenReview (ICLR/NeurIPS) — no RSS, but arXiv cs.LG already catches most of these
 
 **If a feed returns 0 entries**: the URL has likely moved. `fetch_and_score.py` logs `got N entries` per feed every run, so dead feeds are easy to spot. Visit the publisher's site, find the new RSS link, update `config.yaml`, push.
 
