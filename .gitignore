@@ -12,3 +12,9 @@ venv/
 # and active project details. Kept local only; CI restores it from the
 # KB_CONTENT GitHub Secret before running the pipeline. See README.md.
 data/knowledgebase.md
+
+# LLM rerank cache — stores per-paper score AND a one-sentence reason. The
+# reason is grounded in the (private) knowledgebase and may leak unpublished
+# research ideas, so the file is kept out of git entirely. CI persists it
+# across runs via actions/cache (see .github/workflows/update-feed.yml).
+data/llm_cache.json

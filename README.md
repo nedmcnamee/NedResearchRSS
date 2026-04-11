@@ -116,7 +116,9 @@ Useful categories: `cs.LG` (ML), `cs.CV` (vision), `cs.AI` (AI broadly), `stat.M
 
 ### Optional: LLM second-stage scoring
 
-The default pipeline (embeddings + keywords + recency) scores papers cheaply on CPU. You can optionally enable a second pass that re-scores shortlisted papers (those above the medium tier) using the Anthropic API. This produces a much cleaner medium-tier ranking plus a one-sentence justification per paper, at very low cost (~$3.60/month with Sonnet 4.6 default; ~$1.20/month with Haiku 4.5). Cached by paper ID across runs.
+The default pipeline (embeddings + keywords + recency) scores papers cheaply on CPU. You can optionally enable a second pass that re-scores shortlisted papers using the Anthropic API. This produces a much cleaner medium-tier ranking at very low cost (~$3.60/month with Sonnet 4.6; ~$1.20/month with Haiku 4.5). Cached by paper ID across runs.
+
+**Privacy note**: when a private knowledgebase is in use (next section), the LLM also generates a one-sentence reason alongside each score. That reason is grounded in your KB and can echo unpublished project details, so reasons are kept **only** in the local cache file (`data/llm_cache.json`) — they are *never* written to `docs/papers.json` and never shown on the public dashboard. The cache file itself is gitignored and persisted across CI runs via the GitHub Actions cache (not via git commits).
 
 **One-time setup**:
 
@@ -135,7 +137,7 @@ The default pipeline (embeddings + keywords + recency) scores papers cheaply on 
 4. (Optional) Tune `scoring.llm_rerank.profile_brief` — a 2–3 sentence summary of your interests that the LLM uses as context. Ignored if you set up a private knowledgebase (next section).
 5. Push and trigger the workflow manually.
 
-**For local runs**: `export ANTHROPIC_API_KEY=sk-ant-...` before running `python src/fetch_and_score.py`.
+**For local runs**: `export ANTHROPIC_API_KEY=sk-ant-...` before running `python src/fetch_and_score.py`. To inspect why the LLM scored a paper a particular way, open `data/llm_cache.json` locally — each entry has the full reason text.
 
 ### Private research knowledgebase (optional, sensitive content)
 

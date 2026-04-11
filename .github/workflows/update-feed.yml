@@ -49,6 +49,19 @@ jobs:
           restore-keys: |
             hf-all-MiniLM-L6-v2-
 
+      # LLM rerank cache: not committed to git (it stores reasoning text grounded
+      # in the private knowledgebase). Persisted across runs via Actions cache so
+      # we don't re-pay the API for papers we've already scored. Each run writes a
+      # new cache entry (key includes run_id); restore-keys grabs the most recent
+      # one. Old entries auto-evict after 7 days of no access.
+      - name: Restore LLM cache
+        uses: actions/cache@v4
+        with:
+          path: data/llm_cache.json
+          key: llm-cache-${{ github.run_id }}
+          restore-keys: |
+            llm-cache-
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -82,8 +95,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/papers.json docs/index.html data/reference.npz data/reference_meta.json
-          # llm_cache.json may not exist if LLM rerank is disabled
-          [ -f data/llm_cache.json ] && git add data/llm_cache.json || true
+          # data/llm_cache.json is intentionally NOT committed — it contains
+          # KB-grounded reasoning text. Persisted across runs via actions/cache.
           if git diff --staged --quiet; then
             echo "no changes to commit"
           else

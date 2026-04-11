@@ -55,7 +55,6 @@
         "cancer cell lines"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 60.47
     },
     {
@@ -103,7 +102,6 @@
         "foundation model"
       ],
       "llm_score": 62.0,
-      "llm_reason": "Directly relevant to ProCanFM as a multimodal cancer foundation model integrating imaging and omics modalities, with clinical prediction applications; however, focuses on spatial transcriptomics + histology rather than proteomics, so methodological overlap is partial but architectural and conceptual inspiration is high.",
       "stage1_score": 79.0,
       "raw_final_score": 70.5
     },
@@ -133,7 +131,6 @@
         "multi-omics integration"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 59.75
     },
     {
@@ -160,7 +157,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 59.35
     },
     {
@@ -187,7 +183,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 58.08
     },
     {
@@ -218,7 +213,6 @@
         "pan-cancer"
       ],
       "llm_score": 28.0,
-      "llm_reason": "Digital pathology foundation model approach (PRET) is tangentially relevant to Simon's AI-generated proteomics reports and vision-language model interests, but focuses on histopathology image models rather than proteomics or mass spectrometry foundation models, which are his core active work.",
       "stage1_score": 83.5,
       "raw_final_score": 55.75
     },
@@ -246,7 +240,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 55.11
     },
     {
@@ -276,7 +269,6 @@
         "protein language model"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 54.95
     },
     {
@@ -303,7 +295,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 54.48
     },
     {
@@ -332,7 +323,6 @@
         "mass spectrometry"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 54.24
     },
     {
@@ -359,7 +349,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 52.84
     },
     {
@@ -386,7 +375,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 52.81
     },
     {
@@ -415,7 +403,6 @@
         "co-expression network"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 51.55
     },
     {
@@ -442,7 +429,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 50.67
     },
     {
@@ -469,7 +455,6 @@
       "tier": "high",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 50.15
     },
     {
@@ -496,7 +481,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 49.99
     },
     {
@@ -523,7 +507,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 49.47
     },
     {
@@ -550,7 +533,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 48.9
     },
     {
@@ -601,7 +583,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 48.43
     },
     {
@@ -649,7 +630,6 @@
         "pan-cancer"
       ],
       "llm_score": 22.0,
-      "llm_reason": "Pan-cancer recognition using few-shot learning is tangentially related to Simon's foundation model and digital pathology interests, but PRET appears focused on histopathology image analysis rather than proteomics or multi-omics, making it a weak match to his active projects.",
       "stage1_score": 74.5,
       "raw_final_score": 48.25
     },
@@ -677,7 +657,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 47.39
     },
     {
@@ -704,7 +683,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 55.44
     },
     {
@@ -731,7 +709,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 47.09
     },
     {
@@ -758,7 +735,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 46.19
     },
     {
@@ -785,7 +761,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 45.29
     },
     {
@@ -816,7 +791,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 53.27
     },
     {
@@ -843,7 +817,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 45.26
     },
     {
@@ -870,7 +843,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 44.55
     },
     {
@@ -901,7 +873,6 @@
         "deep learning"
       ],
       "llm_score": 22.0,
-      "llm_reason": "Uses deep learning and mass spectrometry/proteomics data, but focused on HLA typing from immunopeptidomics—not directly relevant to DIA-MS cancer proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration that define this researcher's active work.",
       "stage1_score": 66.27,
       "raw_final_score": 44.13
     },
@@ -929,7 +900,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 43.92
     },
     {
@@ -963,7 +933,6 @@
         "foundation model"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 58.41
     },
     {
@@ -990,7 +959,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 43.4
     },
     {
@@ -1022,7 +990,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 50.5
     },
     {
@@ -1049,7 +1016,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 42.5
     },
     {
@@ -1076,7 +1042,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 22.0,
-      "llm_reason": "Multiplexed imaging and spatial proteomics in lung cancer is tangentially related to cancer biomarker discovery, but this paper focuses on clinical histopathology/IHC diagnostics rather than DIA-MS proteomics, foundation models, federated learning, or multi-omics integration—the researcher's core active areas.",
       "stage1_score": 62.21,
       "raw_final_score": 42.11
     },
@@ -1106,7 +1071,6 @@
         "co-expression network"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 42.11
     },
     {
@@ -1142,7 +1106,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 56.07
     },
     {
@@ -1169,7 +1132,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 41.81
     },
     {
@@ -1206,7 +1168,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 41.8
     },
     {
@@ -1233,7 +1194,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 41.8
     },
     {
@@ -1262,7 +1222,6 @@
         "pathway analysis"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 41.52
     },
     {
@@ -1291,7 +1250,6 @@
         "federated learning"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 54.83
     },
     {
@@ -1322,7 +1280,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 35.0,
-      "llm_reason": "Relevant to Simon's interest in foundation models for omics/biology, but focuses on general biomolecular LLM benchmarking rather than proteomics, cancer, or multimodal cancer foundation models specifically; provides some methodological insights for ProCanFM development but is not directly applicable to his core active projects.",
       "stage1_score": 61.62,
       "raw_final_score": 48.31
     },
@@ -1350,7 +1307,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 41.06
     },
     {
@@ -1387,7 +1343,6 @@
         "transformer"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 54.15
     },
     {
@@ -1416,7 +1371,6 @@
         "crispr screen"
       ],
       "llm_score": 15.0,
-      "llm_reason": "CRISPR screens and cancer cell line work are adjacent to the researcher's interests, but this paper focuses on transcription factor regulation and neuroendocrine lineage identity in SCLC with no connection to proteomics, federated learning, foundation models, synthetic lethality, or multi-omics integration that define the researcher's active projects.",
       "stage1_score": 65.63,
       "raw_final_score": 40.31
     },
@@ -1444,7 +1398,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 39.96
     },
     {
@@ -1476,7 +1429,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 22.0,
-      "llm_reason": "Single-cell and spatial profiling is adjacent to the researcher's work in cancer biology but not a primary focus area; their core work centres on bulk DIA-MS proteomics, foundation models, federated learning, and multi-omics integration rather than single-cell or spatial transcriptomics.",
       "stage1_score": 57.87,
       "raw_final_score": 39.94
     },
@@ -1514,7 +1466,6 @@
         "deep learning"
       ],
       "llm_score": 35.0,
-      "llm_reason": "Relevant to the researcher's interest in vision-language models and AI-generated reports for proteomics/digital pathology analogues, but focuses on medical image classification in MLLMs rather than proteomics, mass spectrometry, or omics data—limited direct applicability to active projects.",
       "stage1_score": 71.34,
       "raw_final_score": 53.17
     },
@@ -1545,7 +1496,6 @@
         "transfer learning"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 52.91
     },
     {
@@ -1572,7 +1522,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 39.61
     },
     {
@@ -1621,7 +1570,6 @@
         "deep learning"
       ],
       "llm_score": 18.0,
-      "llm_reason": "Multi-omics and deep learning aspects are relevant but focused on developmental regulatory genomics/epigenomics rather than cancer proteomics, foundation models for MS data, or any of the researcher's active projects.",
       "stage1_score": 60.14,
       "raw_final_score": 39.07
     },
@@ -1651,7 +1599,6 @@
         "foundation model"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 45.88
     },
     {
@@ -1681,7 +1628,6 @@
         "transformer"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 45.74
     },
     {
@@ -1708,7 +1654,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 18.0,
-      "llm_reason": "Single-cell/spatial transcriptomics topic modeling with interpretable gene programs is outside the researcher's core focus areas of DIA-MS proteomics, federated learning, and multimodal cancer foundation models; only tangential relevance through shared interest in cancer biology and pathway analysis methods.",
       "stage1_score": 58.99,
       "raw_final_score": 38.5
     },
@@ -1736,7 +1681,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.5
     },
     {
@@ -1764,7 +1708,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.28
     },
     {
@@ -1796,7 +1739,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 50.95
     },
     {
@@ -1831,7 +1773,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 50.82
     },
     {
@@ -1863,7 +1804,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 44.78
     },
     {
@@ -1893,7 +1833,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 44.76
     },
     {
@@ -1920,7 +1859,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.0
     },
     {
@@ -1955,7 +1893,6 @@
         "tabpfn"
       ],
       "llm_score": 22.0,
-      "llm_reason": "Uses TabPFN which the researcher has experience with, but focuses on time series forecasting rather than omics/cancer applications; only tangentially relevant to their multi-omics augmentation and drug response prediction work.",
       "stage1_score": 78.59,
       "raw_final_score": 50.3
     },
@@ -1983,7 +1920,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 37.56
     },
     {
@@ -2015,7 +1951,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 49.94
     },
     {
@@ -2042,7 +1977,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 22.0,
-      "llm_reason": "Protease-substrate specificity modeling using geometric graph learning is tangentially related to proteomics/cancer biology but doesn't overlap with Simon's core work in DIA-MS proteomics, foundation models for cancer omics, federated learning, multi-omics integration, or synthetic lethality discovery.",
       "stage1_score": 52.85,
       "raw_final_score": 37.42
     },
@@ -2075,7 +2009,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 43.94
     },
     {
@@ -2102,7 +2035,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 22.0,
-      "llm_reason": "Uses DIA proteomics and phosphoproteomics methods relevant to the researcher's toolkit, but focuses on uterine leiomyoma/MED12 biology which is entirely outside the researcher's cancer types, active projects, or biological focus areas.",
       "stage1_score": 51.83,
       "raw_final_score": 36.91
     },
@@ -2135,7 +2067,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 49.17
     },
     {
@@ -2162,7 +2093,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 36.44
     },
     {
@@ -2193,7 +2123,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 28.0,
-      "llm_reason": "Synthetic data generation for small cohorts is loosely related to MOSA/multi-omics augmentation work, but this paper focuses on coagulation/pregnancy data using Hopfield networks and ODE models—not omics, cancer, or proteomics contexts that match the researcher's active projects.",
       "stage1_score": 57.29,
       "raw_final_score": 42.64
     },
@@ -2227,7 +2156,6 @@
         "self-supervised learning"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 48.2
     },
     {
@@ -2256,7 +2184,6 @@
         "biomarker discovery"
       ],
       "llm_score": 8.0,
-      "llm_reason": "RNA-seq pipeline with minimal overlap to researcher's core work in DIA-MS proteomics, federated learning, and foundation models; some tangential relevance to automated bioinformatics workflows and differential expression analysis methods.",
       "stage1_score": 64.23,
       "raw_final_score": 36.12
     },
@@ -2298,7 +2225,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 35.99
     },
     {
@@ -2368,7 +2294,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 35.78
     },
     {
@@ -2397,7 +2322,6 @@
         "deep learning"
       ],
       "llm_score": 18.0,
-      "llm_reason": "Addresses multimodal cancer models and calibration of survival predictions, which is tangentially related to Simon's multimodal cancer foundation model work, but focuses on WSI-genomics survival analysis rather than proteomics, DIA-MS, federated learning, or synthetic lethality—his core active projects.",
       "stage1_score": 65.0,
       "raw_final_score": 41.5
     },
@@ -2425,7 +2349,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 35.27
     },
     {
@@ -2454,7 +2377,6 @@
         "deep learning"
       ],
       "llm_score": 5.0,
-      "llm_reason": "Ancient metagenomics/DNA classification with neural networks has no meaningful overlap with the researcher's cancer proteomics, federated learning, synthetic lethality, or multi-omics work.",
       "stage1_score": 65.47,
       "raw_final_score": 35.23
     },
@@ -2482,7 +2404,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Spatial transcriptomics GNN for tumor microenvironment classification is methodologically interesting but has no overlap with the researcher's core areas of DIA-MS proteomics, federated learning, multi-omics augmentation, synthetic lethality, or cancer cell line proteomics.",
       "stage1_score": 58.14,
       "raw_final_score": 35.07
     },
@@ -2510,7 +2431,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 34.89
     },
     {
@@ -2541,7 +2461,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 46.5
     },
     {
@@ -2574,7 +2493,6 @@
         "transformer"
       ],
       "llm_score": 18.0,
-      "llm_reason": "Self-supervised foundation model using transformer architecture is methodologically relevant to ProCanFM, but this paper is focused on calcium imaging and neural population dynamics in neuroscience, not cancer proteomics or omics data—very distant application domain from the researcher's work.",
       "stage1_score": 62.26,
       "raw_final_score": 40.13
     },
@@ -2602,7 +2520,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Focuses on microsatellite genotyping and Ewing sarcoma chromatin biology using long-read sequencing—tangentially related to paediatric cancer but has no overlap with the researcher's core work in DIA-MS proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
       "stage1_score": 56.19,
       "raw_final_score": 34.09
     },
@@ -2630,7 +2547,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 33.09
     },
     {
@@ -2658,7 +2574,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Brain tumour targeting via engineered enhancer sequences is not relevant to the researcher's core methods (proteomics, federated learning, foundation models, synthetic lethality) and represents a distant therapeutic biology area.",
       "stage1_score": 57.67,
       "raw_final_score": 32.84
     },
@@ -2695,7 +2610,6 @@
         "deep learning"
       ],
       "llm_score": 12.0,
-      "llm_reason": "Structural protein interaction modeling in E. coli is only tangentially related to the researcher's work in cancer proteomics, foundation models, and multi-omics integration; network biology is a minor interest but this paper's focus on prokaryotic structural interactomics provides minimal direct utility.",
       "stage1_score": 52.97,
       "raw_final_score": 32.48
     },
@@ -2723,7 +2637,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 22.0,
-      "llm_reason": "Pan-cancer driver alteration analysis is adjacent to Simon's cancer biology interests, but this is a commentary/preview piece on somatic mutation drivers with no direct relevance to proteomics, foundation models, federated learning, synthetic lethality, or any of his active projects.",
       "stage1_score": 42.18,
       "raw_final_score": 32.09
     },
@@ -2751,7 +2664,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 31.61
     },
     {
@@ -2778,7 +2690,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "This epidemiological/prevention-focused perspective on early-onset cancer causation has minimal overlap with the researcher's computational proteomics, federated learning, and multi-omics integration work.",
       "stage1_score": 51.2,
       "raw_final_score": 31.6
     },
@@ -2806,7 +2717,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "KRAS drug development is a general cancer biology topic with no direct overlap with the researcher's core methods (DIA-MS proteomics, federated learning, foundation models, synthetic lethality, multi-omics integration) or active projects.",
       "stage1_score": 50.94,
       "raw_final_score": 31.47
     },
@@ -2842,7 +2752,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 41.95
     },
     {
@@ -2873,7 +2782,6 @@
         "foundation model"
       ],
       "llm_score": 18.0,
-      "llm_reason": "Time-series foundation model pretraining methods have some conceptual overlap with ProCanFM's self-supervised learning approach, but the paper focuses on time-series classification datasets unrelated to proteomics/omics, offering limited direct applicability to the researcher's work.",
       "stage1_score": 64.45,
       "raw_final_score": 41.23
     },
@@ -2910,7 +2818,6 @@
         "transformer"
       ],
       "llm_score": 18.0,
-      "llm_reason": "Virtual staining in histopathology is tangentially related to the researcher's interest in digital pathology AI and vision-language models for biology, but this paper focuses on GAN/diffusion models for IHC staining translation rather than proteomics, cancer cell line modeling, or any of the researcher's core active projects.",
       "stage1_score": 64.33,
       "raw_final_score": 41.16
     },
@@ -2938,7 +2845,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Viral protein annotation and vaccine design using ESM-2 protein language models is tangentially related to protein language models, but has no direct relevance to cancer proteomics, DIA-MS, federated learning, synthetic lethality, or any of the researcher's active projects.",
       "stage1_score": 49.51,
       "raw_final_score": 30.75
     },
@@ -2966,7 +2872,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Focused on nonlinear mixed-effect models for single-cell/bulk data integration in apoptosis modeling, which is methodologically distant from the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, and synthetic lethality.",
       "stage1_score": 49.4,
       "raw_final_score": 30.7
     },
@@ -2997,7 +2902,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 40.76
     },
     {
@@ -3024,7 +2928,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 30.41
     },
     {
@@ -3051,7 +2954,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 30.33
     },
     {
@@ -3089,7 +2991,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Single-cell annotation with LLM/RAG frameworks is tangentially related to AI for omics, but this focuses on transcriptomic cell type annotation rather than proteomics, foundation models for cancer, or any of the researcher's active projects.",
       "stage1_score": 59.11,
       "raw_final_score": 35.55
     },
@@ -3119,7 +3020,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 40.25
     },
     {
@@ -3144,7 +3044,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 30.15
     },
     {
@@ -3175,7 +3074,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 39.76
     },
     {
@@ -3221,7 +3119,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 15.0,
-      "llm_reason": "Protein evolution/variant activity mapping is tangentially related to protein biology but has no direct overlap with the researcher's active work in cancer proteomics, foundation models for omics, federated learning, or synthetic lethality.",
       "stage1_score": 44.49,
       "raw_final_score": 29.75
     },
@@ -3249,7 +3146,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 29.22
     },
     {
@@ -3276,7 +3172,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 29.21
     },
     {
@@ -3309,7 +3204,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.83
     },
     {
@@ -3339,7 +3233,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.78
     },
     {
@@ -3366,7 +3259,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 29.03
     },
     {
@@ -3393,7 +3285,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 29.02
     },
     {
@@ -3420,7 +3311,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 28.83
     },
     {
@@ -3451,7 +3341,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.41
     },
     {
@@ -3476,7 +3365,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Regulatory genomics and enhancer modeling are not within the researcher's core areas of cancer proteomics, federated learning, foundation models for omics, or synthetic lethality.",
       "stage1_score": 52.49,
       "raw_final_score": 28.75
     },
@@ -3510,7 +3398,6 @@
         "foundation model"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 38.0
     },
     {
@@ -3538,7 +3425,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 15.0,
-      "llm_reason": "Metabolomics is a related omics field but not within Simon's core research areas of proteomics, federated learning, synthetic lethality, or foundation models; only tangentially relevant through multi-omics integration interest.",
       "stage1_score": 41.72,
       "raw_final_score": 28.36
     },
@@ -3595,7 +3481,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 28.3
     },
     {
@@ -3622,7 +3507,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Breast cancer multi-omics study with RNA-seq and ATAC-seq integration, but no proteomics, federated learning, foundation models, or synthetic lethality — only tangentially relevant to the researcher's work through multi-omics integration methods.",
       "stage1_score": 48.5,
       "raw_final_score": 28.25
     },
@@ -3650,7 +3534,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 37.52
     },
     {
@@ -3677,7 +3560,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "While this paper involves AI-assisted workflows and drug response modeling, it focuses on quantitative systems pharmacology with ODE-based mechanistic models for CAR-T therapy—quite distant from the researcher's core work in DIA-MS proteomics, foundation models for omics, federated learning, and multi-omics integration.",
       "stage1_score": 44.04,
       "raw_final_score": 28.02
     },
@@ -3713,7 +3595,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 36.92
     },
     {
@@ -3742,7 +3623,6 @@
         "pathway analysis"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 27.65
     },
     {
@@ -3773,7 +3653,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 36.84
     },
     {
@@ -3802,7 +3681,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 36.79
     },
     {
@@ -3831,7 +3709,6 @@
         "cancer cell lines"
       ],
       "llm_score": 5.0,
-      "llm_reason": "This paper focuses on lncRNA regulatory mechanisms in triple-negative breast cancer with no relevance to proteomics, DIA-MS, foundation models, federated learning, synthetic lethality, or any of the researcher's core methods and active projects.",
       "stage1_score": 50.12,
       "raw_final_score": 27.56
     },
@@ -3859,7 +3736,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 18.0,
-      "llm_reason": "Glioblastoma intratumor heterogeneity and neurosphere culture work; tangentially related to cancer cell line models and drug response, but no proteomics, DIA-MS, federated learning, foundation models, or synthetic lethality content directly relevant to the researcher's active projects.",
       "stage1_score": 35.39,
       "raw_final_score": 26.7
     },
@@ -3892,7 +3768,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 31.37
     },
     {
@@ -3919,7 +3794,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Agent-based mechanistic modeling of multicellular systems is far removed from the researcher's core work in DIA-MS proteomics, foundation models, federated learning, and multi-omics integration; no meaningful overlap with active projects.",
       "stage1_score": 47.95,
       "raw_final_score": 26.48
     },
@@ -3945,7 +3819,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 26.26
     },
     {
@@ -3972,7 +3845,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Single-cell RNA-seq ambient RNA benchmarking is only tangentially related to this researcher's focus on DIA-MS proteomics, cancer cell lines, and foundation models; single-cell proteomics is noted as familiar but not a primary focus, and this paper covers scRNA-seq not proteomics.",
       "stage1_score": 44.24,
       "raw_final_score": 26.12
     },
@@ -4009,7 +3881,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "This paper addresses multimodal MoE routing mechanisms for vision-language tasks, which is tangentially related to Simon's interest in vision-language models for proteomics reports, but focuses on general computer vision/NLP benchmarks with no connection to proteomics, cancer biology, or omics data.",
       "stage1_score": 57.52,
       "raw_final_score": 34.76
     },
@@ -4039,7 +3910,6 @@
         "co-expression network"
       ],
       "llm_score": 5.0,
-      "llm_reason": "Alzheimer's disease single-nucleus RNA-seq study with no overlap with cancer proteomics, DIA-MS, federated learning, or the researcher's active projects; shares only generic methods (WGCNA, GSEA, logistic regression) that are too peripheral to be useful.",
       "stage1_score": 47.09,
       "raw_final_score": 26.05
     },
@@ -4067,7 +3937,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 25.96
     },
     {
@@ -4094,7 +3963,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 25.95
     },
     {
@@ -4121,7 +3989,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 25.7
     },
     {
@@ -4152,7 +4019,6 @@
         "foundation model"
       ],
       "llm_score": 2.0,
-      "llm_reason": "Video temporal grounding is entirely unrelated to the researcher's work in cancer proteomics, federated learning, multi-omics integration, or foundation models for biological data.",
       "stage1_score": 66.29,
       "raw_final_score": 34.15
     },
@@ -4182,7 +4048,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 33.83
     },
     {
@@ -4209,7 +4074,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 25.15
     },
     {
@@ -4240,7 +4104,6 @@
       "tier": "medium",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "This paper addresses vision-language model grounding methods, which is tangentially related to Simon's interest in AI-generated proteomics reports and vision-language model analogies for proteomics, but the work is focused on natural image/document grounding rather than biological or omics data applications, making it minimally relevant to his active projects.",
       "stage1_score": 54.94,
       "raw_final_score": 33.47
     },
@@ -4268,7 +4131,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "This paper concerns p53 mutation reactivation therapeutics, a clinical oncology topic with no direct overlap with the researcher's core areas of cancer proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration.",
       "stage1_score": 37.73,
       "raw_final_score": 24.86
     },
@@ -4309,7 +4171,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 24.78
     },
     {
@@ -4336,7 +4197,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 24.67
     },
     {
@@ -4367,7 +4227,6 @@
         "deep learning"
       ],
       "llm_score": 5.0,
-      "llm_reason": "This paper focuses on explainability metrics for CNN-based medical image classification (chest X-rays), which is unrelated to Simon's core work in proteomics, multi-omics integration, federated learning for cancer proteomics, or foundation models for omics data.",
       "stage1_score": 60.48,
       "raw_final_score": 32.74
     },
@@ -4398,7 +4257,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 32.5
     },
     {
@@ -4425,7 +4283,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 24.27
     },
     {
@@ -4455,7 +4312,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Tangential relevance via the active project on domain-expert AI agents for proteomics and AI-generated reports, but the paper is primarily about clinical NLP/EHR reasoning with no direct connection to proteomics, mass spectrometry, or cancer biology methods the researcher actively uses.",
       "stage1_score": 48.42,
       "raw_final_score": 28.21
     },
@@ -4486,7 +4342,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 31.84
     },
     {
@@ -4513,7 +4368,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 22.0,
-      "llm_reason": "Tangentially relevant to foundation model training (ProCanFM) and AI reliability, but not directly related to proteomics, cancer biology, federated learning, or any of the researcher's core active projects.",
       "stage1_score": 25.69,
       "raw_final_score": 23.84
     },
@@ -4546,7 +4400,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 31.69
     },
     {
@@ -4573,7 +4426,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Immunology/virology paper on HCC mechanisms; no overlap with proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration that define the researcher's work.",
       "stage1_score": 42.48,
       "raw_final_score": 23.74
     },
@@ -4601,7 +4453,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "This is a lung adenocarcinoma biology paper focused on FOXA1 transcription factor and lysosome biogenesis using multi-omics (ATAC-seq, RNA-seq, spatial transcriptomics), which is not directly relevant to the researcher's core areas of DIA-MS proteomics, federated learning, foundation models, or synthetic lethality; only tangentially related through cancer cell line biology and multi-omics methods.",
       "stage1_score": 39.11,
       "raw_final_score": 23.55
     },
@@ -4629,7 +4480,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "This paper focuses on nanoparticle immunotherapy for paediatric brain tumors (medulloblastoma, DMG) and is not related to proteomics, foundation models, federated learning, multi-omics integration, or any of the researcher's core computational methods.",
       "stage1_score": 42.07,
       "raw_final_score": 23.54
     },
@@ -4662,7 +4512,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 31.01
     },
     {
@@ -4689,7 +4538,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 23.17
     },
     {
@@ -4720,7 +4568,6 @@
         "deep learning"
       ],
       "llm_score": 12.0,
-      "llm_reason": "Topological data augmentation for neural networks is not relevant to the researcher's work in cancer proteomics, DIA-MS, federated learning, synthetic lethality, or multi-omics integration; the histopathology application is tangentially adjacent to digital pathology but the core method has no overlap with active projects.",
       "stage1_score": 49.24,
       "raw_final_score": 30.62
     },
@@ -4764,7 +4611,6 @@
         "foundation model"
       ],
       "llm_score": 8.0,
-      "llm_reason": "Brain decoding foundation model with in-context/meta-learning is tangentially related to Simon's interest in foundation models for omics and self-supervised learning, but the domain (fMRI/neuroscience) is far from his core cancer proteomics work.",
       "stage1_score": 53.09,
       "raw_final_score": 30.55
     },
@@ -4794,7 +4640,6 @@
         "cancer cell lines"
       ],
       "llm_score": 2.0,
-      "llm_reason": "mRNA cancer therapeutics and immunotherapy topic has no overlap with the researcher's work in computational cancer biology, proteomics, federated learning, or multi-omics integration.",
       "stage1_score": 43.65,
       "raw_final_score": 22.82
     },
@@ -4837,7 +4682,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Author correction notice for a whole-genome sequencing clinical utility paper; not relevant to proteomics, foundation models, federated learning, or other core research areas.",
       "stage1_score": 40.62,
       "raw_final_score": 22.81
     },
@@ -4893,7 +4737,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Viral immunotherapy and synthetic super-enhancers for glioblastoma are unrelated to the researcher's core work in proteomics, federated learning, multi-omics integration, or synthetic lethality.",
       "stage1_score": 40.2,
       "raw_final_score": 22.6
     },
@@ -4922,7 +4765,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 26.41
     },
     {
@@ -4955,7 +4797,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 29.77
     },
     {
@@ -4992,7 +4833,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 29.74
     },
     {
@@ -5046,7 +4886,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 22.29
     },
     {
@@ -5073,7 +4912,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Tangential at best—uses proteomics and UK Biobank data but focuses on aging/functional health intrinsic capacity rather than cancer proteomics, foundation models, federated learning, or any of the researcher's active projects.",
       "stage1_score": 36.36,
       "raw_final_score": 22.18
     },
@@ -5103,7 +4941,6 @@
         "transformer"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 26.03
     },
     {
@@ -5130,7 +4967,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Lung cancer organoid models are tangentially relevant to cancer cell line/model work but have no direct overlap with DIA-MS proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration that define the researcher's active projects.",
       "stage1_score": 36.06,
       "raw_final_score": 22.03
     },
@@ -5158,7 +4994,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper focuses on HPV E7 oncoprotein regulation of LASP1 via Rb/E2F1 signaling in cervical cancer—a molecular biology/cell biology study with no relevance to the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
       "stage1_score": 41.81,
       "raw_final_score": 21.91
     },
@@ -5186,7 +5021,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "This paper focuses on transcriptional regulation and signaling pathways in medulloblastoma with no overlap with the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
       "stage1_score": 38.83,
       "raw_final_score": 21.91
     },
@@ -5219,7 +5053,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 25.61
     },
     {
@@ -5246,7 +5079,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 21.68
     },
     {
@@ -5273,7 +5105,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 21.58
     },
     {
@@ -5300,7 +5131,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 18.0,
-      "llm_reason": "Hepatocellular carcinoma biology with some multi-omics relevance, but focused on cancer biology commentary rather than proteomics, computational methods, or any of the researcher's active technical projects.",
       "stage1_score": 24.7,
       "raw_final_score": 21.35
     },
@@ -5334,7 +5164,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Text-to-video diffusion model counting accuracy is completely unrelated to cancer proteomics, foundation models for omics, federated learning, or any of the researcher's active projects.",
       "stage1_score": 54.84,
       "raw_final_score": 28.42
     },
@@ -5362,7 +5191,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 21.17
     },
     {
@@ -5390,7 +5218,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 24.61
     },
     {
@@ -5419,7 +5246,6 @@
         "cancer cell lines"
       ],
       "llm_score": 8.0,
-      "llm_reason": "Tangentially related to cancer cell line biology and drug targets, but focuses on structural biochemistry of NMNAT1 inhibition rather than proteomics, multi-omics, ML/DL, or any of the researcher's core computational methods.",
       "stage1_score": 33.76,
       "raw_final_score": 20.88
     },
@@ -5447,7 +5273,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Fecal immunoassay/cytokine profiling technology with no overlap with DIA-MS proteomics, foundation models, federated learning, synthetic lethality, or cancer cell line proteomics that define the researcher's active work.",
       "stage1_score": 29.57,
       "raw_final_score": 20.79
     },
@@ -5475,7 +5300,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "This paper focuses on RUNX1 tumor suppressor biology and breast cancer mouse models, with no overlap with the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration methods.",
       "stage1_score": 36.51,
       "raw_final_score": 20.75
     },
@@ -5503,7 +5327,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Tangentially related to batch correction and data preprocessing in high-content assays, but focused on cell imaging/factor analysis rather than DIA-MS proteomics, federated learning, or any of the researcher's core active projects.",
       "stage1_score": 32.65,
       "raw_final_score": 20.32
     },
@@ -5536,7 +5359,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 27.06
     },
     {
@@ -5567,7 +5389,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Tangentially relevant to Simon's vision-language model and AI-generated proteomics reports interests, but this paper focuses on visual spatial reasoning and multimodal language model training rather than omics or cancer biology applications.",
       "stage1_score": 46.11,
       "raw_final_score": 27.05
     },
@@ -5595,7 +5416,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 20.21
     },
     {
@@ -5620,7 +5440,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 20.06
     },
     {
@@ -5647,7 +5466,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper focuses on low-intensity vibration as a physical cancer therapy modality with transcriptomics/mechanotransduction focus—completely unrelated to proteomics, federated learning, foundation models, synthetic lethality, or any of the researcher's core methods and active projects.",
       "stage1_score": 37.6,
       "raw_final_score": 19.8
     },
@@ -5681,7 +5499,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about vision-language models for traffic crash scene understanding in autonomous driving, which has no overlap with the researcher's work in cancer proteomics, federated learning for omics, or multi-omics integration.",
       "stage1_score": 50.64,
       "raw_final_score": 26.32
     },
@@ -5709,7 +5526,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper focuses on C. elegans germline transcription factors and chromatin biology, with no relevance to cancer proteomics, mass spectrometry, foundation models, federated learning, or any of the researcher's active work areas.",
       "stage1_score": 37.45,
       "raw_final_score": 19.73
     },
@@ -5742,7 +5558,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about embodied AI and digital human agents in 3D environments, with no relevance to cancer proteomics, mass spectrometry, federated learning, multi-omics, or any of the researcher's active projects.",
       "stage1_score": 50.54,
       "raw_final_score": 26.27
     },
@@ -5770,7 +5585,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "While this paper involves phospho-proteomics, it focuses on glioma neurotransmitter signaling and epigenetics (H3 dopaminylation, CDK9 inhibition) with no overlap with DIA-MS proteomics workflows, foundation models, federated learning, synthetic lethality screening, or multi-omics integration methods central to the researcher's work.",
       "stage1_score": 27.09,
       "raw_final_score": 19.55
     },
@@ -5837,7 +5651,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 19.48
     },
     {
@@ -5864,7 +5677,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 19.35
     },
     {
@@ -5891,7 +5703,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "RNA 3D structure quality assessment using spectral graph methods has no overlap with the researcher's work in cancer proteomics, DIA-MS, federated learning, multi-omics integration, or foundation models for cancer.",
       "stage1_score": 36.69,
       "raw_final_score": 19.34
     },
@@ -5919,7 +5730,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Plant DNA metabarcoding and trnL reference databases have no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 38.48,
       "raw_final_score": 19.24
     },
@@ -5947,7 +5757,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper focuses on iron-sulfur cluster assembly and protein targeting motif recognition—biochemistry/structural biology with no relevance to cancer proteomics, foundation models, federated learning, synthetic lethality, or any of the researcher's active projects.",
       "stage1_score": 36.1,
       "raw_final_score": 19.05
     },
@@ -5975,7 +5784,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 18.89
     },
     {
@@ -6017,7 +5825,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Web agents and browser automation have no overlap with the researcher's work in cancer proteomics, foundation models for omics, federated learning, or multi-omics integration.",
       "stage1_score": 48.31,
       "raw_final_score": 25.16
     },
@@ -6050,7 +5857,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Document parsing benchmark for AI agents is unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's core areas; only tangentially relevant via AI agent interest but not applicable to their proteomics domain-expert agent work.",
       "stage1_score": 45.32,
       "raw_final_score": 25.16
     },
@@ -6083,7 +5889,6 @@
         "transformer"
       ],
       "llm_score": 5.0,
-      "llm_reason": "This paper is about vision transformer generalization metrics using circuit analysis, which is unrelated to the researcher's work in cancer proteomics, foundation models for omics, federated learning, or multi-omics integration.",
       "stage1_score": 43.67,
       "raw_final_score": 24.34
     },
@@ -6117,7 +5922,6 @@
         "deep learning"
       ],
       "llm_score": 2.0,
-      "llm_reason": "Autonomous driving data selection has no overlap with cancer proteomics, foundation models for omics, federated learning, or any of the researcher's active areas.",
       "stage1_score": 46.48,
       "raw_final_score": 24.24
     },
@@ -6201,7 +6005,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 12.0,
-      "llm_reason": "Author correction to a multi-omics aging immunology paper; tangentially related to multi-omics methods but not relevant to cancer proteomics, foundation models, federated learning, or any active projects.",
       "stage1_score": 24.14,
       "raw_final_score": 18.07
     },
@@ -6229,7 +6032,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 17.98
     },
     {
@@ -6262,7 +6064,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 23.96
     },
     {
@@ -6289,7 +6090,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "General commentary on AI interpretability vs human cognition; no overlap with computational cancer biology, proteomics, or any of the researcher's active projects.",
       "stage1_score": 30.87,
       "raw_final_score": 17.94
     },
@@ -6317,7 +6117,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 17.82
     },
     {
@@ -6347,7 +6146,6 @@
         "transformer"
       ],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about sequential recommendation systems and transformer-based personalization for e-commerce, with no relevance to cancer proteomics, multi-omics integration, federated learning for biomedical data, or any of the researcher's active projects.",
       "stage1_score": 45.41,
       "raw_final_score": 23.7
     },
@@ -6416,7 +6214,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 17.65
     },
     {
@@ -6443,7 +6240,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 20.56
     },
     {
@@ -6471,7 +6267,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Mathematical modeling of tumor-immune dynamics and chemotherapy resistance is unrelated to Simon's core work in proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 39.01,
       "raw_final_score": 20.5
     },
@@ -6506,7 +6301,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Tangential to synthetic data work but focused on LLM fine-tuning mechanics rather than omics/proteomics synthetic augmentation; not relevant to MOSA or CCMA projects.",
       "stage1_score": 38.21,
       "raw_final_score": 23.11
     },
@@ -6537,7 +6331,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 22.93
     },
     {
@@ -6569,7 +6362,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about robotic manipulation using 3D representations from image editing, with no relevance to cancer proteomics, foundation models for omics, federated learning, synthetic lethality, or any of the researcher's core areas.",
       "stage1_score": 43.82,
       "raw_final_score": 22.91
     },
@@ -6597,7 +6389,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Brain organoids and neurodevelopment are unrelated to the researcher's work in cancer proteomics, federated learning, foundation models for omics, or synthetic lethality.",
       "stage1_score": 31.74,
       "raw_final_score": 16.87
     },
@@ -6625,7 +6416,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Paediatric cancer paper but focused on developmental transcriptomics of pineoblastoma/retinoblastoma with no connection to proteomics, federated learning, synthetic lethality, or the researcher's active computational methods.",
       "stage1_score": 28.66,
       "raw_final_score": 16.83
     },
@@ -6677,7 +6467,6 @@
         "foundation model"
       ],
       "llm_score": 10.0,
-      "llm_reason": "Foundation model topic has surface overlap but this is neuroscience/neural activity, not cancer proteomics or omics—very tangential to the researcher's actual work.",
       "stage1_score": 22.67,
       "raw_final_score": 16.34
     },
@@ -6709,7 +6498,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 3.0,
-      "llm_reason": "This paper is about reinforcement learning and test-time adaptation for large reasoning models, with no relevance to cancer proteomics, omics integration, federated learning, or any of the researcher's core domains.",
       "stage1_score": 40.45,
       "raw_final_score": 21.73
     },
@@ -6747,7 +6535,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "3D scene reconstruction from video sequences has no relevance to cancer proteomics, foundation models for omics, federated learning, synthetic lethality, or any of the researcher's active areas.",
       "stage1_score": 41.36,
       "raw_final_score": 21.68
     },
@@ -6777,7 +6564,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about diffusion models for PDE emulation in physics simulations (fluid dynamics, etc.), with no relevance to cancer proteomics, omics data, federated learning, or any of the researcher's core areas.",
       "stage1_score": 41.18,
       "raw_final_score": 21.59
     },
@@ -6805,7 +6591,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 16.02
     },
     {
@@ -6835,7 +6620,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 21.2
     },
     {
@@ -6862,7 +6646,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 15.86
     },
     {
@@ -6891,7 +6674,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 20.92
     },
     {
@@ -6918,7 +6700,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about HPLC-MS/MS profiling of isoprenoid quinones in microbial/environmental samples, with no relevance to cancer proteomics, DIA-MS, foundation models, federated learning, synthetic lethality, or any of the researcher's active projects.",
       "stage1_score": 28.84,
       "raw_final_score": 15.42
     },
@@ -6944,7 +6725,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 15.38
     },
     {
@@ -6971,7 +6751,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 8.0,
-      "llm_reason": "Tangential to synthetic lethality work (BRCA2/PARP inhibitor is a classic synthetic lethal pair) but focuses on mechanistic DNA replication biology rather than proteomics, computational methods, or cancer cell line profiling relevant to the researcher's active projects.",
       "stage1_score": 22.7,
       "raw_final_score": 15.35
     },
@@ -7000,7 +6779,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Continual learning and catastrophic forgetting in computer vision is unrelated to the researcher's core areas of cancer proteomics, foundation models for omics, federated learning for cancer data, or synthetic lethality.",
       "stage1_score": 35.38,
       "raw_final_score": 20.19
     },
@@ -7029,7 +6807,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "Neural network uncertainty calibration is tangentially related to deep learning methods but has no direct connection to cancer proteomics, multi-omics, federated learning, or any of the researcher's active projects.",
       "stage1_score": 25.13,
       "raw_final_score": 15.06
     },
@@ -7057,7 +6834,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 14.69
     },
     {
@@ -7088,7 +6864,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 19.42
     },
     {
@@ -7115,7 +6890,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This is a news article about AI hallucination and misinformation, with no relevance to cancer proteomics, foundation models, federated learning, or any of the researcher's core areas.",
       "stage1_score": 27.15,
       "raw_final_score": 14.57
     },
@@ -7143,7 +6917,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper focuses on TNF signaling, caspase-8, autophagy adaptor p62, and inflammatory cell death mechanisms - entirely unrelated to cancer proteomics, federated learning, foundation models, synthetic lethality, or multi-omics integration that define the researcher's work.",
       "stage1_score": 27.11,
       "raw_final_score": 14.55
     },
@@ -7176,7 +6949,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 16.98
     },
     {
@@ -7205,7 +6977,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 16.96
     },
     {
@@ -7232,7 +7003,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "News briefing on cellular ageing reprogramming, not relevant to cancer proteomics, federated learning, or any of the researcher's active projects.",
       "stage1_score": 26.62,
       "raw_final_score": 14.31
     },
@@ -7260,7 +7030,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 14.17
     },
     {
@@ -7287,7 +7056,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Cellular reprogramming/ageing reversal is unrelated to the researcher's core areas of cancer proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration.",
       "stage1_score": 26.24,
       "raw_final_score": 14.12
     },
@@ -7315,7 +7083,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about skin biology and ceramide biochemistry, with no relevance to cancer proteomics, foundation models, federated learning, synthetic lethality, or any of the researcher's active projects.",
       "stage1_score": 26.2,
       "raw_final_score": 14.1
     },
@@ -7347,7 +7114,6 @@
         "transformer"
       ],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 18.72
     },
     {
@@ -7374,7 +7140,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "ODE modeling of rheumatic disease bistability using transcriptomics has no meaningful overlap with the researcher's work in cancer proteomics, federated learning, synthetic lethality, or multi-omics integration for oncology.",
       "stage1_score": 26.08,
       "raw_final_score": 14.04
     },
@@ -7404,7 +7169,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 5.0,
-      "llm_reason": "This paper is about mechanistic interpretability of LLM steering vectors and refusal behavior—unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's core areas.",
       "stage1_score": 32.0,
       "raw_final_score": 18.5
     },
@@ -7720,7 +7484,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 13.87
     },
     {
@@ -7749,7 +7512,6 @@
         "transformer"
       ],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about transformer language model representations of numerical magnitude and has no relevance to cancer proteomics, multi-omics integration, federated learning, or any of the researcher's active work.",
       "stage1_score": 30.41,
       "raw_final_score": 16.2
     },
@@ -7777,7 +7539,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 13.35
     },
     {
@@ -7804,7 +7565,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 13.22
     },
     {
@@ -7845,7 +7605,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Robotic manipulation and deformable object simulation is completely unrelated to the researcher's work in cancer proteomics, foundation models for omics, federated learning, or synthetic lethality.",
       "stage1_score": 31.9,
       "raw_final_score": 16.95
     },
@@ -7873,7 +7632,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "RNA polymerase structural biology and antibiotic mechanisms are completely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 23.14,
       "raw_final_score": 12.57
     },
@@ -7902,7 +7660,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about neuroevolution and recurrent neural networks for ECG signal classification, with no relevance to cancer proteomics, DIA-MS, federated learning, multi-omics integration, or any of the researcher's core areas.",
       "stage1_score": 29.24,
       "raw_final_score": 15.62
     },
@@ -7930,7 +7687,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper concerns biochemical characterization of Rho GEF proteins and cryopreservation effects, with no relevance to cancer proteomics, DIA-MS, foundation models, federated learning, or any of the researcher's active projects.",
       "stage1_score": 21.23,
       "raw_final_score": 11.62
     },
@@ -7958,7 +7714,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 11.54
     },
     {
@@ -7986,7 +7741,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 13.23
     },
     {
@@ -8016,7 +7770,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Health policy/innovation strategy piece with no relevance to the researcher's computational cancer biology, proteomics, or machine learning work.",
       "stage1_score": 19.74,
       "raw_final_score": 10.87
     },
@@ -8044,7 +7797,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 10.7
     },
     {
@@ -8071,7 +7823,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about protein self-assembly and bacterial microcompartment materials engineering, with no relevance to cancer proteomics, DIA-MS, foundation models, federated learning, synthetic lethality, or any of the researcher's active areas.",
       "stage1_score": 19.04,
       "raw_final_score": 10.52
     },
@@ -8099,7 +7850,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 20.62,
       "raw_final_score": 10.31
     },
@@ -8127,7 +7877,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper on genetics of obesity drug response (GLP-1 medications) has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
       "stage1_score": 18.39,
       "raw_final_score": 10.2
     },
@@ -8159,7 +7908,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Prompt injection security research is entirely unrelated to the researcher's work in cancer proteomics, foundation models for omics, federated learning, or multi-omics integration.",
       "stage1_score": 25.05,
       "raw_final_score": 13.53
     },
@@ -8187,7 +7935,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about ribosome structural biology and translation elongation mechanisms, entirely unrelated to cancer proteomics, DIA-MS, foundation models, federated learning, or any of the researcher's active work areas.",
       "stage1_score": 18.29,
       "raw_final_score": 10.14
     },
@@ -8216,7 +7963,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Tissue engineering of esophageal grafts has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 18.16,
       "raw_final_score": 10.08
     },
@@ -8261,7 +8007,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Alzheimer's disease therapeutics is entirely outside the researcher's focus on cancer proteomics, federated learning, and multi-omics integration.",
       "stage1_score": 18.13,
       "raw_final_score": 10.06
     },
@@ -8291,7 +8036,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to computational cancer biology, proteomics, or any of the researcher's core areas.",
       "stage1_score": 19.89,
       "raw_final_score": 9.95
     },
@@ -8319,7 +8063,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 9.51
     },
     {
@@ -8347,7 +8090,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "This paper concerns adolescent substance use epidemiology, polygenic risk scores, and behavioral/environmental predictors—completely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 21.99,
       "raw_final_score": 10.99
     },
@@ -8375,7 +8117,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "HIV antiviral drug structural biology is entirely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
       "stage1_score": 16.12,
       "raw_final_score": 9.06
     },
@@ -10780,7 +10521,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Particle physics paper on W boson mass measurement; completely unrelated to cancer proteomics, computational biology, or any of the researcher's work.",
       "stage1_score": 18.07,
       "raw_final_score": 9.04
     },
@@ -10808,7 +10548,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 8.66
     },
     {
@@ -10835,7 +10574,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 8.35
     },
     {
@@ -10879,7 +10617,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "This paper is about antigen diversification in Trypanosoma brucei (a parasitic pathogen), completely unrelated to cancer proteomics, foundation models, federated learning, or any of the researcher's active areas.",
       "stage1_score": 16.37,
       "raw_final_score": 8.19
     },
@@ -10921,7 +10658,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Cryo-EM structural biology of amyloid fibrils is entirely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
       "stage1_score": 14.14,
       "raw_final_score": 8.07
     },
@@ -10963,7 +10699,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 7.92
     },
     {
@@ -11016,7 +10751,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Psychedelic drug neuroimaging is entirely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 14.9,
       "raw_final_score": 7.45
     },
@@ -11047,7 +10781,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 9.84
     },
     {
@@ -11076,7 +10809,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "News article about US science budget cuts with no relevance to the researcher's computational cancer biology, proteomics, or machine learning work.",
       "stage1_score": 12.36,
       "raw_final_score": 7.18
     },
@@ -11104,7 +10836,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 6.99
     },
     {
@@ -11131,7 +10862,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 6.96
     },
     {
@@ -11161,7 +10891,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Quantum error correction and neural decoders for quantum computing have no overlap with the researcher's work in cancer proteomics, multi-omics integration, federated learning for biology, or foundation models for omics data.",
       "stage1_score": 15.7,
       "raw_final_score": 8.85
     },
@@ -11191,7 +10920,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about biomechanical surrogate modeling of knee joint mechanics using graph neural networks, completely unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's active areas.",
       "stage1_score": 13.33,
       "raw_final_score": 7.67
     },
@@ -11235,7 +10963,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in cancer proteomics, federated learning, foundation models, or any of their core research areas.",
       "stage1_score": 12.99,
       "raw_final_score": 6.5
     },
@@ -11263,7 +10990,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper is about bacterial cytoplasmic biophysics and protein agglomeration in E. coli, with no relevance to cancer proteomics, DIA-MS, federated learning, or any of the researcher's active projects.",
       "stage1_score": 10.73,
       "raw_final_score": 6.37
     },
@@ -11292,7 +11018,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "This paper is about bandit algorithms and hidden Markov models in reinforcement learning, with no relevance to cancer proteomics, multi-omics, federated learning, foundation models, or any of the researcher's active areas.",
       "stage1_score": 16.36,
       "raw_final_score": 8.18
     },
@@ -11353,7 +11078,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 6.12
     },
     {
@@ -11378,7 +11102,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 5.73
     },
     {
@@ -11405,7 +11128,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in computational cancer biology, proteomics, or machine learning.",
       "stage1_score": 11.26,
       "raw_final_score": 5.63
     },
@@ -11451,7 +11173,6 @@
         "transformer"
       ],
       "llm_score": 2.0,
-      "llm_reason": "Clinical gene editing trial for β-thalassaemia has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
       "stage1_score": 8.33,
       "raw_final_score": 5.17
     },
@@ -11479,7 +11200,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Personal career reflection piece with no relevance to the researcher's scientific work in proteomics, cancer biology, or computational methods.",
       "stage1_score": 7.99,
       "raw_final_score": 5.0
     },
@@ -11505,7 +11225,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Immunology paper about nasal tissue-resident memory T cells; no overlap with cancer proteomics, foundation models, federated learning, or any of the researcher's active projects.",
       "stage1_score": 7.93,
       "raw_final_score": 4.96
     },
@@ -11675,7 +11394,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 4.95
     },
     {
@@ -11703,7 +11421,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Particle physics paper about W boson mass measurement; completely unrelated to cancer proteomics, computational biology, or any of the researcher's interests.",
       "stage1_score": 9.74,
       "raw_final_score": 4.87
     },
@@ -11732,7 +11449,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 4.74
     },
     {
@@ -11759,7 +11475,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 4.66
     },
     {
@@ -11796,7 +11511,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "This paper on bacterial ribosome assembly and growth recovery has no relevance to cancer proteomics, foundation models, federated learning, or any of the researcher's active projects.",
       "stage1_score": 6.9,
       "raw_final_score": 4.45
     },
@@ -11851,7 +11565,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Plant immunity and rice disease resistance research has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
       "stage1_score": 8.87,
       "raw_final_score": 4.43
     },
@@ -11879,7 +11592,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 4.32
     },
     {
@@ -11907,7 +11619,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in cancer proteomics, computational biology, or any of their research areas.",
       "stage1_score": 5.73,
       "raw_final_score": 2.87
     },
@@ -11940,7 +11651,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "This paper is about CMOS hardware and probabilistic computing circuits, completely unrelated to cancer proteomics, computational biology, or any of the researcher's active areas.",
       "stage1_score": 5.4,
       "raw_final_score": 2.7
     },
@@ -11971,7 +11681,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Quantum computing time series analysis has no overlap with the researcher's work in cancer proteomics, federated learning, multi-omics integration, or foundation models for biology.",
       "stage1_score": 4.99,
       "raw_final_score": 3.5
     },
@@ -11997,7 +11706,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in computational cancer biology, proteomics, or machine learning.",
       "stage1_score": 3.97,
       "raw_final_score": 1.99
     },
@@ -12031,7 +11739,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 1.92
     },
     {
@@ -12058,7 +11765,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 1.91
     },
     {
@@ -12085,7 +11791,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 1.66
     },
     {
@@ -12112,7 +11817,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 2.0,
-      "llm_reason": "Career advice article for international scientists with no relevance to the researcher's computational cancer biology, proteomics, or machine learning research areas.",
       "stage1_score": 1.27,
       "raw_final_score": 1.64
     },
@@ -12140,7 +11844,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in computational cancer biology, proteomics, or machine learning.",
       "stage1_score": 3.26,
       "raw_final_score": 1.63
     },
@@ -12168,7 +11871,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 1.56
     },
     {
@@ -12195,7 +11897,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 1.34
     },
     {
@@ -12222,7 +11923,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 1.26
     },
     {
@@ -12249,7 +11949,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Narcolepsy and orexin pharmacology are completely unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's active projects.",
       "stage1_score": 2.37,
       "raw_final_score": 1.19
     },
@@ -12277,7 +11976,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.86
     },
     {
@@ -12302,7 +12000,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Epidemiology/public health study on physical activity and mortality; completely unrelated to computational cancer biology, proteomics, or any of the researcher's active work.",
       "stage1_score": 1.23,
       "raw_final_score": 0.61
     },
@@ -12331,7 +12028,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to the researcher's work in cancer proteomics, computational biology, or any of their active research areas.",
       "stage1_score": 0.92,
       "raw_final_score": 0.46
     },
@@ -12360,7 +12056,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.27
     },
     {
@@ -12389,7 +12084,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Organic chemistry paper on bismuth reagents with no relevance to cancer proteomics, computational biology, or any of the researcher's interests.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12415,7 +12109,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's interests.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12441,7 +12134,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12466,7 +12158,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's areas of interest.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12494,7 +12185,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12523,7 +12213,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12590,7 +12279,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12624,7 +12312,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Quantum computing/physics paper with no relevance to cancer proteomics, computational biology, or any of the researcher's core areas.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12661,7 +12348,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Quantum computing with fermionic atoms is entirely unrelated to cancer proteomics, computational biology, or any of the researcher's active projects.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12698,7 +12384,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12746,7 +12431,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's interests; this is a satellite imagery/remote sensing paper about artificial light patterns.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12790,7 +12474,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12817,7 +12500,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12845,7 +12527,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12872,7 +12553,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": null,
-      "llm_reason": null,
       "raw_final_score": 0.0
     },
     {
@@ -12899,7 +12579,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's areas of interest.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12935,7 +12614,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Inorganic chemistry paper about iron complexes and luminescence; completely unrelated to cancer proteomics, computational biology, or any of the researcher's active projects.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -12969,7 +12647,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "This paper is about condensed matter physics (topological superconductivity, magnet-superconductor heterostructures) with no relevance to cancer proteomics, computational biology, or any of the researcher's active areas.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     },
@@ -13006,7 +12683,6 @@
       "tier": "low",
       "matched_keywords": [],
       "llm_score": 0.0,
-      "llm_reason": "Quantum physics/atom interferometry paper with no relevance to cancer proteomics, computational biology, or any of the researcher's areas of interest.",
       "stage1_score": 0.0,
       "raw_final_score": 0.0
     }

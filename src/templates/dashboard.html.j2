@@ -236,16 +236,6 @@
     color: var(--muted);
     margin-top: 0.5rem;
   }
-  .llm-reason {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--muted);
-    margin: 0.5rem 0;
-    padding: 0.5rem 0.75rem;
-    border-left: 3px solid var(--accent);
-    background: var(--chip-bg);
-    border-radius: 0 0.25rem 0.25rem 0;
-  }
   #empty {
     text-align: center;
     padding: 3rem 1rem;
@@ -460,9 +450,6 @@
       const sourceWeightLine = (typeof p.source_weight === 'number' && p.source_weight < 1.0 && typeof p.raw_final_score === 'number')
         ? ' &middot; source×' + p.source_weight.toFixed(2) + ' (raw ' + p.raw_final_score.toFixed(0) + ')'
         : '';
-      const llmReasonHtml = p.llm_reason
-        ? '<div class="llm-reason">' + escapeHtml(p.llm_reason) + '</div>'
-        : '';
       return ''
         + '<article class="paper source-' + srcType + readClass + '" data-id="' + idAttr + '">'
         +   '<div class="paper-head">'
@@ -477,7 +464,6 @@
         +     (authorLine ? '<span class="dot">&middot;</span><span>' + escapeHtml(authorLine) + '</span>' : '')
         +     (publishedLine ? '<span class="dot">&middot;</span><span>' + publishedLine + '</span>' : '')
         +   '</div>'
-        +   llmReasonHtml
         +   (p.abstract ? '<div class="paper-abstract">' + escapeHtml(p.abstract) + '</div>' : '')
         +   (chips ? '<div class="chips">' + chips + '</div>' : '')
         +   '<div class="score-detail">embedding ' + p.embedding_score.toFixed(0) + ' &middot; keywords ' + p.keyword_score.toFixed(0) + cosLine + llmLine + sourceWeightLine + topYear + '</div>'

@@ -3,14 +3,21 @@
 Usage from `fetch_and_score.py`:
 
     from llm_rerank import rerank
-    scored = rerank(scored, config)   # mutates each dict to add llm_score / llm_reason
+    scored = rerank(scored, config)   # mutates each dict to add llm_score
 
 The function is a no-op (with a warning) when:
   - `config["scoring"]["llm_rerank"]["enabled"]` is false, OR
   - `ANTHROPIC_API_KEY` env var is missing.
 
 Caching: results are persisted to `data/llm_cache.json` keyed by `(model, paper_id)`.
-The cache is reset whenever the configured model differs from the cached model.
+The cache is reset whenever the configured model OR knowledgebase content changes.
+
+Privacy: the LLM produces a one-sentence reason alongside its score, but the
+reason text is grounded in the (private) knowledgebase and could leak
+unpublished research ideas. Reasons are kept in the local cache file only and
+are NOT propagated onto paper dicts (so they never reach the public papers.json
+or dashboard). The cache itself is gitignored and persisted across CI runs via
+GitHub Actions cache.
 """
 
 from __future__ import annotations
@@ -258,16 +265,17 @@ def rerank(scored: list[dict], config: dict) -> list[dict]:
             f"cache now has {len(cache)} entries"
         )
 
-    # Apply scores back to the shortlisted papers
+    # Apply scores back to the shortlisted papers.
+    # Note: we deliberately do NOT copy `reason` onto the paper dict — reasons
+    # are KB-grounded and may leak unpublished research details. They live only
+    # in data/llm_cache.json (gitignored, restored from Actions cache in CI).
     applied = 0
     for p in shortlisted:
         entry = cache.get(p["id"])
         if not entry:
             p["llm_score"] = None
-            p["llm_reason"] = None
             continue
         p["llm_score"] = float(entry["score"])
-        p["llm_reason"] = entry.get("reason")
         p["stage1_score"] = p["final_score"]
         p["final_score"] = round(blend_w * p["stage1_score"] + (1 - blend_w) * p["llm_score"], 2)
         applied += 1
