@@ -1,581 +1,930 @@
 {
   "model": "claude-sonnet-4-6",
+  "kb_hash": "402080eba7a8d687",
   "entries": {
-    "10.64898/2026.04.08.717021": {
+    "2604.08400": {
       "score": 22,
-      "reason": "Uses mass spectrometry and deep learning for biological data, but focuses on HLA typing/immunopeptidomics rather than DIA proteomics, cancer drug response, multi-omics integration, federated learning, or synthetic lethality.",
+      "reason": "Uses TabPFN which the researcher has experience with, but focuses on time series forecasting rather than omics/cancer applications; only tangentially relevant to their multi-omics augmentation and drug response prediction work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:28.161691+00:00"
+      "scored_at": "2026-04-11T12:22:47.658915+00:00"
     },
-    "10.64898/2026.04.08.717069": {
-      "score": 18,
-      "reason": "While this paper involves cancer cell lines and SCLC biology, it focuses on CRISPR screens and transcriptional regulation of neuroendocrine identity, with no relevance to DIA mass spectrometry, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+    "10.1038/s43018-026-01141-2": {
+      "score": 22,
+      "reason": "Pan-cancer recognition using few-shot learning is tangentially related to Simon's foundation model and digital pathology interests, but PRET appears focused on histopathology image analysis rather than proteomics or multi-omics, making it a weak match to his active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:28.458910+00:00"
-    },
-    "10.64898/2026.04.09.717429": {
-      "score": 2,
-      "reason": "This paper is about ancient DNA metagenomics with deep learning classification, which has no meaningful overlap with the researcher's interests in proteomics, cancer drug response, foundation models for pathology, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:28.489059+00:00"
+      "scored_at": "2026-04-11T12:22:47.872571+00:00"
     },
     "10.1038/s43018-025-01108-9": {
-      "score": 72,
-      "reason": "Directly relevant to foundation models for pathology and clinical oncology, matching the researcher's interests in foundation models/multimodal learning for biology and pathology, though lacks connection to proteomics, drug response, federated learning, or multi-omics integration.",
+      "score": 28,
+      "reason": "Digital pathology foundation model approach (PRET) is tangentially relevant to Simon's AI-generated proteomics reports and vision-language model interests, but focuses on histopathology image models rather than proteomics or mass spectrometry foundation models, which are his core active work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:28.646708+00:00"
+      "scored_at": "2026-04-11T12:22:47.943656+00:00"
     },
-    "10.64898/2026.04.02.716249": {
-      "score": 42,
-      "reason": "Touches multi-omics integration and cancer cell lines (relevant), but focuses on metabolic network reconstruction/flux modeling rather than DIA proteomics, drug response, foundation models, federated learning, or synthetic lethality.",
+    "2604.08333": {
+      "score": 35,
+      "reason": "Relevant to the researcher's interest in vision-language models and AI-generated reports for proteomics/digital pathology analogues, but focuses on medical image classification in MLLMs rather than proteomics, mass spectrometry, or omics data—limited direct applicability to active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:30.138190+00:00"
+      "scored_at": "2026-04-11T12:22:48.107060+00:00"
+    },
+    "2604.03630": {
+      "score": 62,
+      "reason": "Directly relevant to ProCanFM as a multimodal cancer foundation model integrating imaging and omics modalities, with clinical prediction applications; however, focuses on spatial transcriptomics + histology rather than proteomics, so methodological overlap is partial but architectural and conceptual inspiration is high.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:48.181090+00:00"
+    },
+    "2604.08522": {
+      "score": 2,
+      "reason": "Video temporal grounding is entirely unrelated to the researcher's work in cancer proteomics, federated learning, multi-omics integration, or foundation models for biological data.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:49.428391+00:00"
+    },
+    "10.64898/2026.04.09.717429": {
+      "score": 5,
+      "reason": "Ancient metagenomics/DNA classification with neural networks has no meaningful overlap with the researcher's cancer proteomics, federated learning, synthetic lethality, or multi-omics work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:49.785901+00:00"
+    },
+    "10.64898/2026.04.08.717021": {
+      "score": 22,
+      "reason": "Uses deep learning and mass spectrometry/proteomics data, but focused on HLA typing from immunopeptidomics—not directly relevant to DIA-MS cancer proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration that define this researcher's active work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:50.557741+00:00"
+    },
+    "10.64898/2026.04.08.717069": {
+      "score": 15,
+      "reason": "CRISPR screens and cancer cell line work are adjacent to the researcher's interests, but this paper focuses on transcription factor regulation and neuroendocrine lineage identity in SCLC with no connection to proteomics, federated learning, foundation models, synthetic lethality, or multi-omics integration that define the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:50.590389+00:00"
+    },
+    "2604.04239": {
+      "score": 18,
+      "reason": "Addresses multimodal cancer models and calibration of survival predictions, which is tangentially related to Simon's multimodal cancer foundation model work, but focuses on WSI-genomics survival analysis rather than proteomics, DIA-MS, federated learning, or synthetic lethality—his core active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:50.663566+00:00"
+    },
+    "2604.08398": {
+      "score": 18,
+      "reason": "Time-series foundation model pretraining methods have some conceptual overlap with ProCanFM's self-supervised learning approach, but the paper focuses on time-series classification datasets unrelated to proteomics/omics, offering limited direct applicability to the researcher's work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:51.624748+00:00"
+    },
+    "2604.08305": {
+      "score": 18,
+      "reason": "Virtual staining in histopathology is tangentially related to the researcher's interest in digital pathology AI and vision-language models for biology, but this paper focuses on GAN/diffusion models for IHC staining translation rather than proteomics, cancer cell line modeling, or any of the researcher's core active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:52.317915+00:00"
     },
     "10.64898/2026.04.07.716912": {
       "score": 8,
-      "reason": "RNA-seq pipeline for transcriptomics and biomarker discovery has minimal overlap with the researcher's core interests in DIA proteomics, drug response modeling, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "RNA-seq pipeline with minimal overlap to researcher's core work in DIA-MS proteomics, federated learning, and foundation models; some tangential relevance to automated bioinformatics workflows and differential expression analysis methods.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:30.202355+00:00"
-    },
-    "10.1038/s41586-026-10326-9": {
-      "score": 42,
-      "reason": "Touches multi-omics integration and deep learning for biology, but focuses on developmental gene regulation/chromatin accessibility rather than cancer drug response, DIA proteomics, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:30.531559+00:00"
+      "scored_at": "2026-04-11T12:22:52.671071+00:00"
     },
     "10.64898/2026.04.05.716628": {
-      "score": 42,
-      "reason": "Multiplexed imaging and computational pathology in lung cancer is tangentially relevant to multimodal learning for pathology and cancer biology, but the paper focuses on diagnostic IHC workflows rather than the researcher's core interests in DIA proteomics, drug response, federated learning, multi-omics integration, or synthetic lethality.",
+      "score": 22,
+      "reason": "Multiplexed imaging and spatial proteomics in lung cancer is tangentially related to cancer biomarker discovery, but this paper focuses on clinical histopathology/IHC diagnostics rather than DIA-MS proteomics, foundation models, federated learning, or multi-omics integration—the researcher's core active areas.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:30.649862+00:00"
+      "scored_at": "2026-04-11T12:22:53.100417+00:00"
     },
-    "10.64898/2026.04.06.716845": {
+    "2604.04958": {
       "score": 18,
-      "reason": "Multi-omics integration is relevant, but this paper focuses on GWAS gene prioritization using PLSR/Nextflow pipelines, with no connection to DIA proteomics, cancer drug response, foundation models, federated learning, or synthetic lethality.",
+      "reason": "Self-supervised foundation model using transformer architecture is methodologically relevant to ProCanFM, but this paper is focused on calcium imaging and neural population dynamics in neuroscience, not cancer proteomics or omics data—very distant application domain from the researcher's work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:32.087857+00:00"
+      "scored_at": "2026-04-11T12:22:53.117981+00:00"
     },
-    "10.64898/2026.04.07.716833": {
-      "score": 2,
-      "reason": "This paper is about a tuberculosis knowledgebase and has no overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+    "2604.08502": {
+      "score": 5,
+      "reason": "This paper focuses on explainability metrics for CNN-based medical image classification (chest X-rays), which is unrelated to Simon's core work in proteomics, multi-omics integration, federated learning for cancer proteomics, or foundation models for omics data.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:32.267155+00:00"
+      "scored_at": "2026-04-11T12:22:54.649939+00:00"
+    },
+    "2604.03361": {
+      "score": 35,
+      "reason": "Relevant to Simon's interest in foundation models for omics/biology, but focuses on general biomolecular LLM benchmarking rather than proteomics, cancer, or multimodal cancer foundation models specifically; provides some methodological insights for ProCanFM development but is not directly applicable to his core active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:55.332865+00:00"
+    },
+    "10.1038/s41586-026-10326-9": {
+      "score": 18,
+      "reason": "Multi-omics and deep learning aspects are relevant but focused on developmental regulatory genomics/epigenomics rather than cancer proteomics, foundation models for MS data, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:22:55.643366+00:00"
+    },
+    "2604.06269": {
+      "score": 12,
+      "reason": "Single-cell annotation with LLM/RAG frameworks is tangentially related to AI for omics, but this focuses on transcriptomic cell type annotation rather than proteomics, foundation models for cancer, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:23:04.447749+00:00"
     },
     "10.64898/2026.04.08.717220": {
-      "score": 30,
-      "reason": "Touches on cancer biology and multi-omics data integration, but focuses on single-cell/spatial transcriptomics topic modeling rather than DIA proteomics, drug response quantification, federated learning, or synthetic lethality—the researcher's core interests.",
+      "score": 18,
+      "reason": "Single-cell/spatial transcriptomics topic modeling with interpretable gene programs is outside the researcher's core focus areas of DIA-MS proteomics, federated learning, and multimodal cancer foundation models; only tangential relevance through shared interest in cancer biology and pathway analysis methods.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:32.678565+00:00"
-    },
-    "10.1038/s43018-026-01141-2": {
-      "score": 42,
-      "reason": "PRET relates to foundation models and pathology (matching multimodal learning for biology/pathology interests), but focuses on cancer detection/recognition rather than drug response, proteomics, multi-omics integration, or other core interests.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:32.773051+00:00"
+      "scored_at": "2026-04-11T12:23:05.404326+00:00"
     },
     "10.64898/2026.04.07.717084": {
-      "score": 28,
-      "reason": "Uses graph neural networks on spatial transcriptomics for cancer immunology, which touches on multimodal/foundation model concepts and cancer biology, but lacks direct relevance to DIA proteomics, drug response, federated learning, multi-omics integration, or synthetic lethality.",
+      "score": 12,
+      "reason": "Spatial transcriptomics GNN for tumor microenvironment classification is methodologically interesting but has no overlap with the researcher's core areas of DIA-MS proteomics, federated learning, multi-omics augmentation, synthetic lethality, or cancer cell line proteomics.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:33.051837+00:00"
-    },
-    "10.1038/s43018-026-01142-1": {
-      "score": 25,
-      "reason": "Single-cell and spatial profiling in cancer is tangentially related to multi-omics integration and cancer biology, but does not directly address DIA proteomics, drug response, foundation models, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:33.865736+00:00"
-    },
-    "10.64898/2026.04.07.716863": {
-      "score": 0,
-      "reason": "This paper is about microbial/organellar genome visualization tools and has no relevance to the researcher's interests in proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:34.446021+00:00"
+      "scored_at": "2026-04-11T12:23:11.499696+00:00"
     },
     "10.1038/d41586-026-00812-5": {
-      "score": 5,
-      "reason": "Focuses on engineered DNA/enhancer sequences for brain tumor targeting, not relevant to the researcher's interests in proteomics, drug response, foundation models, federated learning, or multi-omics integration.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:34.614653+00:00"
-    },
-    "10.1038/s41587-026-03068-6": {
       "score": 8,
-      "reason": "Single-cell transcriptomics capturing both coding and noncoding RNA is tangentially relevant to multi-omics integration but does not address DIA proteomics, drug response, foundation models, federated learning, or synthetic lethality.",
+      "reason": "Brain tumour targeting via engineered enhancer sequences is not relevant to the researcher's core methods (proteomics, federated learning, foundation models, synthetic lethality) and represents a distant therapeutic biology area.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:34.717435+00:00"
+      "scored_at": "2026-04-11T12:23:17.383127+00:00"
     },
-    "10.64898/2026.04.07.717011": {
+    "10.1038/s43018-026-01142-1": {
       "score": 22,
-      "reason": "Pancreatic cancer multi-omics characterization touches on multi-omics integration, but the paper focuses on histomorphology, transcriptomics, and genomics without addressing DIA proteomics, drug response, federated learning, foundation models, or synthetic lethality.",
+      "reason": "Single-cell and spatial profiling is adjacent to the researcher's work in cancer biology but not a primary focus area; their core work centres on bulk DIA-MS proteomics, foundation models, federated learning, and multi-omics integration rather than single-cell or spatial transcriptomics.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:36.062317+00:00"
+      "scored_at": "2026-04-11T12:23:17.698419+00:00"
     },
-    "10.64898/2026.04.08.717212": {
+    "2604.08541": {
       "score": 12,
-      "reason": "MSI workflow paper is tangentially related to mass spectrometry but focuses on spatial imaging and statistical methodology for osteoarthritis, not DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics, or synthetic lethality.",
+      "reason": "This paper addresses multimodal MoE routing mechanisms for vision-language tasks, which is tangentially related to Simon's interest in vision-language models for proteomics reports, but focuses on general computer vision/NLP benchmarks with no connection to proteomics, cancer biology, or omics data.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:36.350010+00:00"
+      "scored_at": "2026-04-11T12:23:23.184929+00:00"
+    },
+    "2604.07557": {
+      "score": 28,
+      "reason": "Synthetic data generation for small cohorts is loosely related to MOSA/multi-omics augmentation work, but this paper focuses on coagulation/pregnancy data using Hopfield networks and ODE models—not omics, cancer, or proteomics contexts that match the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:23:28.535122+00:00"
     },
     "10.64898/2026.04.08.717017": {
       "score": 12,
-      "reason": "While this paper involves cancer (Ewing sarcoma) and genomic analysis, it focuses on long-read sequencing, microsatellite genotyping, and chromatin state—not DIA proteomics, drug response, foundation models, federated learning, multi-omics integration in the researcher's sense, or synthetic lethality.",
+      "reason": "Focuses on microsatellite genotyping and Ewing sarcoma chromatin biology using long-read sequencing—tangentially related to paediatric cancer but has no overlap with the researcher's core work in DIA-MS proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:36.440304+00:00"
+      "scored_at": "2026-04-11T12:23:31.106505+00:00"
     },
-    "10.64898/2026.04.07.717093": {
-      "score": 22,
-      "reason": "Uses thermal proteomics (related to DIA-MS proteomics field) and ML for protein-ligand interaction, but focuses on natural product target identification and psoriasis/inflammation rather than cancer drug response, multi-omics integration, federated learning, or foundation models for biology/pathology.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:36.963500+00:00"
-    },
-    "10.64898/2026.04.08.717168": {
-      "score": 18,
-      "reason": "Graph learning for protease-substrate specificity has marginal overlap with the researcher's core interests (DIA proteomics, cancer drug response, foundation models for pathology, federated learning, multi-omics, synthetic lethality); proteomics is tangentially related but the paper's focus on structural graph learning for enzymatic specificity is quite distant from the stated research areas.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:36.981462+00:00"
-    },
-    "10.64898/2026.04.07.716940": {
+    "2604.08546": {
       "score": 2,
-      "reason": "This paper focuses on traditional Chinese medicine network pharmacology infrastructure, which has no overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Text-to-video diffusion model counting accuracy is completely unrelated to cancer proteomics, foundation models for omics, federated learning, or any of the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:37.776999+00:00"
+      "scored_at": "2026-04-11T12:23:37.584600+00:00"
     },
-    "10.64898/2026.04.06.716730": {
-      "score": 4,
-      "reason": "This paper is about a bioinformatics pipeline for germline VCF annotation and variant calling QC, which has no meaningful overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+    "2604.08456": {
+      "score": 12,
+      "reason": "This paper addresses vision-language model grounding methods, which is tangentially related to Simon's interest in AI-generated proteomics reports and vision-language model analogies for proteomics, but the work is focused on natural image/document grounding rather than biological or omics data applications, making it minimally relevant to his active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:38.493145+00:00"
+      "scored_at": "2026-04-11T12:23:38.679707+00:00"
     },
-    "10.1016/j.cell.2026.03.019": {
+    "2604.08537": {
       "score": 8,
-      "reason": "Tangentially related to cancer research but focuses on epidemiology and prevention of early-onset cancers, with no connection to the researcher's specific interests in proteomics, drug response, foundation models, federated learning, multi-omics, or synthetic lethality.",
+      "reason": "Brain decoding foundation model with in-context/meta-learning is tangentially related to Simon's interest in foundation models for omics and self-supervised learning, but the domain (fMRI/neuroscience) is far from his core cancer proteomics work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:38.864679+00:00"
+      "scored_at": "2026-04-11T12:23:43.923624+00:00"
     },
-    "10.64898/2026.03.31.715552": {
-      "score": 38,
-      "reason": "The paper uses DIA proteomics and multi-omics integration (matching some researcher interests), but focuses on uterine leiomyoma pathogenesis rather than cancer drug response, foundation models, federated learning, or synthetic lethality, making it only partially relevant.",
+    "10.1038/s41467-026-71166-9": {
+      "score": 12,
+      "reason": "Structural protein interaction modeling in E. coli is only tangentially related to the researcher's work in cancer proteomics, foundation models, and multi-omics integration; network biology is a minor interest but this paper's focus on prokaryotic structural interactomics provides minimal direct utility.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:39.132281+00:00"
+      "scored_at": "2026-04-11T12:23:50.276966+00:00"
     },
     "10.1038/s41592-026-03058-1": {
-      "score": 8,
-      "reason": "Tangentially related through multi-omics/regulatory genomics but focuses on enhancer/chromatin accessibility modeling rather than proteomics, drug response, federated learning, or synthetic lethality—core interests of the researcher.",
+      "score": 5,
+      "reason": "Regulatory genomics and enhancer modeling are not within the researcher's core areas of cancer proteomics, federated learning, foundation models for omics, or synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:39.513329+00:00"
+      "scored_at": "2026-04-11T12:23:51.949651+00:00"
+    },
+    "10.64898/2026.04.08.717168": {
+      "score": 22,
+      "reason": "Protease-substrate specificity modeling using geometric graph learning is tangentially related to proteomics/cancer biology but doesn't overlap with Simon's core work in DIA-MS proteomics, foundation models for cancer omics, federated learning, multi-omics integration, or synthetic lethality discovery.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:23:58.107249+00:00"
+    },
+    "10.64898/2026.03.31.715552": {
+      "score": 22,
+      "reason": "Uses DIA proteomics and phosphoproteomics methods relevant to the researcher's toolkit, but focuses on uterine leiomyoma/MED12 biology which is entirely outside the researcher's cancer types, active projects, or biological focus areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:23:58.800168+00:00"
     },
     "10.1038/d41586-026-01016-7": {
       "score": 12,
-      "reason": "Tangentially related to cancer drug response, but this is a news/review piece on KRAS-targeting drugs with no connection to the researcher's specific methodological interests (DIA proteomics, foundation models, federated learning, multi-omics, synthetic lethality).",
+      "reason": "KRAS drug development is a general cancer biology topic with no direct overlap with the researcher's core methods (DIA-MS proteomics, federated learning, foundation models, synthetic lethality, multi-omics integration) or active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:39.875746+00:00"
+      "scored_at": "2026-04-11T12:24:05.985272+00:00"
     },
-    "10.64898/2026.04.08.717199": {
-      "score": 3,
-      "reason": "This paper focuses on tandem repeat instability and long-read sequencing genomics, with no relevance to DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:40.718089+00:00"
-    },
-    "10.64898/2026.04.06.716861": {
-      "score": 8,
-      "reason": "Tangentially related as a literature screening/NLP tool for biomedical research, but does not address any of the researcher's core interests in proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:40.850266+00:00"
-    },
-    "10.64898/2026.04.07.716920": {
-      "score": 3,
-      "reason": "This paper focuses on BACE1 inhibitor discovery for Alzheimer's disease using QSAR, molecular docking, and MD simulations—completely unrelated to the researcher's interests in DIA proteomics, cancer drug response, foundation models for pathology, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:41.067570+00:00"
-    },
-    "10.64898/2026.04.06.716674": {
+    "10.1016/j.cell.2026.03.019": {
       "score": 12,
-      "reason": "While this paper involves triple-negative breast cancer molecular mechanisms, it focuses on lncRNA regulation, epigenomics, and p53 signaling—topics largely outside the researcher's core interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "This epidemiological/prevention-focused perspective on early-onset cancer causation has minimal overlap with the researcher's computational proteomics, federated learning, and multi-omics integration work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:41.659939+00:00"
+      "scored_at": "2026-04-11T12:24:06.384671+00:00"
     },
-    "10.64898/2026.04.07.714835": {
-      "score": 5,
-      "reason": "Protein structure prediction acceleration is unrelated to the researcher's interests in DIA proteomics, cancer drug response, foundation models for pathology, federated learning, multi-omics integration, or synthetic lethality.",
+    "2604.08457": {
+      "score": 2,
+      "reason": "This paper is about vision-language models for traffic crash scene understanding in autonomous driving, which has no overlap with the researcher's work in cancer proteomics, federated learning for omics, or multi-omics integration.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:42.678106+00:00"
+      "scored_at": "2026-04-11T12:24:13.975069+00:00"
     },
-    "10.64898/2026.04.08.714730": {
-      "score": 8,
-      "reason": "Touches on cancer transcriptomics and multi-omics integration, but focuses on repetitive element RNA-seq pipeline rather than DIA proteomics, drug response, foundation models, federated learning, or synthetic lethality—only peripherally relevant to the researcher's interests.",
+    "2604.08509": {
+      "score": 2,
+      "reason": "This paper is about embodied AI and digital human agents in 3D environments, with no relevance to cancer proteomics, mass spectrometry, federated learning, multi-omics, or any of the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:43.006096+00:00"
+      "scored_at": "2026-04-11T12:24:14.114059+00:00"
     },
     "10.64898/2026.04.07.716565": {
-      "score": 5,
-      "reason": "Viral protein annotation and vaccine design using protein language models is unrelated to the researcher's interests in proteomics, cancer drug response, federated learning, multi-omics integration, or synthetic lethality.",
+      "score": 12,
+      "reason": "Viral protein annotation and vaccine design using ESM-2 protein language models is tangentially related to protein language models, but has no direct relevance to cancer proteomics, DIA-MS, federated learning, synthetic lethality, or any of the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:43.180624+00:00"
+      "scored_at": "2026-04-11T12:24:20.491377+00:00"
+    },
+    "10.64898/2026.04.06.716674": {
+      "score": 5,
+      "reason": "This paper focuses on lncRNA regulatory mechanisms in triple-negative breast cancer with no relevance to proteomics, DIA-MS, foundation models, federated learning, synthetic lethality, or any of the researcher's core methods and active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:24:25.701314+00:00"
     },
     "10.64898/2026.04.06.716803": {
       "score": 12,
-      "reason": "This paper focuses on nonlinear mixed-effect models for integrating single-cell and bulk data in mechanistic modeling of cellular processes (e.g., apoptosis), with no direct relevance to DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Focused on nonlinear mixed-effect models for single-cell/bulk data integration in apoptosis modeling, which is methodologically distant from the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, and synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:43.623251+00:00"
+      "scored_at": "2026-04-11T12:24:31.231591+00:00"
     },
-    "10.64898/2026.04.06.716859": {
-      "score": 8,
-      "reason": "Generative protein sequence models touch on foundation models for biology, but the paper focuses narrowly on Boltzmann machine regularization for protein evolution, with no direct relevance to DIA proteomics, cancer drug response, federated learning, multi-omics integration, or synthetic lethality.",
+    "2604.08469": {
+      "score": 12,
+      "reason": "Topological data augmentation for neural networks is not relevant to the researcher's work in cancer proteomics, DIA-MS, federated learning, synthetic lethality, or multi-omics integration; the histopathology application is tangentially adjacent to digital pathology but the core method has no overlap with active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:44.554173+00:00"
+      "scored_at": "2026-04-11T12:24:31.714679+00:00"
+    },
+    "2604.08516": {
+      "score": 2,
+      "reason": "Web agents and browser automation have no overlap with the researcher's work in cancer proteomics, foundation models for omics, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:24:36.832980+00:00"
+    },
+    "2604.06262": {
+      "score": 8,
+      "reason": "Tangential relevance via the active project on domain-expert AI agents for proteomics and AI-generated reports, but the paper is primarily about clinical NLP/EHR reasoning with no direct connection to proteomics, mass spectrometry, or cancer biology methods the researcher actively uses.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:24:44.239679+00:00"
     },
     "10.64898/2026.04.06.716548": {
-      "score": 18,
-      "reason": "Tangentially related through multi-omics integration in cancer, but focuses on epigenetics/metabolism/adipocyte signaling in TNBC rather than DIA proteomics, drug response, foundation models, federated learning, or synthetic lethality.",
+      "score": 8,
+      "reason": "Breast cancer multi-omics study with RNA-seq and ATAC-seq integration, but no proteomics, federated learning, foundation models, or synthetic lethality — only tangentially relevant to the researcher's work through multi-omics integration methods.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:44.844870+00:00"
-    },
-    "10.64898/2026.04.07.716852": {
-      "score": 42,
-      "reason": "Uses quantitative proteomics and metabolomics on cancer patient samples (relevant to DIA proteomics and drug response), but focuses on metabolic mechanisms of chemoresistance in TNBC with no connection to foundation models, federated learning, multi-omics integration frameworks, or synthetic lethality concepts central to the researcher's interests.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:45.039169+00:00"
-    },
-    "10.1038/s41568-026-00925-z": {
-      "score": 5,
-      "reason": "This paper focuses on neoantigen-based immunotherapy and TCR-T cell approaches, which has no meaningful overlap with the researcher's core interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:45.324676+00:00"
-    },
-    "10.1038/s41586-026-10316-x": {
-      "score": 5,
-      "reason": "Single-cell multiomics of maternal-fetal interface is unrelated to the researcher's core interests in DIA proteomics, cancer drug response, foundation models for pathology, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:45.341794+00:00"
-    },
-    "10.64898/2026.03.29.715135": {
-      "score": 5,
-      "reason": "This paper focuses on iPSC-derived cardiomyocyte differentiation protocols and cardiovascular disease modeling, which has no meaningful overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:46.540491+00:00"
+      "scored_at": "2026-04-11T12:24:44.451612+00:00"
     },
     "10.64898/2026.04.06.716692": {
       "score": 5,
-      "reason": "Agent-based modeling framework for multicellular simulations; unrelated to DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Agent-based mechanistic modeling of multicellular systems is far removed from the researcher's core work in DIA-MS proteomics, foundation models, federated learning, and multi-omics integration; no meaningful overlap with active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:46.777929+00:00"
+      "scored_at": "2026-04-11T12:24:50.972477+00:00"
     },
-    "10.64898/2026.04.06.712906": {
+    "2604.08366": {
       "score": 2,
-      "reason": "This paper focuses on metagenomics and MAG pipeline benchmarking, which is entirely unrelated to the researcher's interests in proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Autonomous driving data selection has no overlap with cancer proteomics, foundation models for omics, federated learning, or any of the researcher's active areas.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:46.980517+00:00"
-    },
-    "10.64898/2026.04.07.717082": {
-      "score": 3,
-      "reason": "This paper focuses on Menin phosphorylation and gastrin transcription in neuroendocrine tumors, with no relevance to DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:47.014569+00:00"
-    },
-    "10.64898/2026.04.03.716310": {
-      "score": 38,
-      "reason": "Touches on proteomics and cancer drug response (kinase inhibitors), but focuses on cardiotoxicity prediction rather than DIA mass spectrometry, multi-omics integration, federated learning, foundation models, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:47.044038+00:00"
-    },
-    "10.64898/2026.04.07.716976": {
-      "score": 2,
-      "reason": "This paper is about microbiome differential abundance analysis and has no overlap with the researcher's interests in proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:48.335406+00:00"
+      "scored_at": "2026-04-11T12:24:57.006949+00:00"
     },
     "10.64898/2026.04.07.717029": {
-      "score": 8,
-      "reason": "Alzheimer's disease single-cell transcriptomics study with no overlap with the researcher's core interests in DIA proteomics, cancer drug response, foundation models for pathology, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:48.869639+00:00"
-    },
-    "10.64898/2026.04.07.717090": {
       "score": 5,
-      "reason": "This paper focuses on biomolecular condensate partitioning and machine learning models using molecular descriptors, which has minimal overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Alzheimer's disease single-nucleus RNA-seq study with no overlap with cancer proteomics, DIA-MS, federated learning, or the researcher's active projects; shares only generic methods (WGCNA, GSEA, logistic regression) that are too peripheral to be useful.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:48.876025+00:00"
+      "scored_at": "2026-04-11T12:24:57.821320+00:00"
     },
-    "10.64898/2026.03.28.714829": {
-      "score": 2,
-      "reason": "This paper focuses on molecular dynamics simulations of ribosomal structure, which has no meaningful overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:48.998900+00:00"
-    },
-    "10.64898/2026.04.07.717034": {
+    "2604.08476": {
       "score": 8,
-      "reason": "TCR/MHC cross-reactivity and T cell-based therapies are tangentially related to cancer immunology, but this paper focuses on structural bioinformatics of peptide-MHC complexes rather than the researcher's core interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics, or synthetic lethality.",
+      "reason": "Tangentially relevant to Simon's vision-language model and AI-generated proteomics reports interests, but this paper focuses on visual spatial reasoning and multimodal language model training rather than omics or cancer biology applications.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:49.388884+00:00"
+      "scored_at": "2026-04-11T12:25:04.142379+00:00"
+    },
+    "2604.08538": {
+      "score": 5,
+      "reason": "Document parsing benchmark for AI agents is unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's core areas; only tangentially relevant via AI agent interest but not applicable to their proteomics domain-expert agent work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:25:10.122991+00:00"
+    },
+    "2604.08181": {
+      "score": 2,
+      "reason": "This paper is about sequential recommendation systems and transformer-based personalization for e-commerce, with no relevance to cancer proteomics, multi-omics integration, federated learning for biomedical data, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:25:10.186316+00:00"
     },
     "10.1038/s41587-026-03087-3": {
-      "score": 5,
-      "reason": "Protein evolution and sequence-activity mapping has minimal overlap with the researcher's interests in proteomics, cancer drug response, multimodal learning, federated learning, or multi-omics integration.",
+      "score": 15,
+      "reason": "Protein evolution/variant activity mapping is tangentially related to protein biology but has no direct overlap with the researcher's active work in cancer proteomics, foundation models for omics, federated learning, or synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:50.090791+00:00"
+      "scored_at": "2026-04-11T12:25:15.322163+00:00"
     },
     "10.64898/2026.04.08.717130": {
-      "score": 2,
-      "reason": "This paper focuses on single-cell RNA-seq ambient RNA decontamination tools, which is unrelated to the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "score": 8,
+      "reason": "Single-cell RNA-seq ambient RNA benchmarking is only tangentially related to this researcher's focus on DIA-MS proteomics, cancer cell lines, and foundation models; single-cell proteomics is noted as familiar but not a primary focus, and this paper covers scRNA-seq not proteomics.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:51.382033+00:00"
+      "scored_at": "2026-04-11T12:25:21.004539+00:00"
     },
-    "10.64898/2026.04.07.717040": {
+    "2604.08475": {
       "score": 2,
-      "reason": "This paper focuses on comparative genomics and synteny analysis tools, with no relevance to proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "This paper is about robotic manipulation using 3D representations from image editing, with no relevance to cancer proteomics, foundation models for omics, federated learning, synthetic lethality, or any of the researcher's core areas.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:51.479451+00:00"
-    },
-    "10.64898/2026.04.06.716802": {
-      "score": 2,
-      "reason": "DNA sequence library design tool with no relevance to DIA proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:51.610726+00:00"
+      "scored_at": "2026-04-11T12:25:26.958882+00:00"
     },
     "10.64898/2026.04.05.716273": {
       "score": 12,
-      "reason": "While this paper touches on drug response modeling and AI-assisted workflows, it focuses on quantitative systems pharmacology and CAR-T mechanistic modeling rather than the researcher's core interests of DIA proteomics, multi-omics integration, foundation models for pathology, federated learning, or synthetic lethality.",
+      "reason": "While this paper involves AI-assisted workflows and drug response modeling, it focuses on quantitative systems pharmacology with ODE-based mechanistic models for CAR-T therapy—quite distant from the researcher's core work in DIA-MS proteomics, foundation models for omics, federated learning, and multi-omics integration.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:51.698411+00:00"
+      "scored_at": "2026-04-11T12:25:27.454410+00:00"
+    },
+    "2604.08192": {
+      "score": 5,
+      "reason": "This paper is about vision transformer generalization metrics using circuit analysis, which is unrelated to the researcher's work in cancer proteomics, foundation models for omics, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:25:31.883303+00:00"
+    },
+    "10.64898/2026.04.06.716844": {
+      "score": 2,
+      "reason": "mRNA cancer therapeutics and immunotherapy topic has no overlap with the researcher's work in computational cancer biology, proteomics, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:25:38.774060+00:00"
     },
     "10.1016/j.ccell.2026.03.007": {
       "score": 22,
-      "reason": "Tangentially related to cancer biology but focuses on tissue-specific driver mutations in large tumor cohorts rather than any of the researcher's core interests (DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality).",
+      "reason": "Pan-cancer driver alteration analysis is adjacent to Simon's cancer biology interests, but this is a commentary/preview piece on somatic mutation drivers with no direct relevance to proteomics, foundation models, federated learning, synthetic lethality, or any of his active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:53.279939+00:00"
-    },
-    "10.64898/2026.04.07.716874": {
-      "score": 12,
-      "reason": "This paper focuses on multiple myeloma transcriptomic subgroups and MRD prognostics in a clinical trial, with no relevance to DIA proteomics, federated learning, foundation models, multi-omics integration, synthetic lethality, or drug response in cancer cell lines.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:53.300710+00:00"
-    },
-    "10.64898/2026.04.06.716844": {
-      "score": 5,
-      "reason": "This paper focuses on mRNA cancer therapeutics, Fas-mediated apoptosis, and tumor immunology, which does not overlap with the researcher's interests in DIA proteomics, drug response modeling, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:53.708075+00:00"
-    },
-    "10.64898/2026.04.07.714454": {
-      "score": 5,
-      "reason": "This paper focuses on nanoparticle drug delivery, innate immune activation, and pediatric brain tumor models, with no relevance to DIA proteomics, cancer drug response profiling, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:54.039037+00:00"
-    },
-    "10.64898/2026.04.08.717142": {
-      "score": 5,
-      "reason": "This paper focuses on HPV oncogene signaling and LASP1 transcriptional regulation in cervical cancer, with no relevance to DIA proteomics, foundation models, federated learning, multi-omics integration, drug response, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:55.096520+00:00"
-    },
-    "10.64898/2026.04.08.717301": {
-      "score": 5,
-      "reason": "This paper focuses on pancreatic cancer metastasis biology (CA19-9, E-selectin, AKT signaling) and is not related to the researcher's interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:55.841325+00:00"
-    },
-    "10.1038/s41586-026-10277-1": {
-      "score": 18,
-      "reason": "Metabolomics is tangentially related to multi-omics integration, but this paper focuses on metabolomics methodology rather than the researcher's core interests in proteomics, cancer drug response, foundation models, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:55.857663+00:00"
-    },
-    "10.64898/2026.04.07.716986": {
-      "score": 12,
-      "reason": "This paper focuses on oncolytic virus immunotherapy and T cell biology in melanoma, with no overlap with DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality; the only tangential connection is cancer drug response, but the approach and methodology are entirely outside the researcher's interests.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:56.298619+00:00"
-    },
-    "10.64898/2026.03.30.715462": {
-      "score": 18,
-      "reason": "Spatial multi-omics integration is tangentially relevant, but the paper focuses on TBI neuroscience with transcriptomics/epigenomics rather than DIA proteomics, cancer drug response, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:57.640788+00:00"
-    },
-    "10.1038/s41592-026-03028-7": {
-      "score": 35,
-      "reason": "Touches on protein representations and foundation models for biology, which partially aligns with the researcher's interest in foundation models for biology, but lacks direct relevance to DIA proteomics, cancer drug response, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:57.945039+00:00"
-    },
-    "10.64898/2026.04.08.717307": {
-      "score": 18,
-      "reason": "While this paper uses multi-omic profiling relevant to multi-omics integration, it focuses on immunology and clinical outcomes in multiple myeloma rather than the researcher's core interests of DIA proteomics, drug response prediction, foundation models, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:58.004672+00:00"
-    },
-    "10.1038/s41591-026-04379-6": {
-      "score": 8,
-      "reason": "Whole-genome sequencing in solid cancers has peripheral relevance to multi-omics and cancer genomics interests, but this is merely an author correction notice with no methodological or analytical content matching the researcher's core areas.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:22:58.190948+00:00"
-    },
-    "10.1038/s41586-026-10329-6": {
-      "score": 8,
-      "reason": "While 'synthetic' elements appear, this paper is about viral gene therapy/immunotherapy for glioblastoma, not related to the researcher's core interests in proteomics, multi-omics, federated learning, or cancer drug response profiling.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:00.102863+00:00"
-    },
-    "10.64898/2026.04.01.715808": {
-      "score": 8,
-      "reason": "PCOS transcriptomics/drug repurposing topic is very distant from the researcher's core interests (DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics for cancer/synthetic lethality); only minor overlap via multi-omics integration concept.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:00.386165+00:00"
-    },
-    "10.1016/j.cell.2026.03.005": {
-      "score": 12,
-      "reason": "Cellular senescence biology is tangentially related to cancer but does not address DIA proteomics, drug response modeling, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:00.592754+00:00"
-    },
-    "10.64898/2026.04.07.715303": {
-      "score": 12,
-      "reason": "This paper focuses on tumor developmental biology, lineage plasticity, and spatial transcriptomics in neuroblastoma/paraganglioma, with no connection to DIA proteomics, drug response, federated learning, multi-omics integration, foundation models, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:02.180616+00:00"
-    },
-    "10.64898/2026.04.06.709730": {
-      "score": 18,
-      "reason": "Touches on cancer drug resistance and patient response, but focuses on miRNA/EV biology in OSCC with no relevance to DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:02.186404+00:00"
-    },
-    "10.64898/2026.04.06.716597": {
-      "score": 8,
-      "reason": "While this paper touches on cancer biology and therapeutic resistance (tangentially related to drug response), it focuses on transcriptional regulation and signaling in medulloblastoma with no connection to DIA proteomics, federated learning, foundation models, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:02.658080+00:00"
-    },
-    "10.64898/2026.04.09.717383": {
-      "score": 12,
-      "reason": "This paper focuses on transcription factor biology, cell polarity, and lysosome biogenesis in lung adenocarcinoma using multi-omics (ATAC-seq, RNA-seq, spatial transcriptomics), but does not address DIA proteomics, drug response, foundation models, federated learning, or synthetic lethality—the core interests of this researcher.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:03.076908+00:00"
-    },
-    "10.64898/2026.04.07.717010": {
-      "score": 0,
-      "reason": "This paper is about plant DNA metabarcoding and trnL reference sequence databases, which has no overlap with the researcher's interests in proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:03.955231+00:00"
-    },
-    "10.64898/2026.04.07.716866": {
-      "score": 8,
-      "reason": "Touches on transcriptomic/epigenetic analysis of breast cancer and tumor biology, but focuses on hypoxic memory and invasion dynamics via computational modeling—far from the researcher's core interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:04.403841+00:00"
-    },
-    "10.64898/2026.04.07.717107": {
-      "score": 42,
-      "reason": "Touches on cancer drug response and multi-omics integration (relevant), but focuses on KRAS inhibitor clinical/preclinical work in appendiceal cancer rather than DIA proteomics, foundation models, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:04.940945+00:00"
-    },
-    "10.1038/s43018-026-01138-x": {
-      "score": 8,
-      "reason": "This paper focuses on tumor microenvironment and metastasis biology, which is tangential to the researcher's core interests in proteomics, drug response, multimodal learning, federated learning, multi-omics, and synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:05.014440+00:00"
-    },
-    "10.1038/s42256-026-01206-y": {
-      "score": 5,
-      "reason": "This paper focuses on materials science research direction prediction using LLMs and concept graphs, with no relevance to proteomics, cancer biology, federated learning, multi-omics, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:05.638470+00:00"
-    },
-    "10.64898/2026.04.07.716739": {
-      "score": 8,
-      "reason": "Focuses on breast cancer cell biology and transcriptomics but lacks relevance to DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality; only tangentially related to cancer drug response research interests.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:06.751495+00:00"
+      "scored_at": "2026-04-11T12:25:39.203764+00:00"
     },
     "10.64898/2026.04.07.717032": {
       "score": 5,
-      "reason": "This paper focuses on viral immunology, NK cell biology, and molecular mimicry in hepatocellular carcinoma—none of which align with the researcher's core interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Immunology/virology paper on HCC mechanisms; no overlap with proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration that define the researcher's work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:07.254385+00:00"
+      "scored_at": "2026-04-11T12:25:45.995276+00:00"
     },
-    "10.64898/2026.04.06.716694": {
-      "score": 8,
-      "reason": "Tangentially related through anticancer drug development and cancer cell biology, but focused on biochemical assay development for sirtuin inhibitors rather than any of the researcher's core interests (DIA proteomics, foundation models, federated learning, multi-omics, or synthetic lethality).",
+    "10.64898/2026.04.08.717142": {
+      "score": 2,
+      "reason": "This paper focuses on HPV E7 oncoprotein regulation of LASP1 via Rb/E2F1 signaling in cervical cancer—a molecular biology/cell biology study with no relevance to the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:08.389710+00:00"
+      "scored_at": "2026-04-11T12:25:52.038499+00:00"
+    },
+    "10.64898/2026.04.07.714454": {
+      "score": 5,
+      "reason": "This paper focuses on nanoparticle immunotherapy for paediatric brain tumors (medulloblastoma, DMG) and is not related to proteomics, foundation models, federated learning, multi-omics integration, or any of the researcher's core computational methods.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:25:52.238086+00:00"
+    },
+    "10.1038/s41586-026-10277-1": {
+      "score": 15,
+      "reason": "Metabolomics is a related omics field but not within Simon's core research areas of proteomics, federated learning, synthetic lethality, or foundation models; only tangentially relevant through multi-omics integration interest.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:25:58.662749+00:00"
+    },
+    "2604.08542": {
+      "score": 2,
+      "reason": "3D scene reconstruction from video sequences has no relevance to cancer proteomics, foundation models for omics, federated learning, synthetic lethality, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:04.795710+00:00"
+    },
+    "2604.08357": {
+      "score": 2,
+      "reason": "This paper is about diffusion models for PDE emulation in physics simulations (fluid dynamics, etc.), with no relevance to cancer proteomics, omics data, federated learning, or any of the researcher's core areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:05.266747+00:00"
+    },
+    "10.1038/s41591-026-04379-6": {
+      "score": 5,
+      "reason": "Author correction notice for a whole-genome sequencing clinical utility paper; not relevant to proteomics, foundation models, federated learning, or other core research areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:12.225511+00:00"
+    },
+    "10.1038/s41586-026-10329-6": {
+      "score": 5,
+      "reason": "Viral immunotherapy and synthetic super-enhancers for glioblastoma are unrelated to the researcher's core work in proteomics, federated learning, multi-omics integration, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:12.485120+00:00"
+    },
+    "2604.08468": {
+      "score": 3,
+      "reason": "This paper is about reinforcement learning and test-time adaptation for large reasoning models, with no relevance to cancer proteomics, omics integration, federated learning, or any of the researcher's core domains.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:17.997853+00:00"
+    },
+    "10.64898/2026.04.09.717383": {
+      "score": 8,
+      "reason": "This is a lung adenocarcinoma biology paper focused on FOXA1 transcription factor and lysosome biogenesis using multi-omics (ATAC-seq, RNA-seq, spatial transcriptomics), which is not directly relevant to the researcher's core areas of DIA-MS proteomics, federated learning, foundation models, or synthetic lethality; only tangentially related through cancer cell line biology and multi-omics methods.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:23.935520+00:00"
+    },
+    "2604.01385": {
+      "score": 2,
+      "reason": "Mathematical modeling of tumor-immune dynamics and chemotherapy resistance is unrelated to Simon's core work in proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:29.045313+00:00"
+    },
+    "10.64898/2026.04.06.716597": {
+      "score": 5,
+      "reason": "This paper focuses on transcriptional regulation and signaling pathways in medulloblastoma with no overlap with the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:29.812741+00:00"
+    },
+    "10.64898/2026.04.07.717010": {
+      "score": 0,
+      "reason": "Plant DNA metabarcoding and trnL reference databases have no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:35.670345+00:00"
+    },
+    "2604.08423": {
+      "score": 8,
+      "reason": "Tangential to synthetic data work but focused on LLM fine-tuning mechanics rather than omics/proteomics synthetic augmentation; not relevant to MOSA or CCMA projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:40.127149+00:00"
+    },
+    "10.1016/j.ccell.2026.03.009": {
+      "score": 12,
+      "reason": "This paper concerns p53 mutation reactivation therapeutics, a clinical oncology topic with no direct overlap with the researcher's core areas of cancer proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:45.923778+00:00"
+    },
+    "10.64898/2026.04.07.716739": {
+      "score": 2,
+      "reason": "This paper focuses on low-intensity vibration as a physical cancer therapy modality with transcriptomics/mechanotransduction focus—completely unrelated to proteomics, federated learning, foundation models, synthetic lethality, or any of the researcher's core methods and active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:46.596466+00:00"
+    },
+    "10.64898/2026.04.05.716469": {
+      "score": 2,
+      "reason": "This paper focuses on C. elegans germline transcription factors and chromatin biology, with no relevance to cancer proteomics, mass spectrometry, foundation models, federated learning, or any of the researcher's active work areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:53.527636+00:00"
+    },
+    "10.64898/2026.04.06.716854": {
+      "score": 2,
+      "reason": "RNA 3D structure quality assessment using spectral graph methods has no overlap with the researcher's work in cancer proteomics, DIA-MS, federated learning, multi-omics integration, or foundation models for cancer.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:26:58.804015+00:00"
     },
     "10.64898/2026.04.06.716728": {
-      "score": 15,
-      "reason": "While this paper addresses breast cancer biology and tumor microenvironment, it focuses on mouse models and transcription factor mechanisms (RUNX1/p53) rather than the researcher's core interests in DIA proteomics, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "score": 5,
+      "reason": "This paper focuses on RUNX1 tumor suppressor biology and breast cancer mouse models, with no overlap with the researcher's core areas of DIA-MS proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration methods.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:10.406279+00:00"
+      "scored_at": "2026-04-11T12:26:59.418869+00:00"
     },
     "10.64898/2026.04.06.714260": {
       "score": 8,
-      "reason": "Tangentially relevant only for the proteomics surrogate/biomarker aspect, but the core focus on intrinsic capacity, aging, and mortality prediction in UK Biobank is far from the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Tangential at best—uses proteomics and UK Biobank data but focuses on aging/functional health intrinsic capacity rather than cancer proteomics, foundation models, federated learning, or any of the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:11.131848+00:00"
+      "scored_at": "2026-04-11T12:27:07.629468+00:00"
+    },
+    "10.64898/2026.04.06.716496": {
+      "score": 2,
+      "reason": "This paper focuses on iron-sulfur cluster assembly and protein targeting motif recognition—biochemistry/structural biology with no relevance to cancer proteomics, foundation models, federated learning, synthetic lethality, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:27:07.836865+00:00"
     },
     "10.64898/2026.04.08.717166": {
-      "score": 18,
-      "reason": "While patient-derived cancer models are tangentially related to drug response research, this paper focuses on organoid morphology and histological fidelity for lung squamous cell carcinoma rather than proteomics, multimodal learning, federated learning, multi-omics, or synthetic lethality.",
+      "score": 8,
+      "reason": "Lung cancer organoid models are tangentially relevant to cancer cell line/model work but have no direct overlap with DIA-MS proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration that define the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:11.695995+00:00"
+      "scored_at": "2026-04-11T12:27:14.118076+00:00"
     },
     "10.64898/2026.04.07.717044": {
-      "score": 42,
-      "reason": "Relevant to cancer cell line drug response and multi-omics aspects, but focuses on glioblastoma spatial heterogeneity with neurosphere cultures rather than the researcher's core interests in DIA proteomics, foundation models, federated learning, or synthetic lethality.",
+      "score": 18,
+      "reason": "Glioblastoma intratumor heterogeneity and neurosphere culture work; tangentially related to cancer cell line models and drug response, but no proteomics, DIA-MS, federated learning, foundation models, or synthetic lethality content directly relevant to the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:13.814884+00:00"
+      "scored_at": "2026-04-11T12:27:19.989236+00:00"
     },
-    "10.64898/2026.04.06.716848": {
-      "score": 52,
-      "reason": "Relevant to cancer drug response and patient-derived models, but lacks connection to DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality, making it a partial match.",
+    "2604.08336": {
+      "score": 5,
+      "reason": "Continual learning and catastrophic forgetting in computer vision is unrelated to the researcher's core areas of cancer proteomics, foundation models for omics, federated learning for cancer data, or synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:14.760998+00:00"
+      "scored_at": "2026-04-11T12:27:20.006787+00:00"
     },
-    "10.1038/s41587-026-03051-1": {
-      "score": 2,
-      "reason": "Homology search and sequence databases are unrelated to the researcher's interests in proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics, or synthetic lethality.",
+    "2604.08524": {
+      "score": 5,
+      "reason": "This paper is about mechanistic interpretability of LLM steering vectors and refusal behavior—unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's core areas.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:15.858611+00:00"
-    },
-    "10.1038/s43018-026-01139-w": {
-      "score": 8,
-      "reason": "Tangentially related via multi-omics/epigenomics and cancer diagnostics, but focused on DNA methylation and liquid biopsy for pediatric brain tumors rather than the researcher's core interests in proteomics, drug response, foundation models, federated learning, or synthetic lethality.",
-      "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:16.899659+00:00"
+      "scored_at": "2026-04-11T12:27:26.746125+00:00"
     },
     "10.64898/2026.04.07.716815": {
-      "score": 5,
-      "reason": "This paper focuses on batch effect correction and preprocessing in high-content imaging assays, which has minimal overlap with the researcher's interests in DIA proteomics, cancer drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "score": 8,
+      "reason": "Tangentially related to batch correction and data preprocessing in high-content assays, but focused on cell imaging/factor analysis rather than DIA-MS proteomics, federated learning, or any of the researcher's core active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:17.679707+00:00"
+      "scored_at": "2026-04-11T12:27:32.273874+00:00"
     },
-    "10.64898/2026.03.30.715394": {
+    "10.64898/2026.04.07.716846": {
+      "score": 8,
+      "reason": "Tangentially related to cancer cell line biology and drug targets, but focuses on structural biochemistry of NMNAT1 inhibition rather than proteomics, multi-omics, ML/DL, or any of the researcher's core computational methods.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:27:32.493293+00:00"
+    },
+    "2604.08544": {
       "score": 2,
-      "reason": "This paper focuses on chloroplast proteomics in algae using the total protein approach, with no relevance to DIA mass spectrometry in cancer, drug response, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Robotic manipulation and deformable object simulation is completely unrelated to the researcher's work in cancer proteomics, foundation models for omics, federated learning, or synthetic lethality.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:18.885583+00:00"
+      "scored_at": "2026-04-11T12:27:38.758047+00:00"
     },
-    "10.64898/2026.04.06.716656": {
+    "10.1038/d41586-026-01025-6": {
+      "score": 2,
+      "reason": "Brain organoids and neurodevelopment are unrelated to the researcher's work in cancer proteomics, federated learning, foundation models for omics, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:27:44.513987+00:00"
+    },
+    "2604.04469": {
+      "score": 2,
+      "reason": "This paper is about transformer language model representations of numerical magnitude and has no relevance to cancer proteomics, multi-omics integration, federated learning, or any of the researcher's active work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:27:47.580361+00:00"
+    },
+    "10.1038/d41586-026-01094-7": {
       "score": 5,
-      "reason": "This paper focuses on immunotherapy and tumor immunology (CD4+ T cells, anti-PD-1, colon cancer mouse models), with no relevance to DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "General commentary on AI interpretability vs human cognition; no overlap with computational cancer biology, proteomics, or any of the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:20.983448+00:00"
+      "scored_at": "2026-04-11T12:27:52.177976+00:00"
     },
-    "10.64898/2026.04.07.715220": {
+    "10.64898/2026.03.31.714463": {
       "score": 12,
-      "reason": "This paper focuses on AML molecular biology and RAS mutation mechanisms, with no meaningful overlap with the researcher's core interests in DIA proteomics, foundation models, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "Fecal immunoassay/cytokine profiling technology with no overlap with DIA-MS proteomics, foundation models, federated learning, synthetic lethality, or cancer cell line proteomics that define the researcher's active work.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:21.618179+00:00"
+      "scored_at": "2026-04-11T12:27:55.207093+00:00"
     },
-    "10.64898/2026.03.29.715165": {
+    "2604.08204": {
       "score": 2,
-      "reason": "This paper focuses on bacterial fitness, evolutionary genomics, and habitat reconstruction using active machine learning—entirely unrelated to the researcher's interests in proteomics, cancer drug response, foundation models for biology/pathology, federated learning, multi-omics integration, or synthetic lethality.",
+      "reason": "This paper is about neuroevolution and recurrent neural networks for ECG signal classification, with no relevance to cancer proteomics, DIA-MS, federated learning, multi-omics integration, or any of the researcher's core areas.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:23.079323+00:00"
+      "scored_at": "2026-04-11T12:27:59.489467+00:00"
     },
-    "10.64898/2026.04.08.717207": {
-      "score": 1,
-      "reason": "This paper is about fluorescence spectroscopy software for molecular dynamics analysis, with no overlap with the researcher's interests in proteomics, cancer drug response, foundation models, federated learning, multi-omics, or synthetic lethality.",
+    "10.64898/2026.04.08.717208": {
+      "score": 2,
+      "reason": "This paper is about HPLC-MS/MS profiling of isoprenoid quinones in microbial/environmental samples, with no relevance to cancer proteomics, DIA-MS, foundation models, federated learning, synthetic lethality, or any of the researcher's active projects.",
       "model": "claude-sonnet-4-6",
-      "scored_at": "2026-04-11T09:23:24.575568+00:00"
+      "scored_at": "2026-04-11T12:28:02.929792+00:00"
+    },
+    "10.1038/d41586-026-01100-y": {
+      "score": 2,
+      "reason": "This is a news article about AI hallucination and misinformation, with no relevance to cancer proteomics, foundation models, federated learning, or any of the researcher's core areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:06.619054+00:00"
+    },
+    "10.1038/s41568-026-00930-2": {
+      "score": 5,
+      "reason": "Paediatric cancer paper but focused on developmental transcriptomics of pineoblastoma/retinoblastoma with no connection to proteomics, federated learning, synthetic lethality, or the researcher's active computational methods.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:12.564129+00:00"
+    },
+    "10.1016/j.molcel.2026.03.013": {
+      "score": 2,
+      "reason": "This paper focuses on TNF signaling, caspase-8, autophagy adaptor p62, and inflammatory cell death mechanisms - entirely unrelated to cancer proteomics, federated learning, foundation models, synthetic lethality, or multi-omics integration that define the researcher's work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:12.963504+00:00"
+    },
+    "10.64898/2026.04.07.714507": {
+      "score": 12,
+      "reason": "While this paper involves phospho-proteomics, it focuses on glioma neurotransmitter signaling and epigenetics (H3 dopaminylation, CDK9 inhibition) with no overlap with DIA-MS proteomics workflows, foundation models, federated learning, synthetic lethality screening, or multi-omics integration methods central to the researcher's work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:18.651699+00:00"
+    },
+    "10.1038/d41586-026-01024-7": {
+      "score": 2,
+      "reason": "Cellular reprogramming/ageing reversal is unrelated to the researcher's core areas of cancer proteomics, foundation models, federated learning, synthetic lethality, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:24.310838+00:00"
+    },
+    "10.1038/d41586-026-01207-2": {
+      "score": 2,
+      "reason": "News briefing on cellular ageing reprogramming, not relevant to cancer proteomics, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:24.892076+00:00"
+    },
+    "10.64898/2026.04.02.716225": {
+      "score": 2,
+      "reason": "ODE modeling of rheumatic disease bistability using transcriptomics has no meaningful overlap with the researcher's work in cancer proteomics, federated learning, synthetic lethality, or multi-omics integration for oncology.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:30.888051+00:00"
+    },
+    "10.64898/2026.04.08.717327": {
+      "score": 2,
+      "reason": "This paper is about skin biology and ceramide biochemistry, with no relevance to cancer proteomics, foundation models, federated learning, synthetic lethality, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:35.233556+00:00"
+    },
+    "10.1038/s42256-026-01205-z": {
+      "score": 22,
+      "reason": "Tangentially relevant to foundation model training (ProCanFM) and AI reliability, but not directly related to proteomics, cancer biology, federated learning, or any of the researcher's core active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:40.465756+00:00"
+    },
+    "10.1038/s42256-026-01215-x": {
+      "score": 5,
+      "reason": "Neural network uncertainty calibration is tangentially related to deep learning methods but has no direct connection to cancer proteomics, multi-omics, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:42.474448+00:00"
+    },
+    "2604.08499": {
+      "score": 2,
+      "reason": "Prompt injection security research is entirely unrelated to the researcher's work in cancer proteomics, foundation models for omics, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:46.885157+00:00"
+    },
+    "10.1016/j.ccell.2026.03.008": {
+      "score": 18,
+      "reason": "Hepatocellular carcinoma biology with some multi-omics relevance, but focused on cancer biology commentary rather than proteomics, computational methods, or any of the researcher's active technical projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:50.919170+00:00"
+    },
+    "10.1038/s41586-026-10484-w": {
+      "score": 12,
+      "reason": "Author correction to a multi-omics aging immunology paper; tangentially related to multi-omics methods but not relevant to cancer proteomics, foundation models, federated learning, or any active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:55.480846+00:00"
+    },
+    "10.64898/2026.04.06.716786": {
+      "score": 2,
+      "reason": "RNA polymerase structural biology and antibiotic mechanisms are completely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:28:58.427498+00:00"
+    },
+    "10.1016/j.molcel.2026.03.012": {
+      "score": 8,
+      "reason": "Tangential to synthetic lethality work (BRCA2/PARP inhibitor is a classic synthetic lethal pair) but focuses on mechanistic DNA replication biology rather than proteomics, computational methods, or cancer cell line profiling relevant to the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:03.974466+00:00"
+    },
+    "10.1038/s41586-026-10457-z": {
+      "score": 10,
+      "reason": "Foundation model topic has surface overlap but this is neuroscience/neural activity, not cancer proteomics or omics—very tangential to the researcher's actual work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:04.060975+00:00"
+    },
+    "2604.07368": {
+      "score": 0,
+      "reason": "This paper concerns adolescent substance use epidemiology, polygenic risk scores, and behavioral/environmental predictors—completely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:09.580487+00:00"
+    },
+    "10.64898/2026.04.08.717323": {
+      "score": 2,
+      "reason": "This paper concerns biochemical characterization of Rho GEF proteins and cryopreservation effects, with no relevance to cancer proteomics, DIA-MS, foundation models, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:16.362040+00:00"
+    },
+    "10.1038/d41586-026-01120-8": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:22.285849+00:00"
+    },
+    "10.1038/s41591-026-04320-x": {
+      "score": 0,
+      "reason": "Completely unrelated to computational cancer biology, proteomics, or any of the researcher's core areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:26.187789+00:00"
+    },
+    "10.1038/d41586-026-01027-4": {
+      "score": 2,
+      "reason": "Health policy/innovation strategy piece with no relevance to the researcher's computational cancer biology, proteomics, or machine learning work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:31.030366+00:00"
+    },
+    "10.64898/2026.04.06.716716": {
+      "score": 2,
+      "reason": "This paper is about protein self-assembly and bacterial microcompartment materials engineering, with no relevance to cancer proteomics, DIA-MS, foundation models, federated learning, synthetic lethality, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:31.710128+00:00"
+    },
+    "10.1038/d41586-026-01107-5": {
+      "score": 2,
+      "reason": "This paper on genetics of obesity drug response (GLP-1 medications) has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:37.112811+00:00"
+    },
+    "10.1038/s41587-026-03100-9": {
+      "score": 2,
+      "reason": "Tissue engineering of esophageal grafts has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:42.810112+00:00"
+    },
+    "10.64898/2026.04.07.714784": {
+      "score": 2,
+      "reason": "This paper is about ribosome structural biology and translation elongation mechanisms, entirely unrelated to cancer proteomics, DIA-MS, foundation models, federated learning, or any of the researcher's active work areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:43.484787+00:00"
+    },
+    "10.1038/s41591-026-04305-w": {
+      "score": 2,
+      "reason": "Alzheimer's disease therapeutics is entirely outside the researcher's focus on cancer proteomics, federated learning, and multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:49.360901+00:00"
+    },
+    "10.1038/s41586-026-10168-5": {
+      "score": 0,
+      "reason": "Particle physics paper on W boson mass measurement; completely unrelated to cancer proteomics, computational biology, or any of the researcher's work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:53.798968+00:00"
+    },
+    "2604.08149": {
+      "score": 0,
+      "reason": "This paper is about bandit algorithms and hidden Markov models in reinforcement learning, with no relevance to cancer proteomics, multi-omics, federated learning, foundation models, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:59.094089+00:00"
+    },
+    "10.1038/s41586-026-10337-6": {
+      "score": 0,
+      "reason": "This paper is about antigen diversification in Trypanosoma brucei (a parasitic pathogen), completely unrelated to cancer proteomics, foundation models, federated learning, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:29:59.121329+00:00"
+    },
+    "10.64898/2026.04.06.715899": {
+      "score": 2,
+      "reason": "HIV antiviral drug structural biology is entirely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:05.495556+00:00"
+    },
+    "10.1038/s41591-026-04287-9": {
+      "score": 0,
+      "reason": "Psychedelic drug neuroimaging is entirely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:10.699044+00:00"
+    },
+    "2604.08358": {
+      "score": 2,
+      "reason": "Quantum error correction and neural decoders for quantum computing have no overlap with the researcher's work in cancer proteomics, multi-omics integration, federated learning for biology, or foundation models for omics data.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:11.257069+00:00"
+    },
+    "10.1038/s41467-026-71223-3": {
+      "score": 2,
+      "reason": "Cryo-EM structural biology of amyloid fibrils is entirely unrelated to the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:17.640236+00:00"
+    },
+    "2604.01990": {
+      "score": 2,
+      "reason": "This paper is about biomechanical surrogate modeling of knee joint mechanics using graph neural networks, completely unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:22.176490+00:00"
+    },
+    "10.1038/s41591-026-04256-2": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in cancer proteomics, federated learning, foundation models, or any of their core research areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:26.257331+00:00"
+    },
+    "10.1038/d41586-026-01105-7": {
+      "score": 2,
+      "reason": "News article about US science budget cuts with no relevance to the researcher's computational cancer biology, proteomics, or machine learning work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:30.056295+00:00"
+    },
+    "10.1038/d41586-026-00960-8": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in computational cancer biology, proteomics, or machine learning.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:30.430119+00:00"
+    },
+    "10.1016/j.molcel.2026.03.018": {
+      "score": 2,
+      "reason": "This paper is about bacterial cytoplasmic biophysics and protein agglomeration in E. coli, with no relevance to cancer proteomics, DIA-MS, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:35.866711+00:00"
+    },
+    "10.1038/d41586-026-00630-9": {
+      "score": 0,
+      "reason": "Particle physics paper about W boson mass measurement; completely unrelated to cancer proteomics, computational biology, or any of the researcher's interests.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:41.774594+00:00"
+    },
+    "10.1038/s41586-026-10361-6": {
+      "score": 0,
+      "reason": "Plant immunity and rice disease resistance research has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or multi-omics integration.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:42.796668+00:00"
+    },
+    "10.1038/s41586-026-10342-9": {
+      "score": 2,
+      "reason": "Clinical gene editing trial for β-thalassaemia has no overlap with the researcher's work in cancer proteomics, foundation models, federated learning, or synthetic lethality.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:48.075723+00:00"
+    },
+    "10.1038/d41586-026-01111-9": {
+      "score": 2,
+      "reason": "Immunology paper about nasal tissue-resident memory T cells; no overlap with cancer proteomics, foundation models, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:53.678517+00:00"
+    },
+    "10.1038/d41586-026-00195-7": {
+      "score": 2,
+      "reason": "Personal career reflection piece with no relevance to the researcher's scientific work in proteomics, cancer biology, or computational methods.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:53.715087+00:00"
+    },
+    "10.1038/s41467-026-71906-x": {
+      "score": 0,
+      "reason": "This paper is about CMOS hardware and probabilistic computing circuits, completely unrelated to cancer proteomics, computational biology, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:30:59.182277+00:00"
+    },
+    "10.1038/d41586-026-01060-3": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in cancer proteomics, computational biology, or any of their research areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:04.372821+00:00"
+    },
+    "10.1038/s41467-026-71781-6": {
+      "score": 2,
+      "reason": "This paper on bacterial ribosome assembly and growth recovery has no relevance to cancer proteomics, foundation models, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:04.430043+00:00"
+    },
+    "2604.08277": {
+      "score": 2,
+      "reason": "Quantum computing time series analysis has no overlap with the researcher's work in cancer proteomics, federated learning, multi-omics integration, or foundation models for biology.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:11.314178+00:00"
+    },
+    "10.1038/d41586-026-01125-3": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in computational cancer biology, proteomics, or machine learning.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:14.880656+00:00"
+    },
+    "10.1038/d41586-026-00913-1": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in computational cancer biology, proteomics, or machine learning.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:20.130002+00:00"
+    },
+    "10.1038/s41587-026-03092-6": {
+      "score": 0,
+      "reason": "Narcolepsy and orexin pharmacology are completely unrelated to cancer proteomics, multi-omics, federated learning, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:20.272322+00:00"
+    },
+    "10.1038/d41586-026-00550-8": {
+      "score": 2,
+      "reason": "Career advice article for international scientists with no relevance to the researcher's computational cancer biology, proteomics, or machine learning research areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:27.652674+00:00"
+    },
+    "10.1038/d41586-026-01000-1": {
+      "score": 0,
+      "reason": "Epidemiology/public health study on physical activity and mortality; completely unrelated to computational cancer biology, proteomics, or any of the researcher's active work.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:27.941760+00:00"
+    },
+    "10.1038/d41586-026-01112-8": {
+      "score": 0,
+      "reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's interests.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:33.813488+00:00"
+    },
+    "10.1038/s41586-026-10486-8": {
+      "score": 0,
+      "reason": "Organic chemistry paper on bismuth reagents with no relevance to cancer proteomics, computational biology, or any of the researcher's interests.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:38.295429+00:00"
+    },
+    "10.1038/d41586-026-00811-6": {
+      "score": 0,
+      "reason": "Completely unrelated to the researcher's work in cancer proteomics, computational biology, or any of their active research areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:38.579384+00:00"
+    },
+    "10.1038/d41586-026-01109-3": {
+      "score": 0,
+      "reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's areas of interest.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:45.765110+00:00"
+    },
+    "10.1038/s41586-026-10285-1": {
+      "score": 0,
+      "reason": "Quantum computing/physics paper with no relevance to cancer proteomics, computational biology, or any of the researcher's core areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:46.016568+00:00"
+    },
+    "10.1038/s41586-026-10260-w": {
+      "score": 0,
+      "reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's interests; this is a satellite imagery/remote sensing paper about artificial light patterns.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:53.153641+00:00"
+    },
+    "10.1038/s41586-026-10356-3": {
+      "score": 0,
+      "reason": "Quantum computing with fermionic atoms is entirely unrelated to cancer proteomics, computational biology, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:31:53.364696+00:00"
+    },
+    "10.1038/d41586-026-01103-9": {
+      "score": 0,
+      "reason": "Completely unrelated to cancer proteomics, computational biology, or any of the researcher's areas of interest.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:32:00.672356+00:00"
+    },
+    "10.1038/s41467-026-71767-4": {
+      "score": 0,
+      "reason": "Inorganic chemistry paper about iron complexes and luminescence; completely unrelated to cancer proteomics, computational biology, or any of the researcher's active projects.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:32:01.020448+00:00"
+    },
+    "10.1038/s41467-026-71687-3": {
+      "score": 0,
+      "reason": "This paper is about condensed matter physics (topological superconductivity, magnet-superconductor heterostructures) with no relevance to cancer proteomics, computational biology, or any of the researcher's active areas.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:32:06.223049+00:00"
+    },
+    "10.1038/s41467-026-69692-7": {
+      "score": 0,
+      "reason": "Quantum physics/atom interferometry paper with no relevance to cancer proteomics, computational biology, or any of the researcher's areas of interest.",
+      "model": "claude-sonnet-4-6",
+      "scored_at": "2026-04-11T12:32:12.403351+00:00"
     }
   }
 }
