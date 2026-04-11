@@ -57,6 +57,18 @@ jobs:
       - name: Build reference index (skipped if library unchanged)
         run: python src/build_reference.py
 
+      - name: Restore knowledgebase from secret
+        env:
+          KB_CONTENT: ${{ secrets.KB_CONTENT }}
+        run: |
+          if [ -n "$KB_CONTENT" ]; then
+            mkdir -p data
+            printf '%s' "$KB_CONTENT" > data/knowledgebase.md
+            echo "Wrote data/knowledgebase.md ($(wc -c < data/knowledgebase.md) bytes)"
+          else
+            echo "KB_CONTENT secret is empty; LLM rerank will fall back to profile_brief"
+          fi
+
       - name: Fetch + score
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

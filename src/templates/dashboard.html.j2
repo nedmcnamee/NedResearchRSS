@@ -58,6 +58,14 @@
   }
   .container { max-width: 960px; margin: 0 auto; }
   h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+  .tagline {
+    margin: 0.35rem 0 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--text);
+    max-width: 780px;
+  }
+  .tagline strong { color: var(--accent); }
   .meta { color: var(--muted); font-size: 0.875rem; }
   .controls {
     display: flex;
@@ -228,6 +236,14 @@
 <header>
   <div class="container">
     <h1>Simon Cai's Personalised Research Feed</h1>
+    <p class="tagline">
+      Weekly feed of new papers from Nature, Cell family, and bioRxiv, scored against
+      <strong>my</strong> Paperpile reading history (recency-weighted) and re-ranked by Claude with context from
+      <strong>my</strong> personal research knowledgebase. Rankings reflect my work in cancer proteomics,
+      foundation models, and multi-omics integration &mdash; so &ldquo;must-read&rdquo; here won&rsquo;t match yours.
+      Fork the <a href="https://github.com/ZhaoxiangSimonCai/SimonResearchRSS" target="_blank" rel="noopener">repo</a>
+      to build your own.
+    </p>
     <div class="meta" id="meta-line">
       Updated {{ updated_human }} &middot;
       <span id="meta-counts">{{ count }} papers</span>

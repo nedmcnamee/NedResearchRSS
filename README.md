@@ -112,10 +112,53 @@ The default pipeline (embeddings + keywords + recency) scores papers cheaply on 
        enabled: true                # flip this on
        model: claude-sonnet-4-6     # or claude-haiku-4-5 for ~3x cheaper
    ```
-4. (Optional) Tune `scoring.llm_rerank.profile_brief` — a 2–3 sentence summary of your interests that the LLM uses as context.
+4. (Optional) Tune `scoring.llm_rerank.profile_brief` — a 2–3 sentence summary of your interests that the LLM uses as context. Ignored if you set up a private knowledgebase (next section).
 5. Push and trigger the workflow manually.
 
 **For local runs**: `export ANTHROPIC_API_KEY=sk-ant-...` before running `python src/fetch_and_score.py`.
+
+### Private research knowledgebase (optional, sensitive content)
+
+For much better LLM judgment, you can supply a rich personal research knowledgebase (active projects, methods, collaborators, keyword tiers, unpublished ideas, grant strategy). This is kept **out of the repo** because it may contain sensitive content — it's gitignored and restored into the CI runner from an encrypted GitHub Secret at workflow time.
+
+**How it works**:
+- The file lives locally at `data/knowledgebase.md` (gitignored — never committed).
+- CI restores it from the `KB_CONTENT` secret into the runner's filesystem before `fetch_and_score.py` runs.
+- The pipeline uses the KB as the LLM system prompt (replacing the short `profile_brief`) and parses its "Keywords for Paper Matching" section for tier1/2/3 keyword scoring.
+- When the KB changes, its sha256 invalidates the LLM cache, so scores are recomputed under the new context.
+- When `KB_CONTENT` is empty, the pipeline falls back gracefully to `profile_brief` from `config.yaml`.
+
+**First-time setup**:
+
+1. Create `data/knowledgebase.md` locally with sections like:
+   ```
+   # Personal Research Knowledgebase
+   ## Research Identity
+   ...
+   ## Core Research Areas
+   ### 1. ...
+   ## Keywords for Paper Matching
+   ### Tier 1: Direct match to active work
+   keyword1, keyword2, ...
+   ### Tier 2: Core methods and adjacent domains
+   ...
+   ### Tier 3: Broader interest
+   ...
+   ```
+2. Push its content into the `KB_CONTENT` secret:
+   ```bash
+   gh secret set KB_CONTENT < data/knowledgebase.md
+   ```
+   Or via the GitHub web UI: Settings → Secrets and variables → Actions → New repository secret → name `KB_CONTENT`, paste the file contents.
+3. Trigger the workflow; it will restore the KB from the secret and use it for scoring.
+
+**Updating the KB**: edit `data/knowledgebase.md` locally, then resync:
+```bash
+gh secret set KB_CONTENT < data/knowledgebase.md
+```
+Next workflow run will pick up the change automatically (and invalidate the LLM cache).
+
+**Privacy note**: GitHub Secrets are encrypted at rest, never shown in logs (even if your workflow tries to `echo` them), and only accessible to workflows running on branches you control. For a public repo, this is a reasonable balance between CI automation and content privacy.
 
 If the API key is missing or `enabled: false`, the pipeline gracefully skips the LLM stage and produces a valid `papers.json` with the embedding+keyword scores.
 

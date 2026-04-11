@@ -7,3 +7,8 @@ venv/
 .env
 .DS_Store
 .pytest_cache/
+
+# Personal research knowledgebase — contains unpublished ideas, grant strategy,
+# and active project details. Kept local only; CI restores it from the
+# KB_CONTENT GitHub Secret before running the pipeline. See README.md.
+data/knowledgebase.md
