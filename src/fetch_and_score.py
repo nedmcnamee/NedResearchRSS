@@ -30,6 +30,7 @@ import yaml
 from dateutil import parser as dateparser
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+KB_PATH = REPO_ROOT / "data" / "knowledgebase.md"
 
 
 # ---------- helpers ----------
@@ -38,6 +39,35 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 def load_config() -> dict:
     with open(REPO_ROOT / "config.yaml") as f:
         return yaml.safe_load(f)
+
+
+def load_kb_keywords() -> dict[str, list[str]]:
+    """Parse the 'Keywords for Paper Matching' section of data/knowledgebase.md.
+
+    Returns {"tier1": [...], "tier2": [...], "tier3": [...]} with any tiers
+    not mentioned mapped to empty lists. If the KB file is missing or the
+    section isn't found, returns empty dict.
+    """
+    if not KB_PATH.exists():
+        return {}
+    try:
+        text = KB_PATH.read_text(encoding="utf-8")
+    except OSError:
+        return {}
+    # Find the keywords section
+    m = re.search(r"##\s*Keywords for Paper Matching(.*?)(?:\n##\s|\Z)", text, re.DOTALL)
+    if not m:
+        return {}
+    section = m.group(1)
+    tiers: dict[str, list[str]] = {}
+    for tier_num, tier_key in [("1", "tier1"), ("2", "tier2"), ("3", "tier3")]:
+        pat = rf"###\s*Tier\s*{tier_num}[^\n]*\n([^#]*?)(?:\n###|\Z)"
+        tm = re.search(pat, section, re.DOTALL)
+        if tm:
+            body = tm.group(1).strip()
+            words = [w.strip() for w in body.split(",") if w.strip()]
+            tiers[tier_key] = words
+    return tiers
 
 
 def normalize_title(title: str) -> str:
@@ -247,9 +277,35 @@ def score_papers(
     floor = float(scoring.get("recency_floor", 0.2))
 
     profile = config["research_profile"]
-    tier1 = [k.lower() for k in profile.get("tier1_keywords") or []]
-    tier2 = [k.lower() for k in profile.get("tier2_keywords") or []]
-    tier3 = [k.lower() for k in profile.get("tier3_keywords") or []]
+    cfg_t1 = [k.lower() for k in profile.get("tier1_keywords") or []]
+    cfg_t2 = [k.lower() for k in profile.get("tier2_keywords") or []]
+    cfg_t3 = [k.lower() for k in profile.get("tier3_keywords") or []]
+
+    # Merge in keywords from data/knowledgebase.md if present (union).
+    kb_kw = load_kb_keywords()
+    kb_t1 = [k.lower() for k in kb_kw.get("tier1", [])]
+    kb_t2 = [k.lower() for k in kb_kw.get("tier2", [])]
+    kb_t3 = [k.lower() for k in kb_kw.get("tier3", [])]
+
+    def _union(a: list[str], b: list[str]) -> list[str]:
+        seen = set()
+        out: list[str] = []
+        for kw in a + b:
+            if kw and kw not in seen:
+                seen.add(kw)
+                out.append(kw)
+        return out
+
+    tier1 = _union(cfg_t1, kb_t1)
+    tier2 = _union(cfg_t2, kb_t2)
+    tier3 = _union(cfg_t3, kb_t3)
+    if kb_kw:
+        print(
+            f"  keyword tiers merged with KB: "
+            f"tier1={len(tier1)} (+{len(kb_t1)})  "
+            f"tier2={len(tier2)} (+{len(kb_t2)})  "
+            f"tier3={len(tier3)} (+{len(kb_t3)})"
+        )
 
     reference_papers = reference_meta.get("papers", [])
     recency_weights = compute_recency_weights(reference_papers, half_life, floor)

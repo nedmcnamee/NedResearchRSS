@@ -16,6 +16,7 @@ The cache is reset whenever the configured model differs from the cached model.
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import os
 import sys
@@ -23,13 +24,34 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+KB_PATH = REPO_ROOT / "data" / "knowledgebase.md"
+
+
+def load_knowledgebase() -> tuple[str | None, str | None]:
+    """Return (kb_text, kb_sha256) if data/knowledgebase.md exists, else (None, None).
+
+    The KB gives the LLM a rich understanding of the researcher's focus, projects,
+    methods, and collaborators — far more context than the short `profile_brief`.
+    """
+    if not KB_PATH.exists():
+        return None, None
+    try:
+        text = KB_PATH.read_text(encoding="utf-8")
+    except OSError:
+        return None, None
+    digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    return text.strip(), digest[:16]
 
 
 # ---------- cache I/O ----------
 
 
-def _load_cache(cache_path: Path, model: str) -> dict[str, dict]:
-    """Load existing cache for the given model. Reset on model mismatch."""
+def _load_cache(cache_path: Path, model: str, kb_hash: str | None) -> dict[str, dict]:
+    """Load existing cache. Reset on model OR KB content mismatch.
+
+    KB content is baked into the system prompt, so any KB edit invalidates
+    existing scores — we want fresh judgment under the new context.
+    """
     if not cache_path.exists():
         return {}
     try:
@@ -43,12 +65,23 @@ def _load_cache(cache_path: Path, model: str) -> dict[str, dict]:
             f"config model={model!r} — resetting cache"
         )
         return {}
+    if data.get("kb_hash") != kb_hash:
+        print(
+            f"  llm_rerank: cached kb_hash={data.get('kb_hash')!r} differs from "
+            f"current kb_hash={kb_hash!r} — resetting cache"
+        )
+        return {}
     return dict(data.get("entries") or {})
 
 
-def _save_cache(cache_path: Path, model: str, entries: dict[str, dict]) -> None:
+def _save_cache(
+    cache_path: Path,
+    model: str,
+    kb_hash: str | None,
+    entries: dict[str, dict],
+) -> None:
     cache_path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"model": model, "entries": entries}
+    payload = {"model": model, "kb_hash": kb_hash, "entries": entries}
     with open(cache_path, "w") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
@@ -56,21 +89,31 @@ def _save_cache(cache_path: Path, model: str, entries: dict[str, dict]) -> None:
 # ---------- prompt + parsing ----------
 
 
-_SYSTEM_PROMPT = (
+_SYSTEM_PROMPT_TEMPLATE = (
     "You are filtering academic papers for a researcher. Score each paper from 0 "
     "(irrelevant) to 100 (must-read) based on how well it matches the researcher's "
-    "stated interests, then give a single concise sentence justifying the score. "
-    "Always respond as a JSON object with keys 'score' (integer 0-100) and 'reason' "
-    "(string). No prose outside the JSON."
+    "active work, methods, and interests as described below. Prioritise direct "
+    "overlap with their listed core research areas and active projects over "
+    "generic topical similarity. Reward papers that would be genuinely useful to "
+    "their current projects; penalise tangential matches even if they share "
+    "buzzwords. Give a single concise sentence justifying the score. Always "
+    "respond as a JSON object with keys 'score' (integer 0-100) and 'reason' "
+    "(string). No prose outside the JSON.\n\n"
+    "--- RESEARCHER PROFILE ---\n"
+    "{profile}\n"
+    "--- END PROFILE ---"
 )
 
 
-def _build_user_prompt(profile_brief: str, paper: dict) -> str:
+def _build_system_prompt(profile: str) -> str:
+    return _SYSTEM_PROMPT_TEMPLATE.format(profile=profile.strip())
+
+
+def _build_user_prompt(paper: dict) -> str:
     abstract = (paper.get("abstract") or "").strip()
     if len(abstract) > 1800:
         abstract = abstract[:1800].rstrip() + "…"
     return (
-        f"Researcher interests:\n{profile_brief.strip()}\n\n"
         f"Paper title: {paper.get('title', '').strip()}\n"
         f"Paper abstract: {abstract or '(no abstract available)'}\n\n"
         "Respond with JSON only."
@@ -125,7 +168,7 @@ async def _score_one(client, model: str, system: str, user: str) -> dict | None:
 async def _score_many(
     papers_to_score: list[dict],
     model: str,
-    profile_brief: str,
+    system_prompt: str,
     max_concurrent: int,
 ) -> dict[str, dict]:
     from anthropic import AsyncAnthropic
@@ -136,8 +179,8 @@ async def _score_many(
 
     async def worker(paper: dict) -> None:
         async with sem:
-            user_prompt = _build_user_prompt(profile_brief, paper)
-            parsed = await _score_one(client, model, _SYSTEM_PROMPT, user_prompt)
+            user_prompt = _build_user_prompt(paper)
+            parsed = await _score_one(client, model, system_prompt, user_prompt)
             if parsed is not None:
                 parsed["model"] = model
                 parsed["scored_at"] = datetime.now(timezone.utc).isoformat()
@@ -176,12 +219,22 @@ def rerank(scored: list[dict], config: dict) -> list[dict]:
     blend_w = float(rcfg.get("blend_weight", 0.5))
     cache_path = REPO_ROOT / rcfg.get("cache_path", "data/llm_cache.json")
     max_concurrent = int(rcfg.get("max_concurrent", 5))
-    profile_brief = (
-        rcfg.get("profile_brief")
-        or ", ".join((config.get("research_profile") or {}).get("tier1_keywords") or [])
-    )
 
-    cache = _load_cache(cache_path, model)
+    # Prefer data/knowledgebase.md (rich KB) over the short profile_brief.
+    kb_text, kb_hash = load_knowledgebase()
+    if kb_text:
+        profile = kb_text
+        print(f"  llm_rerank: using knowledgebase.md ({len(kb_text)} chars, hash={kb_hash})")
+    else:
+        profile = (
+            rcfg.get("profile_brief")
+            or ", ".join((config.get("research_profile") or {}).get("tier1_keywords") or [])
+        )
+        print("  llm_rerank: no data/knowledgebase.md found; using profile_brief from config")
+
+    system_prompt = _build_system_prompt(profile)
+
+    cache = _load_cache(cache_path, model, kb_hash)
     shortlisted = [p for p in scored if p.get("final_score", 0) >= threshold]
     if not shortlisted:
         print(f"  llm_rerank: no papers above threshold ({threshold}); skipping")
@@ -195,9 +248,11 @@ def rerank(scored: list[dict], config: dict) -> list[dict]:
     )
 
     if fresh:
-        new_results = asyncio.run(_score_many(fresh, model, profile_brief, max_concurrent))
+        new_results = asyncio.run(
+            _score_many(fresh, model, system_prompt, max_concurrent)
+        )
         cache.update(new_results)
-        _save_cache(cache_path, model, cache)
+        _save_cache(cache_path, model, kb_hash, cache)
         print(
             f"  llm_rerank: scored {len(new_results)}/{len(fresh)} new papers; "
             f"cache now has {len(cache)} entries"

@@ -38,8 +38,10 @@ scoring:
     nn: 0.7
     keyword: 0.3
   tiers:
-    high: 60
-    medium: 30
+    # Lowered from 60/30: with LLM rerank blending (0.5 stage1 + 0.5 llm) the final
+    # score range is compressed, so the old 60 threshold starves the must-read tier.
+    high: 50
+    medium: 25
   # Recency weighting: each reference paper's contribution is multiplied by
   #   max(0.5 ** (years_since_added / half_life), floor)
   # before taking the max cosine. Uses Paperpile's `created` (added-to-library) date,
@@ -53,10 +55,14 @@ scoring:
   llm_rerank:
     enabled: true                        # opt-in
     model: claude-sonnet-4-6              # default; switch to claude-haiku-4-5 for ~3x cheaper
-    apply_to_min_score: 30                # only re-score papers above this stage1 score
+    # Weekly runs produce fewer papers per run than daily — score everything so the
+    # LLM judgment applies across the full feed, not just the medium+high tier.
+    # Cost at Sonnet rates with ~200 papers/week ≈ $0.30/week.
+    apply_to_min_score: 0
     blend_weight: 0.5                     # 0.5 stage1 + 0.5 llm = final
-    cache_path: data/llm_cache.json       # disk cache, keyed by paper id + model
+    cache_path: data/llm_cache.json       # disk cache, keyed by paper id + model + kb hash
     max_concurrent: 5                     # limit parallel API calls
+    # profile_brief is used only as a fallback when data/knowledgebase.md is absent.
     profile_brief: |
       DIA mass spectrometry proteomics, cancer cell line and patient drug response,
       foundation models and multimodal learning for biology and pathology,
@@ -68,7 +74,9 @@ library:
   meta: data/reference_meta.json
 
 fetch:
-  lookback_days: 14
+  # Weekly cadence: show the last 10 days of papers (7 days since last run + 3-day buffer
+  # for late-published papers and to cover the occasional missed cron).
+  lookback_days: 10
   max_papers_per_feed: 100
   # User-Agent sent with RSS requests (some publishers reject default python-urllib UA)
   user_agent: "SimonResearchRSS/0.1 (+https://github.com/)"
