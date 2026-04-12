@@ -32,6 +32,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 KB_PATH = REPO_ROOT / "data" / "knowledgebase.md"
+RATINGS_PATH = REPO_ROOT / "data" / "ratings.json"
 
 
 def load_knowledgebase() -> tuple[str | None, str | None]:
@@ -50,14 +51,74 @@ def load_knowledgebase() -> tuple[str | None, str | None]:
     return text.strip(), digest[:16]
 
 
+def load_ratings() -> tuple[dict[str, dict], str | None]:
+    """Return (ratings_dict, ratings_hash) from data/ratings.json, or ({}, None).
+
+    Ratings are stored as {paperId: {score: 1-5, rated_at: iso, title: str}}.
+    The hash is used for cache invalidation alongside model and kb_hash.
+    """
+    if not RATINGS_PATH.exists():
+        return {}, None
+    try:
+        with open(RATINGS_PATH) as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return {}, None
+    ratings = data.get("ratings") or {}
+    if not ratings:
+        return {}, None
+    digest = hashlib.sha256(
+        json.dumps(sorted(ratings.items()), ensure_ascii=False).encode("utf-8")
+    ).hexdigest()
+    return ratings, digest[:16]
+
+
+def build_calibration_section(ratings: dict[str, dict], max_per_group: int = 25) -> str:
+    """Build a prompt section from researcher ratings for LLM calibration.
+
+    Only includes 4-5 star (high) and 1-2 star (low) papers. 3-star is neutral.
+    Returns an empty string if no qualifying ratings exist.
+    """
+    high: list[tuple[str, int]] = []
+    low: list[tuple[str, int]] = []
+    for pid, info in ratings.items():
+        score = info.get("score", 0)
+        title = info.get("title") or pid
+        if score >= 4:
+            high.append((title, score))
+        elif score <= 2 and score >= 1:
+            low.append((title, score))
+    if not high and not low:
+        return ""
+    # Sort by recency (most recent first) then cap
+    high.sort(key=lambda x: ratings.get(x[0], {}).get("rated_at", ""), reverse=True)
+    low.sort(key=lambda x: ratings.get(x[0], {}).get("rated_at", ""), reverse=True)
+    high = high[:max_per_group]
+    low = low[:max_per_group]
+
+    lines = ["\n--- CALIBRATION FROM RESEARCHER RATINGS ---"]
+    if high:
+        lines.append("Papers the researcher rated highly (score similar papers higher):")
+        for title, s in high:
+            lines.append(f'- "{title}" ({s}\u2605)')
+    if low:
+        lines.append("Papers the researcher rated poorly (score similar papers lower):")
+        for title, s in low:
+            lines.append(f'- "{title}" ({s}\u2605)')
+    lines.append("--- END CALIBRATION ---")
+    return "\n".join(lines)
+
+
 # ---------- cache I/O ----------
 
 
-def _load_cache(cache_path: Path, model: str, kb_hash: str | None) -> dict[str, dict]:
-    """Load existing cache. Reset on model OR KB content mismatch.
+def _load_cache(
+    cache_path: Path, model: str, kb_hash: str | None, ratings_hash: str | None
+) -> dict[str, dict]:
+    """Load existing cache. Reset on model, KB, or ratings mismatch.
 
-    KB content is baked into the system prompt, so any KB edit invalidates
-    existing scores — we want fresh judgment under the new context.
+    KB content and ratings calibration are baked into the system prompt, so
+    any change invalidates existing scores — we want fresh judgment.
     """
     if not cache_path.exists():
         return {}
@@ -78,6 +139,12 @@ def _load_cache(cache_path: Path, model: str, kb_hash: str | None) -> dict[str, 
             f"current kb_hash={kb_hash!r} — resetting cache"
         )
         return {}
+    if data.get("ratings_hash") != ratings_hash:
+        print(
+            f"  llm_rerank: cached ratings_hash={data.get('ratings_hash')!r} differs from "
+            f"current ratings_hash={ratings_hash!r} — resetting cache"
+        )
+        return {}
     return dict(data.get("entries") or {})
 
 
@@ -85,10 +152,16 @@ def _save_cache(
     cache_path: Path,
     model: str,
     kb_hash: str | None,
+    ratings_hash: str | None,
     entries: dict[str, dict],
 ) -> None:
     cache_path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"model": model, "kb_hash": kb_hash, "entries": entries}
+    payload = {
+        "model": model,
+        "kb_hash": kb_hash,
+        "ratings_hash": ratings_hash,
+        "entries": entries,
+    }
     with open(cache_path, "w") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
@@ -112,8 +185,11 @@ _SYSTEM_PROMPT_TEMPLATE = (
 )
 
 
-def _build_system_prompt(profile: str) -> str:
-    return _SYSTEM_PROMPT_TEMPLATE.format(profile=profile.strip())
+def _build_system_prompt(profile: str, calibration: str = "") -> str:
+    prompt = _SYSTEM_PROMPT_TEMPLATE.format(profile=profile.strip())
+    if calibration:
+        prompt += "\n\n" + calibration.strip()
+    return prompt
 
 
 def _build_user_prompt(paper: dict) -> str:
@@ -239,9 +315,17 @@ def rerank(scored: list[dict], config: dict) -> list[dict]:
         )
         print("  llm_rerank: no data/knowledgebase.md found; using profile_brief from config")
 
-    system_prompt = _build_system_prompt(profile)
+    # Load researcher ratings for calibration (few-shot examples in the prompt).
+    ratings, ratings_hash = load_ratings()
+    calibration = ""
+    if ratings:
+        calibration = build_calibration_section(ratings)
+        n_cal = calibration.count("\n- ") if calibration else 0
+        print(f"  llm_rerank: using {n_cal} calibration examples from ratings (hash={ratings_hash})")
 
-    cache = _load_cache(cache_path, model, kb_hash)
+    system_prompt = _build_system_prompt(profile, calibration)
+
+    cache = _load_cache(cache_path, model, kb_hash, ratings_hash)
     shortlisted = [p for p in scored if p.get("final_score", 0) >= threshold]
     if not shortlisted:
         print(f"  llm_rerank: no papers above threshold ({threshold}); skipping")
@@ -259,7 +343,7 @@ def rerank(scored: list[dict], config: dict) -> list[dict]:
             _score_many(fresh, model, system_prompt, max_concurrent)
         )
         cache.update(new_results)
-        _save_cache(cache_path, model, kb_hash, cache)
+        _save_cache(cache_path, model, kb_hash, ratings_hash, cache)
         print(
             f"  llm_rerank: scored {len(new_results)}/{len(fresh)} new papers; "
             f"cache now has {len(cache)} entries"

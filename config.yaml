@@ -86,6 +86,16 @@ scoring:
       foundation models and multimodal learning for biology and pathology,
       federated learning, multi-omics integration, synthetic lethality.
 
+# Admin features: paper ratings + manual paper addition.
+# Only the admin (passphrase-authenticated) sees the rating UI and add-paper input.
+# Ratings and queued papers are synced to the repo via the GitHub Contents API.
+admin:
+  # SHA-256 hex of the admin passphrase. Empty string disables admin mode.
+  # To regenerate: python -c "import hashlib; print(hashlib.sha256(b'YOUR_PASSPHRASE').hexdigest())"
+  passphrase_sha256: "87b3e52bfdeb1c03b4628a5d6ec49eba58e30b8267b84f94882a8afb7a9fb4ca"
+  # GitHub repo for the sync button (Contents API target).
+  repo: ZhaoxiangSimonCai/SimonResearchRSS
+
 library:
   path: data/library.json
   cache: data/reference.npz

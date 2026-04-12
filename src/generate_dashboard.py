@@ -8,12 +8,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import yaml
 from dateutil import parser as dateparser
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = REPO_ROOT / "src" / "templates"
 PAPERS_JSON = REPO_ROOT / "docs" / "papers.json"
+RATINGS_JSON = REPO_ROOT / "data" / "ratings.json"
+CONFIG_YAML = REPO_ROOT / "config.yaml"
 OUT_HTML = REPO_ROOT / "docs" / "index.html"
 DISPLAY_TZ = ZoneInfo("Australia/Melbourne")
 
@@ -50,6 +53,30 @@ def main() -> int:
     # Guard against accidental </script> in abstracts breaking the inline block.
     papers_json_inline = papers_json_inline.replace("</", "<\\/")
 
+    # --- Admin config (passphrase hash, repo) ---
+    admin_hash = ""
+    admin_repo = ""
+    try:
+        with open(CONFIG_YAML) as cf:
+            cfg = yaml.safe_load(cf)
+        admin_cfg = cfg.get("admin") or {}
+        admin_hash = admin_cfg.get("passphrase_sha256") or ""
+        admin_repo = admin_cfg.get("repo") or ""
+    except Exception:
+        pass
+
+    # --- Existing ratings (for cross-device merge) ---
+    ratings_json_inline = "{}"
+    if RATINGS_JSON.exists():
+        try:
+            with open(RATINGS_JSON) as rf:
+                ratings_data = json.load(rf)
+            ratings_json_inline = json.dumps(
+                ratings_data.get("ratings") or {}, ensure_ascii=False
+            ).replace("</", "<\\/")
+        except Exception:
+            pass
+
     html = template.render(
         updated_human=updated_human,
         count=data.get("count", 0),
@@ -57,6 +84,9 @@ def main() -> int:
         library_size=data.get("library_size", 0),
         feeds=data.get("feeds", []),
         papers_json=papers_json_inline,
+        admin_hash=admin_hash,
+        admin_repo=admin_repo,
+        ratings_json=ratings_json_inline,
     )
     OUT_HTML.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_HTML, "w") as f:

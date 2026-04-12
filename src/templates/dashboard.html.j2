@@ -370,6 +370,78 @@
     padding: 3rem 1rem;
     color: var(--muted);
   }
+  /* ---------- admin mode ---------- */
+  .admin-only { display: none !important; }
+  .admin-mode .admin-only { display: inline-flex !important; }
+  .admin-btn {
+    flex-shrink: 0;
+    width: 2rem; height: 2rem; padding: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .admin-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .admin-mode .admin-btn { color: var(--accent); border-color: var(--accent); }
+  .star-rating {
+    gap: 0.1rem; align-items: center; font-size: 0.85rem;
+  }
+  .star-rating .star {
+    background: none; border: none; padding: 0; cursor: pointer;
+    color: var(--muted); font-size: 1rem; line-height: 1; transition: color 0.1s;
+  }
+  .star-rating .star.active { color: #f59e0b; }
+  .star-rating .star:hover { color: #fbbf24; }
+  .sync-btn {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .sync-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .add-paper-wrap {
+    gap: 0.4rem; align-items: center; flex-basis: 100%;
+  }
+  .add-paper-input {
+    flex: 1; min-width: 0;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+  }
+  .add-paper-input::placeholder { color: var(--muted); }
+  .add-paper-input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .add-paper-btn {
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .add-paper-btn:disabled { opacity: 0.5; cursor: default; }
+  .toast {
+    position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    padding: 0.65rem 1.25rem; border-radius: 0.5rem;
+    background: var(--text); color: var(--bg);
+    font-size: 0.85rem; z-index: 999; opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
   footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -384,6 +456,7 @@
     <div class="title-row">
       <h1>Simon Cai's Personalised Research Feed</h1>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle light/dark theme">☾</button>
+      <button class="admin-btn" id="admin-toggle" type="button" aria-label="Admin mode" title="Admin mode">🔑</button>
     </div>
     <details class="tagline-details">
       <summary>About this feed</summary>
@@ -434,9 +507,15 @@
         <input type="checkbox" id="hide-read"> Hide read
       </label>
       <input id="search" type="search" placeholder="Search title, abstract, authors, journal...">
+      <button class="sync-btn admin-only" id="sync-btn" type="button" title="Sync ratings &amp; queue to GitHub">🔄 Sync</button>
+      <div class="add-paper-wrap admin-only">
+        <input class="add-paper-input" id="add-paper-input" type="text" placeholder="Add paper by DOI or arXiv ID...">
+        <button class="add-paper-btn" id="add-paper-btn" type="button">Add</button>
+      </div>
     </div>
   </div>
 </header>
+<div class="toast" id="toast"></div>
 <main>
   <div class="container" id="paper-list"></div>
   <div class="container" id="empty" style="display:none;">No papers match your filter.</div>
@@ -449,6 +528,7 @@
 </footer>
 
 <script type="application/json" id="papers-data">{{ papers_json|safe }}</script>
+<script type="application/json" id="ratings-data">{{ ratings_json|safe }}</script>
 <script>
 (function () {
   const raw = document.getElementById('papers-data').textContent;
@@ -497,6 +577,231 @@
     });
   }
   updateThemeIcon();
+
+  // ---------- admin mode ----------
+  const ADMIN_HASH = '{{ admin_hash }}';
+  const ADMIN_REPO = '{{ admin_repo }}';
+  const ADMIN_KEY = 'srrss.admin';
+  const PAT_KEY = 'srrss.github_pat';
+  let isAdmin = false;
+
+  async function sha256hex(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+  }
+
+  function setAdminMode(on) {
+    isAdmin = on;
+    document.body.classList.toggle('admin-mode', on);
+    try {
+      if (on) sessionStorage.setItem(ADMIN_KEY, 'true');
+      else sessionStorage.removeItem(ADMIN_KEY);
+    } catch (e) {}
+  }
+
+  async function promptAdmin() {
+    if (!ADMIN_HASH) { showToast('Admin mode not configured'); return; }
+    if (isAdmin) { setAdminMode(false); return; }
+    const pw = prompt('Enter admin passphrase:');
+    if (!pw) return;
+    const h = await sha256hex(pw);
+    if (h === ADMIN_HASH) {
+      setAdminMode(true);
+      showToast('Admin mode enabled');
+      render();
+    } else {
+      showToast('Wrong passphrase');
+    }
+  }
+
+  document.getElementById('admin-toggle').addEventListener('click', promptAdmin);
+  if (ADMIN_HASH && sessionStorage.getItem(ADMIN_KEY) === 'true') setAdminMode(true);
+
+  // ---------- toast ----------
+  function showToast(msg, ms) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function () { t.classList.remove('show'); }, ms || 2500);
+  }
+
+  // ---------- ratings store (localStorage + cross-device merge) ----------
+  const RATINGS_KEY = 'srrss.ratings';
+  const QUEUE_KEY = 'srrss.queue';
+
+  function getRatings() {
+    try { return JSON.parse(localStorage.getItem(RATINGS_KEY)) || {}; } catch (e) { return {}; }
+  }
+  function saveRatings(r) {
+    try { localStorage.setItem(RATINGS_KEY, JSON.stringify(r)); } catch (e) {}
+  }
+  function setRating(paperId, score, title) {
+    const r = getRatings();
+    if (score === 0) { delete r[paperId]; }
+    else { r[paperId] = { score: score, rated_at: new Date().toISOString(), title: title || '' }; }
+    saveRatings(r);
+  }
+  function getRating(paperId) {
+    const r = getRatings();
+    return r[paperId] ? r[paperId].score : 0;
+  }
+  function getQueue() {
+    try { return JSON.parse(localStorage.getItem(QUEUE_KEY)) || []; } catch (e) { return []; }
+  }
+  function saveQueue(q) {
+    try { localStorage.setItem(QUEUE_KEY, JSON.stringify(q)); } catch (e) {}
+  }
+
+  // Cross-device merge: bake server-side ratings into localStorage on load
+  (function () {
+    try {
+      const serverRatings = JSON.parse(document.getElementById('ratings-data').textContent || '{}');
+      const local = getRatings();
+      let merged = false;
+      for (const id in serverRatings) {
+        if (!local[id] || (serverRatings[id].rated_at && local[id].rated_at && serverRatings[id].rated_at > local[id].rated_at)) {
+          local[id] = serverRatings[id];
+          merged = true;
+        }
+      }
+      if (merged) saveRatings(local);
+    } catch (e) {}
+  })();
+
+  // ---------- sync to GitHub ----------
+  async function syncToGitHub() {
+    if (!ADMIN_REPO) { showToast('Repo not configured'); return; }
+    let pat = '';
+    try { pat = localStorage.getItem(PAT_KEY) || ''; } catch (e) {}
+    if (!pat) {
+      pat = prompt('Enter a GitHub Personal Access Token\n(fine-grained, Contents read/write on this repo):');
+      if (!pat) return;
+      try { localStorage.setItem(PAT_KEY, pat); } catch (e) {}
+    }
+    const headers = { Authorization: 'Bearer ' + pat, 'Content-Type': 'application/json' };
+
+    async function putFile(path, content, msg) {
+      const url = 'https://api.github.com/repos/' + ADMIN_REPO + '/contents/' + path;
+      // GET current SHA
+      let sha = null;
+      try {
+        const res = await fetch(url, { headers: headers });
+        if (res.ok) { sha = (await res.json()).sha; }
+        else if (res.status === 401 || res.status === 403) {
+          showToast('PAT rejected — clear it and retry');
+          try { localStorage.removeItem(PAT_KEY); } catch (e) {}
+          return false;
+        }
+      } catch (e) { showToast('Network error'); return false; }
+      // PUT
+      const body = { message: msg, content: btoa(unescape(encodeURIComponent(content))) };
+      if (sha) body.sha = sha;
+      try {
+        const res = await fetch(url, { method: 'PUT', headers: headers, body: JSON.stringify(body) });
+        if (res.status === 409) {
+          // SHA stale — retry once
+          const res2 = await fetch(url, { headers: headers });
+          if (res2.ok) body.sha = (await res2.json()).sha;
+          const res3 = await fetch(url, { method: 'PUT', headers: headers, body: JSON.stringify(body) });
+          return res3.ok;
+        }
+        return res.ok;
+      } catch (e) { return false; }
+    }
+
+    showToast('Syncing…');
+    const ratingsPayload = JSON.stringify({ ratings: getRatings() }, null, 2);
+    const queuePayload = JSON.stringify({ queue: getQueue() }, null, 2);
+    const r1 = await putFile('data/ratings.json', ratingsPayload, 'Update paper ratings');
+    const r2 = await putFile('data/queue.json', queuePayload, 'Update paper queue');
+    showToast(r1 && r2 ? 'Synced ✓' : 'Sync failed — check PAT permissions');
+  }
+
+  document.getElementById('sync-btn').addEventListener('click', syncToGitHub);
+
+  // ---------- add paper by DOI / arXiv ----------
+  async function addPaper() {
+    const input = document.getElementById('add-paper-input');
+    const raw = (input.value || '').trim();
+    if (!raw) return;
+    const btn = document.getElementById('add-paper-btn');
+    btn.disabled = true;
+    btn.textContent = '…';
+
+    try {
+      let paper = null;
+      // Detect arXiv ID
+      const arxivMatch = raw.match(/(\d{4}\.\d{4,5})/);
+      if (arxivMatch) {
+        paper = await fetchArxiv(arxivMatch[1]);
+      } else {
+        // Try as DOI (strip URL prefixes)
+        const doi = raw.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').trim();
+        if (doi) paper = await fetchCrossRef(doi);
+      }
+      if (!paper) { showToast('Could not fetch paper metadata'); return; }
+      // Add to queue
+      const q = getQueue();
+      if (q.some(function (p) { return p.id === paper.id; })) {
+        showToast('Paper already in queue');
+        return;
+      }
+      q.push(paper);
+      saveQueue(q);
+      input.value = '';
+      showToast('Added: ' + paper.title.slice(0, 60) + (paper.title.length > 60 ? '…' : ''));
+    } catch (e) {
+      showToast('Error fetching metadata');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Add';
+    }
+  }
+
+  async function fetchCrossRef(doi) {
+    const res = await fetch('https://api.crossref.org/works/' + encodeURIComponent(doi));
+    if (!res.ok) return null;
+    const data = (await res.json()).message;
+    return {
+      id: 'doi:' + doi.toLowerCase(),
+      title: (data.title || [''])[0],
+      abstract: (data.abstract || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+      authors: (data.author || []).map(function (a) { return (a.given || '') + ' ' + (a.family || ''); }).filter(Boolean),
+      url: 'https://doi.org/' + doi,
+      journal: (data['container-title'] || [''])[0],
+      doi: doi.toLowerCase(),
+      added_at: new Date().toISOString()
+    };
+  }
+
+  async function fetchArxiv(arxivId) {
+    const res = await fetch('https://export.arxiv.org/api/query?id_list=' + arxivId);
+    if (!res.ok) return null;
+    const text = await res.text();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, 'text/xml');
+    const entry = xml.querySelector('entry');
+    if (!entry) return null;
+    const title = (entry.querySelector('title') || {}).textContent || '';
+    const summary = (entry.querySelector('summary') || {}).textContent || '';
+    const authors = Array.from(entry.querySelectorAll('author name')).map(function (n) { return n.textContent; });
+    return {
+      id: 'arxiv:' + arxivId,
+      title: title.replace(/\s+/g, ' ').trim(),
+      abstract: summary.replace(/\s+/g, ' ').trim(),
+      authors: authors,
+      url: 'https://arxiv.org/abs/' + arxivId,
+      journal: 'arXiv',
+      arxiv_id: arxivId,
+      added_at: new Date().toISOString()
+    };
+  }
+
+  document.getElementById('add-paper-btn').addEventListener('click', addPaper);
+  document.getElementById('add-paper-input').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') addPaper();
+  });
 
   // ---------- read-state (localStorage) ----------
   const READ_KEY = 'srrss.readPapers';
@@ -660,6 +965,12 @@
         +     '<h2 class="paper-title"><a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener">' + escapeHtml(p.title) + '</a></h2>'
         +     '<div class="paper-actions">'
         +       '<button class="read-toggle" data-action="toggle-read">' + readLabel + '</button>'
+        +       (function () {
+                  var r = getRating(p.id);
+                  var s = '';
+                  for (var i = 1; i <= 5; i++) s += '<button class="star' + (i <= r ? ' active' : '') + '" data-star="' + i + '">★</button>';
+                  return '<span class="star-rating admin-only">' + s + '</span>';
+                })()
         +       '<span class="tier-badge ' + p.tier + '">' + p.final_score.toFixed(0) + '</span>'
         +     '</div>'
         +   '</div>'
@@ -695,6 +1006,24 @@
           // remove from view immediately
           card.style.display = 'none';
         }
+      });
+    });
+
+    // wire star-rating buttons (admin mode)
+    list.querySelectorAll('.star[data-star]').forEach(function (star) {
+      star.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const card = star.closest('.paper');
+        const id = card.getAttribute('data-id');
+        const val = parseInt(star.getAttribute('data-star'), 10);
+        const current = getRating(id);
+        const newVal = (val === current) ? 0 : val; // click same star to clear
+        const title = (card.querySelector('.paper-title a') || {}).textContent || '';
+        setRating(id, newVal, title);
+        // update stars visually
+        card.querySelectorAll('.star').forEach(function (s) {
+          s.classList.toggle('active', parseInt(s.getAttribute('data-star'), 10) <= newVal);
+        });
       });
     });
   }

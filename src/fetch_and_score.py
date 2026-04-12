@@ -31,6 +31,7 @@ from dateutil import parser as dateparser
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 KB_PATH = REPO_ROOT / "data" / "knowledgebase.md"
+QUEUE_PATH = REPO_ROOT / "data" / "queue.json"
 
 
 # ---------- helpers ----------
@@ -85,6 +86,49 @@ def strip_html(raw: str) -> str:
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+def load_queued_papers() -> list[dict]:
+    """Load manually queued papers from data/queue.json (synced from the dashboard).
+
+    Returns them in the same dict format as fetch_feed() output so they can be
+    appended to all_papers and go through the standard scoring pipeline.
+    """
+    if not QUEUE_PATH.exists():
+        return []
+    try:
+        with open(QUEUE_PATH) as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return []
+    queue = data.get("queue") or []
+    if not queue:
+        return []
+    out: list[dict] = []
+    for entry in queue:
+        title = (entry.get("title") or "").strip()
+        if not title:
+            continue
+        abstract = (entry.get("abstract") or "").strip()
+        doi = (entry.get("doi") or "").lower() or None
+        arxiv_id = (entry.get("arxiv_id") or "").lower() or None
+        out.append(
+            {
+                "title": title,
+                "abstract": abstract,
+                "authors": entry.get("authors") or [],
+                "url": entry.get("url") or "",
+                "journal": entry.get("journal") or "Manual",
+                "feed_weight": 1.0,  # journal-equivalent: user explicitly wants these
+                "published": entry.get("added_at"),
+                "doi": doi,
+                "arxiv_id": arxiv_id,
+                "title_norm": normalize_title(title),
+            }
+        )
+    if out:
+        print(f"  loaded {len(out)} manually queued papers from {QUEUE_PATH.name}")
+    return out
 
 
 _ARXIV_RE = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})", re.IGNORECASE)
@@ -562,7 +606,12 @@ def main() -> int:
                 break
         all_papers.extend(filtered)
         time.sleep(0.2)  # polite pause between hosts
-    print(f"\ncollected {len(all_papers)} papers across all feeds")
+    # Append manually queued papers (added via the dashboard admin UI).
+    queued = load_queued_papers()
+    all_papers.extend(queued)
+
+    print(f"\ncollected {len(all_papers)} papers across all feeds" +
+          (f" (incl. {len(queued)} manually queued)" if queued else ""))
 
     # internal dedupe (same paper from multiple feeds)
     seen_keys: set[str] = set()
