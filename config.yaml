@@ -83,7 +83,7 @@ scoring:
     apply_to_min_score: 0
     blend_weight: 0.5                     # 0.5 stage1 + 0.5 llm = final
     cache_path: data/llm_cache.json       # disk cache, keyed by paper id + model + kb hash
-    max_concurrent: 5                     # limit parallel API calls
+    max_concurrent: 1                     # limit parallel API calls
     # profile_brief is used only as a fallback when data/knowledgebase.md is absent.
     profile_brief: |
       Medical oncologist and PhD candidate focusing on antibody drug conjugate biomarkers. 
