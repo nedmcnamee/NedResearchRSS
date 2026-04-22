@@ -1,11 +1,11 @@
 research_profile:
   tier1_keywords:
-    - DIA-MS
-    - data-independent acquisition
-    - cancer proteomics
-    - foundation model
-    - federated learning
-    - synthetic lethality
+    - biomarker discovery
+    - clinical proteomics
+    - antibody drug conjugate biomarkers
+    - spatial pathology
+    - spatial biomarkers
+    - ADC biomarkers
     - multi-omics integration
     - ProCan
   tier2_keywords:
@@ -18,14 +18,18 @@ research_profile:
     - pan-cancer
     - transfer learning
     - multimodal learning
+    - DIA-MS
+    - data-independent acquisition
+    - cancer proteomics
+    - foundation model
+    - federated learning
+    - synthetic lethality
   tier3_keywords:
     - proteogenomics
     - single-cell proteomics
     - transformer
     - deep learning
     - cancer genomics
-    - biomarker discovery
-    - clinical proteomics
     - protein language model
 
 scoring:
@@ -82,9 +86,10 @@ scoring:
     max_concurrent: 5                     # limit parallel API calls
     # profile_brief is used only as a fallback when data/knowledgebase.md is absent.
     profile_brief: |
-      DIA mass spectrometry proteomics, cancer cell line and patient drug response,
-      foundation models and multimodal learning for biology and pathology,
-      federated learning, multi-omics integration, synthetic lethality.
+      Medical oncologist and PhD candidate focusing on antibody drug conjugate biomarkers. 
+      Expertise in DIA-MS proteomics (ProCan), ADCs (HER2, TROP2, B7-H3), and 
+      spatial computational pathology using foundation models and graph neural 
+      networks to predict drug response in clinical cohorts.
 
 # Admin features: paper ratings + manual paper addition.
 # Only the admin (passphrase-authenticated) sees the rating UI and add-paper input.
@@ -92,9 +97,9 @@ scoring:
 admin:
   # SHA-256 hex of the admin passphrase. Empty string disables admin mode.
   # To regenerate: python -c "import hashlib; print(hashlib.sha256(b'YOUR_PASSPHRASE').hexdigest())"
-  passphrase_sha256: "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae"
+  passphrase_sha256: "4f37fc0c547aee7c62b86e2019e0e110c9cdee5fd19bbb5000bc883c334abfa7"
   # GitHub repo for the sync button (Contents API target).
-  repo: ZhaoxiangSimonCai/SimonResearchRSS
+  repo: nedmcnamee/NedResearchRSS
 
 library:
   path: data/library.json
@@ -107,7 +112,7 @@ fetch:
   lookback_days: 10
   max_papers_per_feed: 100
   # User-Agent sent with RSS requests (some publishers reject default python-urllib UA)
-  user_agent: "SimonResearchRSS/0.1 (+https://github.com/)"
+  user_agent: "NedResearchRSS/0.1 (+https://github.com/)"
   request_timeout: 30
 
 feeds:
@@ -131,6 +136,9 @@ feeds:
   - {name: Cell,                        url: "https://www.cell.com/cell/inpress.rss"}
   - {name: Cancer Cell,                 url: "https://www.cell.com/cancer-cell/inpress.rss"}
   - {name: Molecular Cell,              url: "https://www.cell.com/molecular-cell/inpress.rss"}
+  - {name: Journal of Clinical Oncology, url: "https://ascopubs.org/action/showFeed?jc=jco&type=etoc&feed=rss"}
+  - {name: Lancet Oncology, url: "https://www.thelancet.com/rssfeed/lanonc_current.xml"}
+  - {name: Clinical Cancer Research, url: "https://aacrjournals.org/clincancerres/rss/current.xml"}
 
   # bioRxiv subject feeds — biology preprints, weight 0.76 so a bioRxiv paper
   # needs raw score ~66 to clear the must-read threshold (vs 50 for journals).
