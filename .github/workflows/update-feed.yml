@@ -101,6 +101,7 @@ jobs:
             echo "no changes to commit"
           else
             git commit -m "chore: daily research feed update"
+            git pull --rebase origin main
             git push
           fi
 
