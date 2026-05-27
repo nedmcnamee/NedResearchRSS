@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-27T01:04:59.617820+00:00",
+  "updated_at": "2026-05-27T02:13:07.454877+00:00",
   "count": 90,
   "tier_counts": {
     "high": 10,
@@ -183,7 +183,7 @@
       "doi": "10.1200/jco-26-00937",
       "arxiv_id": null,
       "final_score": 61.8,
-      "embedding_score": 69.44,
+      "embedding_score": 69.43,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.6034,
       "max_cosine_weighted": 0.5063,
@@ -246,7 +246,7 @@
       "embedding_score": 68.67,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5991,
-      "max_cosine_weighted": 0.5028,
+      "max_cosine_weighted": 0.5027,
       "recency_weight_used": 0.839,
       "top_match_added_year": 2025,
       "top_match_title": "Progress of antibody-drug conjugates (ADCs) targeting c-Met in cancer therapy; insights from clinical and preclinical st",
@@ -281,7 +281,7 @@
       "embedding_score": 100.0,
       "keyword_score": 44.0,
       "max_cosine_raw": 0.8004,
-      "max_cosine_weighted": 0.7389,
+      "max_cosine_weighted": 0.7388,
       "recency_weight_used": 0.923,
       "top_match_added_year": 2025,
       "top_match_title": "Sequence-to-sequence translation from mass spectra to peptides with a transformer model",
@@ -405,7 +405,7 @@
       "embedding_score": 63.48,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.57,
-      "max_cosine_weighted": 0.4784,
+      "max_cosine_weighted": 0.4783,
       "recency_weight_used": 0.839,
       "top_match_added_year": 2025,
       "top_match_title": "Targeting HER2-positive breast cancer: advances and future directions",
@@ -419,7 +419,7 @@
         "carboplatin"
       ],
       "llm_score": 72.0,
-      "stage1_score": 44.44,
+      "stage1_score": 44.43,
       "raw_final_score": 58.22,
       "tier": "high"
     },
@@ -495,7 +495,7 @@
       "doi": "10.1200/jco-25-02016",
       "arxiv_id": null,
       "final_score": 56.72,
-      "embedding_score": 59.2,
+      "embedding_score": 59.19,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.546,
       "max_cosine_weighted": 0.4582,
@@ -715,45 +715,6 @@
       "tier": "medium"
     },
     {
-      "id": "2605.21454",
-      "title": "ProtoPathway: Biologically Structured Prototype-Pathway Fusion for Multimodal Cancer Survival Prediction",
-      "authors": [
-        "Amaya Gallagher-Syed",
-        "Costantino Pitzalis",
-        "Myles J. Lewis",
-        "Michael R. Barnes",
-        "Gregory Slabaugh"
-      ],
-      "abstract": "We introduce ProtoPathway, an interpretable-by-design multimodal framework for cancer survival prediction that unifies whole slide imaging and transcriptomics through encoders producing biologically grounded representations on both sides of the fusion. On the histopathology side, $K$ learnable morphological prototypes, trained end-to-end with the survival objective, serve as the slide representation itself: patches flow into prototype tokens via soft assignment, compressing variable-length patch sets into fixed task-adaptive tokens. On the genomic side, a bipartite graph neural network encodes gene expression within the Reactome pathway hierarchy, producing pathway embeddings that reflect both constituent genes and their broader biological context through bidirectional message passing over a shared gene--pathway graph. Cross-modal attention then operates over a compact prototype $\\times$ pathway matrix in which prototypes query pathways, modeling the biological direction in which molecular programs give rise to tissue morphology. Because both axes carry stable task-learned identity, the attention matrix is itself an interpretability output, yielding native inference-time attribution across the full biological hierarchy, from genes through pathways and prototypes to spatial tissue maps. We evaluate on five TCGA cancer cohorts, demonstrating competitive or superior survival prediction with substantially improved biological interpretability and reduced computational cost, with interpretability claims validated through fold-stratified rank-based population-level analysis. Our source code, model weights, and Reactome pathways, together with a unified codebase reimplementing all multimodal survival baselines under identical preprocessing and evaluation, are available at: https://github.com/AmayaGS/ProtoPathway.",
-      "url": "https://arxiv.org/abs/2605.21454v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-20T17:43:43+00:00",
-      "doi": null,
-      "arxiv_id": "2605.21454",
-      "final_score": 51.12,
-      "embedding_score": 100.0,
-      "keyword_score": 0.0,
-      "max_cosine_raw": 0.7332,
-      "max_cosine_weighted": 0.685,
-      "recency_weight_used": 0.934,
-      "top_match_added_year": 2025,
-      "top_match_title": "Molecular-driven foundation model for oncologic pathology",
-      "matched_keywords": [],
-      "auto_keywords": [
-        "survival prediction",
-        "cancer survival",
-        "protopathway",
-        "multimodal",
-        "biologically",
-        "fusion"
-      ],
-      "llm_score": 72.0,
-      "stage1_score": 70.0,
-      "raw_final_score": 71.0,
-      "tier": "medium"
-    },
-    {
       "id": "10.1200/jco-25-01047",
       "title": "Survival Analysis of the WSG TP-II Trial: Neoadjuvant Trastuzumab and Pertuzumab Plus Endocrine Therapy Versus Chemotherapy in Hormone Receptor–Positive/Human Epidermal Growth Factor Receptor 2–Positive Early Breast Cancer",
       "authors": [
@@ -854,7 +815,7 @@
       "published": "2026-05-25T00:00:00+00:00",
       "doi": "10.64898/2026.05.21.726796",
       "arxiv_id": null,
-      "final_score": 44.01,
+      "final_score": 44.0,
       "embedding_score": 62.58,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.565,
@@ -872,8 +833,8 @@
         "hydrogel"
       ],
       "llm_score": 72.0,
-      "stage1_score": 43.81,
-      "raw_final_score": 57.91,
+      "stage1_score": 43.8,
+      "raw_final_score": 57.9,
       "tier": "medium"
     },
     {
@@ -891,7 +852,7 @@
       "doi": "10.1038/s41592-026-03113-x",
       "arxiv_id": null,
       "final_score": 42.21,
-      "embedding_score": 84.89,
+      "embedding_score": 84.88,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.6487,
       "max_cosine_weighted": 0.579,
@@ -1003,6 +964,44 @@
       "tier": "medium"
     },
     {
+      "id": "10.64898/2026.05.22.727257",
+      "title": "Molecular Characterization of T-Lineage Acute Lymphoblastic Leukemia by an Optimal-Transport Based Multi-Omics Integration Framework",
+      "authors": [
+        "Li, L., Wang, J., Wan, S."
+      ],
+      "abstract": "T-lineage acute lymphoblastic leukemia (T-ALL) is an aggressive pediatric malignancy characterized by complex heterogeneity across multiple molecular layers. Accurate subtyping is essential for understanding disease mechanisms, risk stratification, and guiding targeted therapeutic strategies. However, current diagnostic approaches are labor-intensive and time-consuming, and existing computational methods are limited by reliance on single-modality data or simple integration strategies. Effective integration of heterogeneous multi-omics data remains a major computational challenge. We present OTTER (Optimal Transport-based Transcriptomics and gEnomics Representation fusion), a novel multi-modal deep learning framework that jointly models RNA-seq gene expression and somatic genomic variant data for T-ALL molecular characterization. OTTER encodes each omics modality through a modality-specific variational autoencoder and aligns the resulting latent representations using Gromov-Wasserstein optimal transport (GW-OT), which preserves the internal geometric structure of each modality without requiring a shared feature space. We applied OTTER to the Children's Oncology Group (COG) AALL0434 cohort comprising 1,309 patients across 17 T-ALL subtypes. Gradient-based feature importance and cross-omics interaction analysis were performed on the holdout set to identify subtype-driving molecular features and cross-modal coordinated programs. OTTER provides a principled, biologically interpretable, and computationally effective framework for multi-omics-driven T-ALL molecular characterization. By leveraging GW-OT for geometry-preserving cross-modal alignment and gradient-based interpretability for cross-omics interaction profiling, OTTER goes beyond single-modality approaches to uncover the coordinated molecular landscape of T-ALL. The framework is generalizable to other cancers and multi-omics integration tasks.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.05.22.727257v1?rss=1",
+      "journal": "bioRxiv Bioinformatics",
+      "source_weight": 0.76,
+      "published": "2026-05-26T00:00:00+00:00",
+      "doi": "10.64898/2026.05.22.727257",
+      "arxiv_id": null,
+      "final_score": 38.72,
+      "embedding_score": 94.0,
+      "keyword_score": 37.0,
+      "max_cosine_raw": 0.6954,
+      "max_cosine_weighted": 0.6218,
+      "recency_weight_used": 0.894,
+      "top_match_added_year": 2025,
+      "top_match_title": "A technical review of multi-omics data integration methods: from classical statistical to deep generative approaches",
+      "matched_keywords": [
+        "multi-omics integration",
+        "deep learning"
+      ],
+      "auto_keywords": [
+        "molecular characterization",
+        "t-lineage acute",
+        "acute lymphoblastic",
+        "lymphoblastic leukemia",
+        "t-all molecular",
+        "framework"
+      ],
+      "llm_score": 25.0,
+      "stage1_score": 76.9,
+      "raw_final_score": 50.95,
+      "tier": "medium"
+    },
+    {
       "id": "10.1016/s1470-2045(26)00117-8",
       "title": "[Comment] AKT-targeted triplet therapy in advanced breast cancer",
       "authors": [
@@ -1073,7 +1072,7 @@
         "energy-adaptable"
       ],
       "llm_score": 25.0,
-      "stage1_score": 50.28,
+      "stage1_score": 50.27,
       "raw_final_score": 37.64,
       "tier": "medium"
     },
@@ -1187,43 +1186,6 @@
       "tier": "medium"
     },
     {
-      "id": "2605.20885",
-      "title": "Training distribution determines the ceiling of drug-blind cancer sensitivity prediction",
-      "authors": [
-        "Taekyung Heo"
-      ],
-      "abstract": "Precision oncology requires predicting which drugs will suppress a specific tumor from its molecular profile, but drug-blind sensitivity prediction has plateaued despite increasingly complex drug representations. Here we show that this stagnation reflects a metric artifact rather than a representational bottleneck. The standard benchmark, global Pearson r, is dominated by between-drug potency differences that a trivial drug-mean predictor captures without any cell-specific learning. Per-drug Pearson r, which isolates within-drug cell ranking, reveals that no drug encoding improves over cell-only features across four independent datasets. A controlled experiment channeling mechanism-of-action identity as either a drug feature or a training-distribution constraint identifies the cause. Supplying MoA as a feature yields negligible benefit, whereas using it to stratify training raises per-drug r substantially for targeted kinase inhibitors, because pan-cancer co-training suppresses pathway-specific sensitivity signals. Mechanism-stratified training and response matching from pilot observations provide two deployable strategies that together recover the principal sources of predictive gain in drug-blind sensitivity prediction.",
-      "url": "https://arxiv.org/abs/2605.20885v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-20T08:24:56+00:00",
-      "doi": null,
-      "arxiv_id": "2605.20885",
-      "final_score": 36.78,
-      "embedding_score": 89.51,
-      "keyword_score": 15.0,
-      "max_cosine_raw": 0.6318,
-      "max_cosine_weighted": 0.6007,
-      "recency_weight_used": 0.951,
-      "top_match_added_year": 2026,
-      "top_match_title": "Benchmarking machine learning methods for synthetic lethality prediction in cancer",
-      "matched_keywords": [
-        "pan-cancer"
-      ],
-      "auto_keywords": [
-        "sensitivity prediction",
-        "drug-blind sensitivity",
-        "training",
-        "distribution",
-        "determines",
-        "ceiling"
-      ],
-      "llm_score": 35.0,
-      "stage1_score": 67.15,
-      "raw_final_score": 51.08,
-      "tier": "medium"
-    },
-    {
       "id": "10.64898/2026.05.22.727123",
       "title": "Sparse, trainable subnetworks for multi-omics integration: a cross-validated evaluation of the Lottery Ticket Hypothesis across nutrigenomic, toxicogenomic, and oncogenomic datasets",
       "authors": [
@@ -1297,51 +1259,6 @@
       "tier": "medium"
     },
     {
-      "id": "2605.25050",
-      "title": "Multimodality Stacking with Blockwise missing values and application to the PIONeeR biomarkers study for prediction of resistance to immunotherapy",
-      "authors": [
-        "Mohamed Boussena",
-        "Florence Monville",
-        "Jacques Fieschi-Meric",
-        "Frederic Vely",
-        "Pierre Milpied",
-        "Julien Mazieres",
-        "Maurice Perol",
-        "Eric Vivier",
-        "Laurent Greillier",
-        "Fabrice Barlesi",
-        "Sebastien Benzekry"
-      ],
-      "abstract": "Integrating multimodal datasets in clinical oncology is frequently hindered by high dimensionality and blockwise missingness, where entire data sources are unavailable for specific patient subsets. Standard survival models often struggle with these gaps, leading to biased results or patient exclusion. We introduce Multimodality Stacking with Blockwise missing values (MSB), a late-fusion framework for survival analysis that independently models modality-specific features before aggregating predictions via a cross-validated stacking meta-learner. MSB was validated on the PIONeeR study (n=443 patients, 378 biomarkers across eight heterogeneous sources) to predict progression-free survival in advanced non-small cell lung cancer patients receiving immunotherapy. MSB yielded higher predictive performance (C-index) than baseline algorithms. Improvements varied by baseline strength: linear models showed a 15.9% increase (p<0.001 for the Wilcoxon signed-rank test), random survival forests gained 5.4% (p=0.002), and gradient boosting methods improved by 2.1% (p=0.030). Beyond discrimination, MSB reduced the generalization gap (train-test difference in 5 folds cross-validation repeated 3 times: 0.055 vs 0.380 for linear models). Permutation importance analysis identified routine laboratory markers, clinical features, and PD-L1 expression as primary predictive drivers. Missing block indicators showed negligible importance, suggesting the model learned from biomarker values rather than data availability patterns. MSB provides a statistically validated framework for multimodal survival prediction with blockwise missingness. By enabling systematic biomarker evaluation without requiring complete data, MSB offers a practical tool for predictive modeling in biomedical research, pending external validation. Implementation is available at https://github.com/MohamedBoussena/MSB under Inria license.",
-      "url": "https://arxiv.org/abs/2605.25050v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-24T12:48:38+00:00",
-      "doi": null,
-      "arxiv_id": "2605.25050",
-      "final_score": 36.09,
-      "embedding_score": 93.21,
-      "keyword_score": 0.0,
-      "max_cosine_raw": 0.6616,
-      "max_cosine_weighted": 0.6181,
-      "recency_weight_used": 0.934,
-      "top_match_added_year": 2025,
-      "top_match_title": "Molecular-driven foundation model for oncologic pathology",
-      "matched_keywords": [],
-      "auto_keywords": [
-        "multimodality stacking",
-        "blockwise missing",
-        "missing values",
-        "blockwise missingness",
-        "pioneer",
-        "biomarkers"
-      ],
-      "llm_score": 35.0,
-      "stage1_score": 65.25,
-      "raw_final_score": 50.12,
-      "tier": "medium"
-    },
-    {
       "id": "10.64898/2026.05.21.726986",
       "title": "Decoding Multicellular Communication Motifs from Spatial Transcriptomics with ALARMIST",
       "authors": [
@@ -1355,7 +1272,7 @@
       "doi": "10.64898/2026.05.21.726986",
       "arxiv_id": null,
       "final_score": 35.76,
-      "embedding_score": 74.43,
+      "embedding_score": 74.42,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5422,
       "max_cosine_weighted": 0.5298,
@@ -1394,7 +1311,7 @@
       "embedding_score": 51.84,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.464,
-      "max_cosine_weighted": 0.4237,
+      "max_cosine_weighted": 0.4236,
       "recency_weight_used": 0.913,
       "top_match_added_year": 2025,
       "top_match_title": "Synthetic lethality in cancer drug discovery: challenges and opportunities",
@@ -1425,11 +1342,11 @@
       "published": "2026-05-26T00:00:00+00:00",
       "doi": "10.1038/s41587-026-03170-9",
       "arxiv_id": null,
-      "final_score": 35.51,
-      "embedding_score": 65.74,
+      "final_score": 35.5,
+      "embedding_score": 65.73,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5309,
-      "max_cosine_weighted": 0.489,
+      "max_cosine_weighted": 0.4889,
       "recency_weight_used": 0.921,
       "top_match_added_year": 2025,
       "top_match_title": "Foundation models in bioinformatics",
@@ -1443,49 +1360,8 @@
         "raise"
       ],
       "llm_score": 25.0,
-      "stage1_score": 46.02,
-      "raw_final_score": 35.51,
-      "tier": "medium"
-    },
-    {
-      "id": "2605.19902",
-      "title": "Hierarchical Contrastive Learning for Multi-Domain Protein-Ligand Binding",
-      "authors": [
-        "Shuo Zhang",
-        "Rongqi Hong",
-        "Huifeng Zhang",
-        "Jian K. Liu"
-      ],
-      "abstract": "Predicting protein-ligand binding affinity remains intractable for multi-domain proteins, where inter-domain dynamics govern molecular recognition. Existing geometric deep learning methods typically treat proteins as monolithic static graphs, suffering from rigid-body assumptions and aleatoric noise in flexible regions. To address this, we introduced HCLBind, a self-supervised framework that decouples geometric representation learning from affinity regression. HCLBind leverages a general-to-specific pre-training paradigm on the Q-BioLiP database to learn a robust physical grammar of binding. We propose a novel hierarchical decoy strategy: the model learns local physicochemical constraints through protein coordinate perturbation in single-domain proteins and global conformational geometry through inter-domain rotation in multi-domain complexes. Our hybrid architecture integrates a domain-gated graph attention network and cross-modal attention to explicitly prioritize domain interfaces. Furthermore, we employ LoRA on protein and ligand foundation models, ensuring efficient optimization while preserving evolutionary knowledge. Experiments on PDBBind demonstrate that HCLBind effectively learns discriminative interface features and provides robust uncertainty estimation, overcoming the limitations of standard supervised learning. The code is available at https://github.com/jiankliu/HCLBind.",
-      "url": "https://arxiv.org/abs/2605.19902v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-19T14:33:02+00:00",
-      "doi": null,
-      "arxiv_id": "2605.19902",
-      "final_score": 35.27,
-      "embedding_score": 80.52,
-      "keyword_score": 22.0,
-      "max_cosine_raw": 0.5978,
-      "max_cosine_weighted": 0.5585,
-      "recency_weight_used": 0.934,
-      "top_match_added_year": 2025,
-      "top_match_title": "Molecular-driven foundation model for oncologic pathology",
-      "matched_keywords": [
-        "foundation model",
-        "deep learning"
-      ],
-      "auto_keywords": [
-        "protein-ligand binding",
-        "multi-domain",
-        "hierarchical",
-        "contrastive",
-        "hclbind",
-        "proteins"
-      ],
-      "llm_score": 35.0,
-      "stage1_score": 62.97,
-      "raw_final_score": 48.98,
+      "stage1_score": 46.01,
+      "raw_final_score": 35.5,
       "tier": "medium"
     },
     {
@@ -1501,8 +1377,8 @@
       "published": "2026-05-27T00:00:00+00:00",
       "doi": "10.1016/s1470-2045(26)00059-8",
       "arxiv_id": null,
-      "final_score": 35.03,
-      "embedding_score": 64.37,
+      "final_score": 35.02,
+      "embedding_score": 64.36,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.575,
       "max_cosine_weighted": 0.4825,
@@ -1519,8 +1395,8 @@
         "safety"
       ],
       "llm_score": 25.0,
-      "stage1_score": 45.06,
-      "raw_final_score": 35.03,
+      "stage1_score": 45.05,
+      "raw_final_score": 35.02,
       "tier": "medium"
     },
     {
@@ -1537,7 +1413,7 @@
       "doi": "10.1016/s1470-2045(26)00053-7",
       "arxiv_id": null,
       "final_score": 35.02,
-      "embedding_score": 64.34,
+      "embedding_score": 64.33,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5748,
       "max_cosine_weighted": 0.4824,
@@ -1554,7 +1430,7 @@
         "negative advanced"
       ],
       "llm_score": 25.0,
-      "stage1_score": 45.04,
+      "stage1_score": 45.03,
       "raw_final_score": 35.02,
       "tier": "medium"
     },
@@ -1739,46 +1615,6 @@
       "tier": "medium"
     },
     {
-      "id": "2605.22954",
-      "title": "FederatedRSF : Federated Random Survival Forests for Partially Overlapping Medical Data",
-      "authors": [
-        "Maryam Moradpour",
-        "Jonas Harriehausen",
-        "Amirreza Aleyasin",
-        "Lion Philipp Wolf",
-        "Youngjun Park",
-        "Anne-Christin Hauschild"
-      ],
-      "abstract": "Multi-center survival prediction can improve robustness and generalizability, yet privacy regulations and institutional governance often prevent pooling patient-level clinical and genomic data across institutions. In practice, deployment is further complicated by feature-space heterogeneity, in which sites collect different covariates or use different sequencing panels, resulting in only partially overlapping feature sets. We present FederatedRSF, a Python package that implements federated random survival forests, aggregating locally trained survival trees and redistributing only feature-compatible trees to each site, enabling inference with partial overlap without sharing raw data. We evaluate FederatedRSF on the GBSG2 breast cancer cohort distributed with the scikit-survival package, simulating feature heterogeneity across clients by withholding subsets of features, and assessing discrimination using Harrell's concordance index (C-Index) under repeated cross-validation and site-splits. The results demonstrated that the federated model can achieve performance comparable to that of the centralized training setting.",
-      "url": "https://arxiv.org/abs/2605.22954v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-21T18:32:25+00:00",
-      "doi": null,
-      "arxiv_id": "2605.22954",
-      "final_score": 34.25,
-      "embedding_score": 85.91,
-      "keyword_score": 0.0,
-      "max_cosine_raw": 0.6419,
-      "max_cosine_weighted": 0.5838,
-      "recency_weight_used": 0.91,
-      "top_match_added_year": 2025,
-      "top_match_title": "Federated deep learning enables cancer subtyping by proteomics",
-      "matched_keywords": [],
-      "auto_keywords": [
-        "federated random",
-        "random survival",
-        "survival forests",
-        "partially overlapping",
-        "federatedrsf",
-        "medical"
-      ],
-      "llm_score": 35.0,
-      "stage1_score": 60.14,
-      "raw_final_score": 47.57,
-      "tier": "low"
-    },
-    {
       "id": "10.64898/2026.05.22.726988",
       "title": "Spatially-Resolved Multiomic Atlas of Leiomyosarcoma Identifies Two Clinically Relevant Epigenetically-Driven Cell States",
       "authors": [
@@ -1791,7 +1627,7 @@
       "published": "2026-05-26T00:00:00+00:00",
       "doi": "10.64898/2026.05.22.726988",
       "arxiv_id": null,
-      "final_score": 34.23,
+      "final_score": 34.22,
       "embedding_score": 88.68,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.7112,
@@ -1809,9 +1645,9 @@
         "atlas"
       ],
       "llm_score": 28.0,
-      "stage1_score": 62.08,
-      "raw_final_score": 45.04,
-      "tier": "low"
+      "stage1_score": 62.07,
+      "raw_final_score": 45.03,
+      "tier": "medium"
     },
     {
       "id": "10.64898/2026.05.17.725083",
@@ -1848,7 +1684,7 @@
       "llm_score": 15.0,
       "stage1_score": 74.5,
       "raw_final_score": 44.75,
-      "tier": "low"
+      "tier": "medium"
     },
     {
       "id": "10.64898/2026.05.16.725005",
@@ -1883,7 +1719,7 @@
       "llm_score": 28.0,
       "stage1_score": 61.44,
       "raw_final_score": 44.72,
-      "tier": "low"
+      "tier": "medium"
     },
     {
       "id": "10.1200/jco-25-02546",
@@ -1925,43 +1761,6 @@
       "tier": "low"
     },
     {
-      "id": "2605.19579",
-      "title": "TACK: A statistical evaluation of degradation activity on a novel TArgeting Chimeras Knowledge dataset",
-      "authors": [
-        "Stefano Ribes",
-        "Nils Dunlop",
-        "Rocío Mercado"
-      ],
-      "abstract": "Proteolysis-targeting chimeras (PROTACs) represent a promising therapeutic modality that induces targeted protein degradation by hijacking the ubiquitin-proteasome system. However, rational PROTAC design remains challenging due to the complex interplay between molecular structure, target proteins, E3 ligases, and the cellular context. We present TACK, a statistical evaluation of degradation activity on a novel TArgeting Chimeras Knowledge dataset of 3,514 PROTACs and 6,561 degradation endpoints aggregated from three major repositories with standardized molecular representations, protein annotations, and experimental conditions. Using scaffold-based 5$\\times$5 cross-validation, we perform a rigorous statistical comparison of three machine learning methods to predict PROTAC degradation activity across three tasks: $DC_{50}$ and Dmax regression, and binary activity classification. Feature ablation demonstrates that cellular context features and simple protein representations rival complex ESM protein embeddings, highlighting the importance of feature engineering over architectural sophistication. Models trained on the best performing features show that potency ($pDC_{50}$, $R^2=0.66$) is substantially more predictable than maximum degradation (Dmax, $R^2=0.36$). In activity prediction, statistical tests support that classical methods (XGBoost and MLP) significantly outperform PROTAC-STAN, a domain-specific graph neural network model (ROC-AUC: 0.85 vs. 0.74, p<0.001). Finally, we propose an ensemble-based uncertainty quantification approach showing that prediction variance correlates with prediction error ($pDC_{50}$: Spearman $ρ=0.36$, p<0.001; Dmax: $ρ=0.69$, p<0.001), enabling confidence-aware experimental prioritization. Our findings challenge assumptions about specialized architectures for degradation prediction and provide evidence-based guidance for ML-driven PROTAC assessment.",
-      "url": "https://arxiv.org/abs/2605.19579v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-19T09:22:30+00:00",
-      "doi": null,
-      "arxiv_id": "2605.19579",
-      "final_score": 33.72,
-      "embedding_score": 83.82,
-      "keyword_score": 0.0,
-      "max_cosine_raw": 0.6585,
-      "max_cosine_weighted": 0.574,
-      "recency_weight_used": 0.872,
-      "top_match_added_year": 2025,
-      "top_match_title": "The pan-cancer proteome atlas, a mass spectrometry-based landscape for discovering tumor biology, biomarkers, and therap",
-      "matched_keywords": [],
-      "auto_keywords": [
-        "degradation activity",
-        "tack statistical",
-        "statistical evaluation",
-        "evaluation degradation",
-        "targeting chimeras",
-        "chimeras knowledge"
-      ],
-      "llm_score": 35.0,
-      "stage1_score": 58.67,
-      "raw_final_score": 46.84,
-      "tier": "low"
-    },
-    {
       "id": "10.1200/jco-25-03022",
       "title": "Reply to: Immune Checkpoint Blockade in Deficient Mismatch Repair/Microsatellite Instability–High Gastric Cancer: Solid Evidence or Premature Extrapolation?",
       "authors": [
@@ -1999,51 +1798,6 @@
       "tier": "low"
     },
     {
-      "id": "2605.26026",
-      "title": "A Multimodal 3D Foundation Model for Light Sheet Fluorescence Microscopy Enables Few-Shot Segmentation, Classification, and Deblurring",
-      "authors": [
-        "Adina Scheinfeld",
-        "Haotan Zhang",
-        "Shang Mu",
-        "Rudolf L. M. van Herten",
-        "Lucas Stoffl",
-        "Ali Erturk",
-        "Zhuhao Wu",
-        "Johannes C. Paetzold"
-      ],
-      "abstract": "Light sheet fluorescence microscopy (LSM) enables high-resolution, three-dimensional (3D) imaging of biological specimens, providing rich volumetric data for studying cellular organization, pathology, and vascular networks. However, the size, dimensionality, and annotation burden of LSM data make supervised deep learning approaches costly and difficult to scale. Additionally, despite the abundance of unannotated LSM volumes, foundation models for this modality remain underexplored due to computational challenges and the complexity of volumetric representation learning. In this work, we introduce a 3D foundation model for LSM data, pretrained on a large curated collection of 3D images spanning multiple organisms, stains, and imaging protocols. We learn transferable volumetric representations by jointly optimizing for masked reconstruction and image-text alignment. The pretrained backbone drastically reduces the annotation burden, enabling efficient, few-shot adaptation for varied downstream tasks. We evaluate this approach on downstream segmentation, classification, and deblurring. Our results demonstrate consistent improvements over baselines, (1) when measured using standard evaluation metrics and (2) when rigorously assessed by domain experts. This highlights the potential of foundation model pretraining to reduce annotation requirements while improving performance across diverse LSM analysis tasks. Pretrained model weights and code for pretraining and finetuning are publicly available: https://github.com/AdinaScheinfeld/lsm_fm_public_repo.git.",
-      "url": "https://arxiv.org/abs/2605.26026v1",
-      "journal": "arXiv cs.LG (machine learning)",
-      "source_weight": 0.65,
-      "published": "2026-05-25T16:50:58+00:00",
-      "doi": null,
-      "arxiv_id": "2605.26026",
-      "final_score": 33.33,
-      "embedding_score": 97.09,
-      "keyword_score": 22.0,
-      "max_cosine_raw": 0.6812,
-      "max_cosine_weighted": 0.6363,
-      "recency_weight_used": 0.934,
-      "top_match_added_year": 2025,
-      "top_match_title": "Molecular-driven foundation model for oncologic pathology",
-      "matched_keywords": [
-        "foundation model",
-        "deep learning"
-      ],
-      "auto_keywords": [
-        "light sheet",
-        "sheet fluorescence",
-        "fluorescence microscopy",
-        "segmentation classification",
-        "enables",
-        "few-shot"
-      ],
-      "llm_score": 28.0,
-      "stage1_score": 74.56,
-      "raw_final_score": 51.28,
-      "tier": "low"
-    },
-    {
       "id": "10.1016/j.ccell.2026.04.008",
       "title": "Engineered enhancers: Using tumor switches for precision therapy",
       "authors": [
@@ -2076,47 +1830,6 @@
       "llm_score": 25.0,
       "stage1_score": 41.64,
       "raw_final_score": 33.32,
-      "tier": "low"
-    },
-    {
-      "id": "2605.23169",
-      "title": "PRAXIS: Case-distilled and code-verified AI agents for biological research",
-      "authors": [
-        "Zhenyu Ma",
-        "Yuyang Song",
-        "Chunyi Yang",
-        "Jingyi Zhu",
-        "Limei Xu",
-        "Min Xiao",
-        "Xukai Jiang"
-      ],
-      "abstract": "Large language models are moving scientific research from text assistance toward agentic workflows, yet biological research requires strong object validation, methodological suitability, reproducibility, and auditability. Prompt engineering, general RAG, or tool use alone cannot reliably produce domain-specific scientific judgment. Here, we present PRAXIS, a verifiable biological research agent framework driven by literature learning and case distillation. PRAXIS converts research experience, failure boundaries, domain rules, and executable procedures into structured long-term memory. By coordinating successful cases, negative cases, rules, and skills, PRAXIS supports problem definition, object validation, method selection, workflow execution, result interpretation, and review feedback across diverse biocomputational tasks. We instantiated PRAXIS as an agent suite for biomedical computing and evaluated it through object validation, case retrieval, memory ablation, public benchmarks, and cross-agent workflows. The results show that case-based learning improves method selection, error suppression, and workflow organization in complex biological research tasks. Rather than replacing scientists, PRAXIS provides a general pathway for transforming research experience into executable, auditable, and transferable agent capabilities.",
-      "url": "https://arxiv.org/abs/2605.23169v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-22T02:41:41+00:00",
-      "doi": null,
-      "arxiv_id": "2605.23169",
-      "final_score": 33.24,
-      "embedding_score": 91.9,
-      "keyword_score": 0.0,
-      "max_cosine_raw": 0.6312,
-      "max_cosine_weighted": 0.6119,
-      "recency_weight_used": 0.969,
-      "top_match_added_year": 2026,
-      "top_match_title": "An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis",
-      "matched_keywords": [],
-      "auto_keywords": [
-        "biological research",
-        "research experience",
-        "praxis",
-        "object validation",
-        "case-distilled",
-        "code-verified"
-      ],
-      "llm_score": 28.0,
-      "stage1_score": 64.33,
-      "raw_final_score": 46.16,
       "tier": "low"
     },
     {
@@ -2208,7 +1921,7 @@
       "doi": "10.64898/2026.05.22.727236",
       "arxiv_id": null,
       "final_score": 32.66,
-      "embedding_score": 72.82,
+      "embedding_score": 72.81,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.6223,
       "max_cosine_weighted": 0.5222,
@@ -2320,7 +2033,7 @@
       "doi": "10.1038/s41587-026-03134-z",
       "arxiv_id": null,
       "final_score": 31.95,
-      "embedding_score": 79.86,
+      "embedding_score": 79.85,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.7276,
       "max_cosine_weighted": 0.5553,
@@ -2527,7 +2240,7 @@
       "doi": "10.1200/jco-25-03026",
       "arxiv_id": null,
       "final_score": 31.71,
-      "embedding_score": 54.9,
+      "embedding_score": 54.89,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.522,
       "max_cosine_weighted": 0.438,
@@ -2912,7 +2625,7 @@
       "embedding_score": 50.88,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5212,
-      "max_cosine_weighted": 0.4192,
+      "max_cosine_weighted": 0.4191,
       "recency_weight_used": 0.804,
       "top_match_added_year": 2024,
       "top_match_title": "A systematic analysis of the landscape of synthetic lethality-driven precision oncology",
@@ -2950,7 +2663,7 @@
       "doi": "10.1038/s41568-026-00936-w",
       "arxiv_id": null,
       "final_score": 30.12,
-      "embedding_score": 50.35,
+      "embedding_score": 50.34,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5997,
       "max_cosine_weighted": 0.4166,
@@ -3136,7 +2849,7 @@
       "embedding_score": 49.12,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.4699,
-      "max_cosine_weighted": 0.4109,
+      "max_cosine_weighted": 0.4108,
       "recency_weight_used": 0.874,
       "top_match_added_year": 2025,
       "top_match_title": "Machine learning-based extrachromosomal DNA identification in large-scale cohorts reveals its clinical implications in c",
@@ -3171,7 +2884,7 @@
       "embedding_score": 75.65,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5633,
-      "max_cosine_weighted": 0.5356,
+      "max_cosine_weighted": 0.5355,
       "recency_weight_used": 0.951,
       "top_match_added_year": 2026,
       "top_match_title": "Combinatorial CRISPR screen identifies fitness effects of gene paralogues",
@@ -3202,8 +2915,8 @@
       "published": "2026-05-26T00:00:00+00:00",
       "doi": "10.64898/2026.05.22.727059",
       "arxiv_id": null,
-      "final_score": 29.52,
-      "embedding_score": 46.67,
+      "final_score": 29.51,
+      "embedding_score": 46.66,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.4767,
       "max_cosine_weighted": 0.3993,
@@ -3220,8 +2933,8 @@
         "pd- axis"
       ],
       "llm_score": 45.0,
-      "stage1_score": 32.67,
-      "raw_final_score": 38.84,
+      "stage1_score": 32.66,
+      "raw_final_score": 38.83,
       "tier": "low"
     },
     {
@@ -3260,54 +2973,6 @@
       "tier": "low"
     },
     {
-      "id": "2605.18701",
-      "title": "Learning Normal Representations for Blood Biomarkers",
-      "authors": [
-        "Aashna P. Shah",
-        "Michelle M. Li",
-        "Yash Lal",
-        "Seffi Cohen",
-        "Liat F. Antwarg",
-        "Morgan Sanchez",
-        "James A. Diao",
-        "Chirag J. Patel",
-        "Ben Y. Reis",
-        "Ran D. Balicer",
-        "Noa Dagan",
-        "Arjun K. Manrai"
-      ],
-      "abstract": "Blood-based biomarkers underpin clinical diagnosis and management, yet their interpretation relies largely on fixed population reference intervals that ignore stable, intra-patient variability. As such, population-based interpretation can mask meaningful deviation from an individual's baseline, risking delayed disease detection. To remedy this, there have been increasing efforts to personalize blood biomarker interpretation using individual testing histories. However, these methods may overfit to sparse data, inflating false-positive rates and unnecessary follow-up, and can also unwittingly include unrecognized or subclinical disease. Here, we leverage nearly 2 billion longitudinal laboratory measurements from over 1.6 million individuals across North America, the Middle East, and East Asia, to show that while laboratory values are highly individual, purely personalized intervals routinely overfit, classifying up to 68% of measurements as abnormal, without corresponding associations with adverse clinical outcomes. We then introduce NORMA, a conditional transformer-based framework that generates reference intervals by conditioning on both a patient's history and population-level data about \"normal\" variation. NORMA-derived intervals achieve higher precision for predicting outcomes, including mortality, acute kidney injury, and chronic disease. These findings caution against over-personalization in laboratory medicine and demonstrate that anchoring individual trajectories to population-level priors outperforms either approach alone. To promote transparency, we publicly release the model, code, and an interactive user interface for accessible, individualized laboratory interpretation.",
-      "url": "https://arxiv.org/abs/2605.18701v1",
-      "journal": "arXiv q-bio.QM (comp biology)",
-      "source_weight": 0.72,
-      "published": "2026-05-18T17:37:05+00:00",
-      "doi": null,
-      "arxiv_id": "2605.18701",
-      "final_score": 29.25,
-      "embedding_score": 77.35,
-      "keyword_score": 7.0,
-      "max_cosine_raw": 0.6207,
-      "max_cosine_weighted": 0.5435,
-      "recency_weight_used": 0.876,
-      "top_match_added_year": 2025,
-      "top_match_title": "AI-driven predictive biomarker discovery with contrastive learning to improve clinical trial outcomes",
-      "matched_keywords": [
-        "transformer"
-      ],
-      "auto_keywords": [
-        "normal",
-        "blood",
-        "biomarkers",
-        "reference intervals",
-        "learning",
-        "representations"
-      ],
-      "llm_score": 25.0,
-      "stage1_score": 56.24,
-      "raw_final_score": 40.62,
-      "tier": "low"
-    },
-    {
       "id": "10.64898/2026.05.24.727503",
       "title": "Chromatin accessibility of primary cancers informs regional mutagenesis in metastases through multi-scale deep learning",
       "authors": [
@@ -3321,7 +2986,7 @@
       "doi": "10.64898/2026.05.24.727503",
       "arxiv_id": null,
       "final_score": 29.07,
-      "embedding_score": 84.85,
+      "embedding_score": 84.84,
       "keyword_score": 7.0,
       "max_cosine_raw": 0.6092,
       "max_cosine_weighted": 0.5788,
@@ -3377,7 +3042,7 @@
         "inflammatory signaling"
       ],
       "llm_score": 28.0,
-      "stage1_score": 48.11,
+      "stage1_score": 48.1,
       "raw_final_score": 38.05,
       "tier": "low"
     },
@@ -3408,7 +3073,7 @@
       "doi": "10.1038/s41586-026-10652-y",
       "arxiv_id": null,
       "final_score": 28.82,
-      "embedding_score": 60.93,
+      "embedding_score": 60.92,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.4811,
       "max_cosine_weighted": 0.4663,
@@ -3489,7 +3154,7 @@
       "doi": "10.1200/jco-25-02116",
       "arxiv_id": null,
       "final_score": 28.79,
-      "embedding_score": 46.54,
+      "embedding_score": 46.53,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.4197,
       "max_cosine_weighted": 0.3987,
@@ -3506,7 +3171,7 @@
         "chronic"
       ],
       "llm_score": 25.0,
-      "stage1_score": 32.58,
+      "stage1_score": 32.57,
       "raw_final_score": 28.79,
       "tier": "low"
     },
@@ -3523,7 +3188,7 @@
       "published": "2026-05-27T00:00:00+00:00",
       "doi": "10.1016/s1470-2045(26)00124-5",
       "arxiv_id": null,
-      "final_score": 28.71,
+      "final_score": 28.7,
       "embedding_score": 60.59,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.5539,
@@ -3541,8 +3206,8 @@
         "phase trials"
       ],
       "llm_score": 15.0,
-      "stage1_score": 42.42,
-      "raw_final_score": 28.71,
+      "stage1_score": 42.41,
+      "raw_final_score": 28.7,
       "tier": "low"
     },
     {
@@ -3816,7 +3481,7 @@
       "doi": "10.1200/jco-26-00605",
       "arxiv_id": null,
       "final_score": 27.66,
-      "embedding_score": 43.3,
+      "embedding_score": 43.29,
       "keyword_score": 0.0,
       "max_cosine_raw": 0.457,
       "max_cosine_weighted": 0.3835,
@@ -3835,6 +3500,316 @@
       "llm_score": 25.0,
       "stage1_score": 30.31,
       "raw_final_score": 27.66,
+      "tier": "low"
+    },
+    {
+      "id": "10.1200/jco-25-02311",
+      "title": "Durvalumab in Combination With Neoadjuvant Chemotherapy in Early Triple-Negative Breast Cancer: Long-Term Analysis From the GeparNuevo Trial",
+      "authors": [
+        "Sibylle Loibl",
+        "Michael Untch",
+        "Jens Huober",
+        "Vanessa Schaser",
+        "Michael Braun",
+        "Carsten Denkert",
+        "Andreas Hartkopf",
+        "Jens-Uwe Blohmer",
+        "Claus Hanusch",
+        "Theresa Link",
+        "Mattea Reinisch",
+        "Dirk-Michael Zahm",
+        "Rudolf Weide",
+        "Vesna Bjelic-Radisic",
+        "Peter Staib",
+        "Hans Tesch",
+        "Kerstin Rhiem",
+        "Ralf Lorenz",
+        "Julia Rey",
+        "Andreas Schneeweiss"
+      ],
+      "abstract": "Journal of Clinical Oncology, Ahead of Print.",
+      "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-02311?af=R",
+      "journal": "Journal of Clinical Oncology",
+      "source_weight": 1.0,
+      "published": null,
+      "doi": "10.1200/jco-25-02311",
+      "arxiv_id": null,
+      "final_score": 27.57,
+      "embedding_score": 43.07,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.4557,
+      "max_cosine_weighted": 0.3824,
+      "recency_weight_used": 0.839,
+      "top_match_added_year": 2025,
+      "top_match_title": "Targeting HER2-positive breast cancer: advances and future directions",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "durvalumab",
+        "combination",
+        "neoadjuvant",
+        "chemotherapy",
+        "early",
+        "triple-negative"
+      ],
+      "llm_score": 25.0,
+      "stage1_score": 30.15,
+      "raw_final_score": 27.57,
+      "tier": "low"
+    },
+    {
+      "id": "10.1038/s41568-026-00939-7",
+      "title": "Tracing disease origin with plasma cell-free chromatin",
+      "authors": [
+        "Xiaoxuan Meng"
+      ],
+      "abstract": "Nature Reviews Cancer, Published online: 19 May 2026; doi:10.1038/s41568-026-00939-7 In this Tools of the Trade article, Xiaoxuan Meng describes the development of cf-EpiTracing, a highly sensitive and automated epigenetic liquid-biopsy platform that captures histone modifications on cell-free chromatin from plasma, enabling unbiased monitoring of cancer.",
+      "url": "https://www.nature.com/articles/s41568-026-00939-7",
+      "journal": "Nature Reviews Cancer",
+      "source_weight": 1.0,
+      "published": "2026-05-19T00:00:00+00:00",
+      "doi": "10.1038/s41568-026-00939-7",
+      "arxiv_id": null,
+      "final_score": 27.43,
+      "embedding_score": 42.64,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.4364,
+      "max_cosine_weighted": 0.3804,
+      "recency_weight_used": 0.872,
+      "top_match_added_year": 2025,
+      "top_match_title": "The pan-cancer proteome atlas, a mass spectrometry-based landscape for discovering tumor biology, biomarkers, and therap",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "cell-free chromatin",
+        "plasma",
+        "tracing",
+        "disease",
+        "origin",
+        "cancer"
+      ],
+      "llm_score": 25.0,
+      "stage1_score": 29.85,
+      "raw_final_score": 27.43,
+      "tier": "low"
+    },
+    {
+      "id": "10.1200/jco-25-02755",
+      "title": "Treatment Switching and Subsequent Therapy Confound Overall Survival Estimates in PHAROS",
+      "authors": [
+        "Jian Huang",
+        "Zheng-Fu Xie"
+      ],
+      "abstract": "Journal of Clinical Oncology, Ahead of Print.",
+      "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-02755?af=R",
+      "journal": "Journal of Clinical Oncology",
+      "source_weight": 1.0,
+      "published": null,
+      "doi": "10.1200/jco-25-02755",
+      "arxiv_id": null,
+      "final_score": 27.19,
+      "embedding_score": 41.96,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.497,
+      "max_cosine_weighted": 0.3772,
+      "recency_weight_used": 0.759,
+      "top_match_added_year": 2024,
+      "top_match_title": "Retrospective analysis of clinical characteristics and outcomes of patients with carcinoma of unknown primary from three",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "treatment",
+        "switching",
+        "subsequent",
+        "therapy",
+        "confound",
+        "overall"
+      ],
+      "llm_score": 25.0,
+      "stage1_score": 29.37,
+      "raw_final_score": 27.19,
+      "tier": "low"
+    },
+    {
+      "id": "10.1038/s42256-026-01233-9",
+      "title": "Deep neural operator for free boundary problems",
+      "authors": [
+        "Zongjia Long",
+        "Qi Zhou",
+        "Aiqing Zhu",
+        "Dong Dai",
+        "Yiqun Liu"
+      ],
+      "abstract": "Nature Machine Intelligence, Published online: 21 May 2026; doi:10.1038/s42256-026-01233-9 Long et al. introduce a neural operator method to solve free boundary problems with high precision. The framework shows promise for real-time predictions in clinical applications, particularly in simulating tumour growth.",
+      "url": "https://www.nature.com/articles/s42256-026-01233-9",
+      "journal": "Nature Machine Intelligence",
+      "source_weight": 1.0,
+      "published": "2026-05-21T00:00:00+00:00",
+      "doi": "10.1038/s42256-026-01233-9",
+      "arxiv_id": null,
+      "final_score": 27.16,
+      "embedding_score": 56.19,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.4535,
+      "max_cosine_weighted": 0.4441,
+      "recency_weight_used": 0.979,
+      "top_match_added_year": 2026,
+      "top_match_title": "A foundation model for clinical-grade computational pathology and rare cancers detection",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "neural operator",
+        "free boundary",
+        "boundary problems",
+        "deep"
+      ],
+      "llm_score": 15.0,
+      "stage1_score": 39.33,
+      "raw_final_score": 27.16,
+      "tier": "low"
+    },
+    {
+      "id": "10.64898/2026.05.22.727134",
+      "title": "Transcriptomic profile of MTUS1-low TNBC reveals candidate therapeutic strategies.",
+      "authors": [
+        "Guichaoua, G., Collier, O., Rodrigues-Ferreira, S., Nahmias, C., Stoven, V."
+      ],
+      "abstract": "Background: Triple-negative breast cancer (TNBC) is a clinically aggressive breast cancer subtype. It is a heterogeneous disease that remains difficult to stratify and still lacks durable, biomarker-guided therapeutic options. Low expression of the tumour suppressor MTUS1 is associated with aggressive breast cancer features, but the biological properties of MTUS1-low TNBC remain insufficiently defined. Our goal was to determine whether low MTUS1 expression defines shared proliferative and stress-adaptation mechanisms that could guide candidate therapeutic strategies and corresponding target/drug pairs in MTUS1-low TNBC. Methods: We labelled tumours from seven public TNBC RNA-seq cohorts based on the lowest and highest MTUS1 expression tertiles. Differential gene expression was analysed using gene set enrichment analysis (GSEA) with the Hallmark pathway database to identify deregulated biological pathways between MTUS1-low TNBC tumours and their MTUS1-high counterparts. Reproducibility was examined across independent TNBC cohorts and secondarily in broader breast cancer and selected TCGA tumour cohorts. Gene essentiality scores from CRISPR-Cas9 experiments in TNBC cell-line models were correlated with MTUS1 expression to propose therapeutic strategies and corresponding candidate target/drug pairs. Results: MTUS1-low tumours showed a reproducible pathway-level profile marked by MYC-linked proliferative activity and up-regulated oxidative phosphorylation, combined with stress-adaptation mechanisms involving unfolded protein response (UPR) and DNA repair Hallmark gene sets. Based on CRISPR data, we propose three therapeutic strategies: (1) targeting MYC to reduce its transcriptional activity, (2) targeting proteins from the UPR, and (3) targeting DNA repair. We also propose corresponding candidate target/drug pairs to allow experimental validation of these strategies. Conclusions: Low MTUS1 TNBC is associated with MYC-linked proliferative activity and stress-adaptation mechanisms. By linking this tumour profile to CRISPR-derived dependency signals, our analysis prioritises experimentally testable target-pathway hypotheses centred on MYC, UPR/proteostasis, and DNA repair or checkpoint control. Although the proposed therapeutic strategies and candidate targets remain to be experimentally tested, the latter finding is consistent with published work showing that ATIP3-deficient TNBC cell-line models are sensitive to inhibition of the WEE1/PKMYT1 G2/M checkpoint kinases.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.05.22.727134v1?rss=1",
+      "journal": "bioRxiv Cancer Biology",
+      "source_weight": 0.76,
+      "published": "2026-05-26T00:00:00+00:00",
+      "doi": "10.64898/2026.05.22.727134",
+      "arxiv_id": null,
+      "final_score": 26.96,
+      "embedding_score": 61.38,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.4927,
+      "max_cosine_weighted": 0.4685,
+      "recency_weight_used": 0.951,
+      "top_match_added_year": 2026,
+      "top_match_title": "Benchmarking machine learning methods for synthetic lethality prediction in cancer",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "therapeutic strategies",
+        "tnbc",
+        "breast cancer",
+        "candidate therapeutic",
+        "tnbc cell-line",
+        "corresponding candidate"
+      ],
+      "llm_score": 28.0,
+      "stage1_score": 42.96,
+      "raw_final_score": 35.48,
+      "tier": "low"
+    },
+    {
+      "id": "10.1016/s1470-2045(26)00060-4",
+      "title": "[Articles] Estimating total and diagnosed global cancer incidence and stage distribution from 1990 to 2050: a simulation-based analysis of 17 cancers",
+      "authors": [
+        "Zachary J Ward, Fabio Ynoe Moraes, Andrew M Scott, Timothy R Rebbeck, Patrick J Loehrer, Hedvig Hricak"
+      ],
+      "abstract": "These findings highlight the substantial and growing burden of cancers, especially in low-income and middle-income countries, where many people who develop cancer die undiagnosed. Accounting for demographic and epidemiological trends as well as health system factors, our modelling framework enables evaluation of targeted interventions to strengthen the cancer workforce and improve diagnostic pathways across diverse geographical and socioeconomic settings.",
+      "url": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(26)00060-4/fulltext?rss=yes",
+      "journal": "Lancet Oncology",
+      "source_weight": 1.0,
+      "published": "2026-05-27T00:00:00+00:00",
+      "doi": "10.1016/s1470-2045(26)00060-4",
+      "arxiv_id": null,
+      "final_score": 26.84,
+      "embedding_score": 55.28,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.5795,
+      "max_cosine_weighted": 0.4398,
+      "recency_weight_used": 0.759,
+      "top_match_added_year": 2024,
+      "top_match_title": "Retrospective analysis of clinical characteristics and outcomes of patients with carcinoma of unknown primary from three",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "cancer",
+        "cancers",
+        "articles",
+        "estimating",
+        "total",
+        "diagnosed"
+      ],
+      "llm_score": 15.0,
+      "stage1_score": 38.69,
+      "raw_final_score": 26.84,
+      "tier": "low"
+    },
+    {
+      "id": "10.1200/jco-25-03015",
+      "title": "Signal Worth Trusting—If We Can Reproduce It: Clarifying Overall Response Rate and Progression-Free Survival in BEACON Immuno",
+      "authors": [
+        "Yongkai Lu"
+      ],
+      "abstract": "Journal of Clinical Oncology, Ahead of Print.",
+      "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-03015?af=R",
+      "journal": "Journal of Clinical Oncology",
+      "source_weight": 1.0,
+      "published": null,
+      "doi": "10.1200/jco-25-03015",
+      "arxiv_id": null,
+      "final_score": 26.64,
+      "embedding_score": 40.39,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.4599,
+      "max_cosine_weighted": 0.3699,
+      "recency_weight_used": 0.804,
+      "top_match_added_year": 2024,
+      "top_match_title": "Synthetic lethality-mediated precision oncology via the tumor transcriptome",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "signal",
+        "worth",
+        "trusting",
+        "reproduce",
+        "clarifying",
+        "overall"
+      ],
+      "llm_score": 25.0,
+      "stage1_score": 28.28,
+      "raw_final_score": 26.64,
+      "tier": "low"
+    },
+    {
+      "id": "10.1200/jco-25-02536",
+      "title": "Multicenter Cohort Study of Original or Substitute Systemic Therapy With or Without Brain Radiotherapy for Extensive-Stage Small Cell Lung Cancer With Brain-Only Progression After First-Line Treatment",
+      "authors": [
+        "Shuangqing Lu",
+        "Jingyi Jia",
+        "Kai Ren",
+        "Wenxiao Jia",
+        "Zhuoran Sun",
+        "Ke Zhao",
+        "Xuwei Cai",
+        "Lujun Zhao",
+        "Hui Zhu"
+      ],
+      "abstract": "Journal of Clinical Oncology, Ahead of Print.",
+      "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-02536?af=R",
+      "journal": "Journal of Clinical Oncology",
+      "source_weight": 1.0,
+      "published": null,
+      "doi": "10.1200/jco-25-02536",
+      "arxiv_id": null,
+      "final_score": 26.31,
+      "embedding_score": 53.75,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.5155,
+      "max_cosine_weighted": 0.4326,
+      "recency_weight_used": 0.839,
+      "top_match_added_year": 2025,
+      "top_match_title": "Pembrolizumab versus chemotherapy for previously untreated, PD-L1-expressing, locally advanced or metastatic non-small-c",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "multicenter",
+        "cohort",
+        "original",
+        "substitute",
+        "systemic",
+        "therapy"
+      ],
+      "llm_score": 15.0,
+      "stage1_score": 37.62,
+      "raw_final_score": 26.31,
       "tier": "low"
     }
   ]
