@@ -1,16 +1,56 @@
 research_profile:
   tier1_keywords:
+    # Core: ADC biomarkers and clinical proteomics
     - biomarker discovery
     - clinical proteomics
+    - antibody drug conjugate
+    - antibody-drug conjugate
+    - ADC biomarkers
     - antibody drug conjugate biomarkers
     - spatial pathology
     - spatial biomarkers
-    - ADC biomarkers
     - multi-omics integration
     - ProCan
+    # Clinical: ADC agents and targets
+    - trastuzumab deruxtecan
+    - sacituzumab govitecan
+    - datopotamab deruxtecan
+    - patritumab deruxtecan
+    - telisotuzumab vedotin
+    - B7-H3
+    - TROP2
+    - HER2-low
+    - CEACAM5
+    - claudin 18.2
+    - PTK7
+    - topoisomerase I inhibitor
+    - ADC resistance
+    - target expression
+    # Clinical: translation into practice
+    - companion diagnostic
+    - predictive biomarker
+    - molecular tumour board
+    - precision oncology
+    - comprehensive genomic profiling
+    - clinical trial matching
   tier2_keywords:
+    # Proteomics / methods
     - mass spectrometry
     - label-free quantification
+    - DIA-MS
+    - data-independent acquisition
+    - targeted proteomics
+    - selected reaction monitoring
+    - parallel reaction monitoring
+    - cancer proteomics
+    - tumour purity
+    - laser capture microdissection
+    - immunohistochemistry
+    - H-score
+    - multiplex immunofluorescence
+    - sequential immunofluorescence
+    - spatial transcriptomics
+    # Computational
     - cancer cell lines
     - drug response prediction
     - self-supervised learning
@@ -18,12 +58,39 @@ research_profile:
     - pan-cancer
     - transfer learning
     - multimodal learning
-    - DIA-MS
-    - data-independent acquisition
-    - cancer proteomics
     - foundation model
     - federated learning
     - synthetic lethality
+    - whole slide image
+    - computational pathology
+    - cell segmentation
+    - graph neural network
+    - large language model
+    - clinical information extraction
+    # Clinical oncology
+    - phase 1 trial
+    - first-in-human
+    - early phase trial
+    - dose escalation
+    - basket trial
+    - umbrella trial
+    - clinical trial navigation
+    - colorectal cancer
+    - sarcoma
+    - glioma
+    - irinotecan
+    - topoisomerase inhibitor resistance
+    - drug resistance mechanisms
+    - next-generation sequencing
+    - Molecular Screening and Therapeutics
+    - real-world evidence
+    - interstitial lung disease
+    - ctDNA
+    - circulating tumour DNA
+    - minimal residual disease
+    - immune checkpoint inhibitor
+    - bispecific antibody
+    - radioligand therapy
   tier3_keywords:
     - proteogenomics
     - single-cell proteomics
@@ -31,6 +98,18 @@ research_profile:
     - deep learning
     - cancer genomics
     - protein language model
+    - tumour microenvironment
+    - tumour heterogeneity
+    - liquid biopsy
+    - health technology assessment
+    - cancer of unknown primary
+    - biopsy site
+    - tissue of origin
+    - CPTAC
+    - clinical decision support
+    - AI in oncology
+    - quality assurance
+    - laboratory accreditation
 
 scoring:
   model: sentence-transformers/all-MiniLM-L6-v2
@@ -45,19 +124,16 @@ scoring:
     # Rank-based caps + score floors: each week the top-scoring papers fill the
     # tiers up to `max_count`, but a paper only qualifies if its final_score
     # clears `min_score`. Everything that doesn't fit any tier is DROPPED from
-    # docs/papers.json entirely. The dashboard shows ~90 curated papers per week.
-    #
-    # Tune max_count to resize the dashboard; tune min_score to protect against
-    # weak weeks (e.g. raise high.min_score to stop promoting mediocre papers
-    # into must-read when there aren't 10 strong candidates).
+    # docs/papers.json entirely.
+    # Caps raised slightly (was 10/30/50) to absorb the added clinical feeds.
     high:
-      max_count: 10
+      max_count: 12
       min_score: 40
     medium:
-      max_count: 30
+      max_count: 40
       min_score: 30
     low:
-      max_count: 50
+      max_count: 60
       min_score: 22
   # Recency weighting: each reference paper's contribution is multiplied by
   #   max(0.5 ** (years_since_added / half_life), floor)
@@ -70,26 +146,28 @@ scoring:
   # Set enabled=true and export ANTHROPIC_API_KEY (locally) or add it as a GitHub
   # secret (CI). Without the key the pipeline still runs and just skips the LLM stage.
   llm_rerank:
-    enabled: true                        # opt-in
-    # Switch models here. Options (April 2026):
-    #   claude-haiku-4-5   — fastest + cheapest (~$1.20/month steady state)
-    #   claude-sonnet-4-6  — smarter, ~3x cost (~$3.60/month)
-    # Changing the model invalidates the LLM cache automatically, so the next
-    # run re-scores every paper under the new model.
+    enabled: true
+    # Options:
+    #   claude-haiku-4-5   — fastest + cheapest
+    #   claude-sonnet-4-6  — smarter, ~3x cost
+    # Changing the model invalidates the LLM cache automatically.
     model: claude-haiku-4-5
-    # Weekly runs produce fewer papers per run than daily — score everything so the
-    # LLM judgment applies across the full feed, not just the medium+high tier.
-    # Cost at Sonnet rates with ~200 papers/week ≈ $0.30/week.
     apply_to_min_score: 0
     blend_weight: 0.5                     # 0.5 stage1 + 0.5 llm = final
     cache_path: data/llm_cache.json       # disk cache, keyed by paper id + model + kb hash
     max_concurrent: 1                     # limit parallel API calls
     # profile_brief is used only as a fallback when data/knowledgebase.md is absent.
     profile_brief: |
-      Medical oncologist and PhD candidate focusing on antibody drug conjugate biomarkers. 
-      Expertise in DIA-MS proteomics (ProCan), ADCs (HER2, TROP2, B7-H3), and 
-      spatial computational pathology using foundation models and graph neural 
-      networks to predict drug response in clinical cohorts.
+      Medical oncologist and PhD candidate focusing on antibody drug conjugate (ADC)
+      biomarkers. Expertise in DIA-MS and targeted (SRM/PRM) proteomics (ProCan), ADC
+      targets (HER2, TROP2, B7-H3, CEACAM5, CLDN6, PTK7), and spatial computational
+      pathology using foundation models to predict drug response in clinical cohorts.
+      Strong interest in clinical translation: early-phase ADC trials, predictive and
+      companion biomarkers, precision oncology programs, trial matching, resistance
+      mechanisms (e.g. topoisomerase I inhibitors), and clinically deployable
+      multiplex protein assays. Clinical tumour streams of interest include colorectal
+      cancer, sarcoma, and glioma. Clinically meaningful practice-changing trial
+      results in medical oncology are relevant even outside the research focus.
 
 # Admin features: paper ratings + manual paper addition.
 # Only the admin (passphrase-authenticated) sees the rating UI and add-paper input.
@@ -118,39 +196,56 @@ fetch:
 feeds:
   # Each feed may optionally set:
   #   weight:     multiplier applied to the paper's final_score before tier
-  #               assignment (default 1.0). Lower weights demote noisy sources
-  #               so they need a higher raw score to reach must-read. With
-  #               high_tier=50 and weight=0.75, an arXiv paper needs raw >= 67
-  #               to clear must-read, vs >= 50 for a weight=1.0 journal.
+  #               assignment (default 1.0). Lower weights demote noisy sources.
   #   max_papers: per-feed entry cap (default fetch.max_papers_per_feed=100).
+  # Check the workflow log for "got N entries" — any feed returning 0 has a stale URL.
 
-  # Tier-1 journals (full weight — peer-reviewed, curated by editors)
+  # --- Science / methods journals (full weight) ---
   - {name: Nature,                      url: "https://www.nature.com/nature.rss"}
   - {name: Nature Methods,              url: "https://www.nature.com/nmeth.rss"}
   - {name: Nature Biotechnology,        url: "https://www.nature.com/nbt.rss"}
-  - {name: Nature Medicine,             url: "https://www.nature.com/nm.rss"}
   - {name: Nature Communications,       url: "https://www.nature.com/ncomms.rss"}
   - {name: Nature Machine Intelligence, url: "https://www.nature.com/natmachintell.rss"}
+  - {name: Cell,                        url: "https://www.cell.com/cell/inpress.rss"}
+  - {name: Molecular Cell,              url: "https://www.cell.com/molecular-cell/inpress.rss"}
+  - {name: Cell Systems,                url: "https://www.cell.com/cell-systems/inpress.rss"}
+
+  # --- Cancer biology / translational (full weight) ---
+  - {name: Nature Medicine,             url: "https://www.nature.com/nm.rss"}
   - {name: Nature Cancer,               url: "https://www.nature.com/natcancer.rss"}
   - {name: Nature Reviews Cancer,       url: "https://www.nature.com/nrc.rss"}
-  - {name: Cell,                        url: "https://www.cell.com/cell/inpress.rss"}
+  - {name: Nature Reviews Clinical Oncology, url: "https://www.nature.com/nrclinonc.rss"}
+  - {name: Nature Reviews Drug Discovery, url: "https://www.nature.com/nrd.rss"}
   - {name: Cancer Cell,                 url: "https://www.cell.com/cancer-cell/inpress.rss"}
-  - {name: Molecular Cell,              url: "https://www.cell.com/molecular-cell/inpress.rss"}
-  - {name: Journal of Clinical Oncology, url: "https://ascopubs.org/action/showFeed?jc=jco&type=etoc&feed=rss"}
-  - {name: Lancet Oncology, url: "https://www.thelancet.com/rssfeed/lanonc_current.xml"}
-  - {name: Clinical Cancer Research, url: "https://aacrjournals.org/clincancerres/rss/current.xml"}
+  - {name: Cell Reports Medicine,       url: "https://www.cell.com/cell-reports-medicine/inpress.rss"}
+  - {name: Cancer Discovery,            url: "https://aacrjournals.org/cancerdiscovery/rss/current.xml"}
+  - {name: Cancer Research,             url: "https://aacrjournals.org/cancerres/rss/current.xml"}
+  - {name: Clinical Cancer Research,    url: "https://aacrjournals.org/clincancerres/rss/current.xml"}
 
-  # bioRxiv subject feeds — biology preprints, weight 0.76 so a bioRxiv paper
-  # needs raw score ~66 to clear the must-read threshold (vs 50 for journals).
-  # Tuned to target ~1/3 preprints in the must-read tier.
+  # --- Clinical oncology / trials (full weight) ---
+  - {name: New England Journal of Medicine, url: "https://www.nejm.org/action/showFeed?jc=nejm&type=etoc&feed=rss"}
+  - {name: Lancet,                      url: "https://www.thelancet.com/rssfeed/lancet_current.xml"}
+  - {name: Lancet Oncology,             url: "https://www.thelancet.com/rssfeed/lanonc_current.xml"}
+  - {name: Journal of Clinical Oncology, url: "https://ascopubs.org/action/showFeed?jc=jco&type=etoc&feed=rss"}
+  - {name: JCO Precision Oncology,      url: "https://ascopubs.org/action/showFeed?jc=po&type=etoc&feed=rss"}
+  - {name: JCO Clinical Cancer Informatics, url: "https://ascopubs.org/action/showFeed?jc=cci&type=etoc&feed=rss"}
+  - {name: Annals of Oncology,          url: "https://www.annalsofoncology.org/current.rss"}
+  - {name: ESMO Open,                   url: "https://www.esmoopen.com/current.rss"}
+  - {name: European Journal of Cancer,  url: "https://www.ejcancer.com/current.rss"}
+  - {name: JAMA Oncology,               url: "https://jamanetwork.com/rss/site_167/67.xml"}
+
+  # --- Proteomics (full weight) ---
+  - {name: Molecular & Cellular Proteomics, url: "https://www.mcponline.org/current.rss"}
+  - {name: Journal of Proteome Research, url: "https://pubs.acs.org/action/showFeed?type=axatoc&feed=rss&jc=jprobs"}
+
+  # --- bioRxiv / medRxiv subject feeds — weight 0.76 ---
   - {name: bioRxiv Cancer Biology,   url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=cancer_biology", weight: 0.76}
   - {name: bioRxiv Bioinformatics,   url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics", weight: 0.76}
   - {name: bioRxiv Systems Biology,  url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=systems_biology", weight: 0.76}
   - {name: bioRxiv Biochemistry,     url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=biochemistry", weight: 0.76}
+  - {name: medRxiv Oncology,         url: "https://connect.medrxiv.org/medrxiv_xml.php?subject=oncology", weight: 0.76}
 
-  # arXiv preprints — the cutting-edge ML firehose. cs.LG/cs.CV weighted
-  # hardest (need raw score ~77 to reach must-read). q-bio.QM is closer to
-  # this field so slightly kinder (needs raw ~69).
+  # --- arXiv preprints — ML firehose, heavily down-weighted ---
   - {name: "arXiv cs.LG (machine learning)",   url: "http://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=40", weight: 0.65, max_papers: 40}
   - {name: "arXiv cs.CV (vision / pathology)", url: "http://export.arxiv.org/api/query?search_query=cat:cs.CV&sortBy=submittedDate&sortOrder=descending&max_results=30", weight: 0.65, max_papers: 30}
   - {name: "arXiv q-bio.QM (comp biology)",    url: "http://export.arxiv.org/api/query?search_query=cat:q-bio.QM&sortBy=submittedDate&sortOrder=descending&max_results=40", weight: 0.72, max_papers: 40}
