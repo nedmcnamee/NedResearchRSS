@@ -194,7 +194,7 @@
         "Lisa A. Carey",
         "Antonio C. Wolff"
       ],
-      "abstract": "Journal of Clinical Oncology, Ahead of Print.",
+      "abstract": "Journal of Clinical Oncology, Volume 44, Issue 30, Page 2919-2928, October 2026.",
       "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-02255?af=R",
       "journal": "Journal of Clinical Oncology",
       "source_weight": 1.0,
@@ -565,6 +565,37 @@
       "tier": "medium"
     },
     {
+      "id": "10.1038/s41587-026-03353-4",
+      "title": "Tracing the origins of CRISPR–Cas",
+      "authors": [
+        "Dario Ummarino"
+      ],
+      "abstract": "Nature Biotechnology, Published online: 12 October 2026; doi:10.1038/s41587-026-03353-4 Tracing the origins of CRISPR–Cas",
+      "url": "https://www.nature.com/articles/s41587-026-03353-4",
+      "journal": "Nature Biotechnology",
+      "source_weight": 1.0,
+      "published": "2026-10-12T00:00:00+00:00",
+      "doi": "10.1038/s41587-026-03353-4",
+      "arxiv_id": null,
+      "final_score": 49.15,
+      "embedding_score": 70.21,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.5664,
+      "max_cosine_weighted": 0.51,
+      "recency_weight_used": 0.9,
+      "top_match_added_year": 2026,
+      "top_match_title": "A compendium of synthetic lethal gene pairs defined by extensive combinatorial pan-cancer CRISPR screening",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "origins crispr",
+        "crispr cas",
+        "tracing"
+      ],
+      "llm_score": null,
+      "raw_final_score": 49.15,
+      "tier": "medium"
+    },
+    {
       "id": "10.1200/jco-26-00742",
       "title": "Prognostic Impact of Telomere Maintenance Mechanisms in Neuroblastoma",
       "authors": [
@@ -621,17 +652,17 @@
       "tier": "medium"
     },
     {
-      "id": "10.1016/j.molcel.2026.09.030",
-      "title": "Toward interpretable foundation models for molecular biology",
+      "id": "10.64898/2026.10.15.759051",
+      "title": "Drug-centric knowledge graph: representing therapeutic modality, pharmacology and multiscale biology",
       "authors": [
-        "Mukund Varma, Trey Ideker"
+        "Bar, A., Shapiro, M., Erez, G., Levinson, D., Reisfeld, T., Shamgar, U., Perlman, A., Dormont, F., Matalon, O."
       ],
-      "abstract": "Interpretability must be a first-class design objective for the next generation of foundation models in molecular biology. In this perspective, Varma and Ideker examine the ways in which it can be built into a model, from biological priors to architecture, and provide a checklist for authors and reviewers.",
-      "url": "https://www.cell.com/molecular-cell/fulltext/S1097-2765(26)00673-8?rss=yes",
-      "journal": "Molecular Cell",
-      "source_weight": 1.0,
-      "published": "2026-10-07T00:00:00+00:00",
-      "doi": "10.1016/j.molcel.2026.09.030",
+      "abstract": "Biomedical knowledge graphs link targets to mechanisms, diseases and phenotypes, but target-centered representations omit much of what distinguishes therapeutic interventions. We introduce a drug-centric knowledge graph, whose identity model, schema and information-selection priorities are organized around the therapeutic intervention, and a graph built on this design. Each intervention has one identity, linked through relation types shared by all compounds, including target actions, indications, adverse effects, classifications, half-life and direct links to pathways, Gene Ontology concepts, cells and anatomy, and through modality-specific relation types describing small-molecule chemistry, antibody sequences and formats, protein-therapy sequences and antibody-drug conjugate components. Integrating 38 source resources, the graph contains 166,261 nodes of 27 types, 8,106,906 directed edges of 129 relation types and 18,429 compounds in eight therapeutic categories. Construction combines source-specific extraction, compound-identity resolution, language-model-assisted vocabulary and predicate mapping, confidence scoring and connectivity filtering; an expert-reviewed workflow adds investigational therapeutics without altering the base graph. The design offers a reusable template for representing interventions as structured, multimodal objects.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759051v1?rss=1",
+      "journal": "bioRxiv Systems Biology",
+      "source_weight": 0.76,
+      "published": "2026-10-16T00:00:00+00:00",
+      "doi": "10.64898/2026.10.15.759051",
       "arxiv_id": null,
       "final_score": 46.91,
       "embedding_score": 60.59,
@@ -645,20 +676,21 @@
         "foundation model"
       ],
       "auto_keywords": [
-        "foundation models",
-        "molecular biology",
-        "toward",
-        "interpretable"
+        "medical image",
+        "image restoration",
+        "enhancement",
+        "all-in-one",
+        "multimodal"
       ],
       "llm_score": null,
       "raw_final_score": 46.91,
       "tier": "medium"
     },
     {
-      "id": "10.1038/s41592-026-03254-z",
-      "title": "Tangermeme: a toolkit for understanding cis- regulatory logic using deep learning models",
+      "id": "10.64898/2026.10.15.759446",
+      "title": "Dynamic flux balance analysis of cancer metabolism using expression-based human cell line models",
       "authors": [
-        "Jacob Schreiber"
+        "Kelley, L. P., Dukovski, I., Shah, D., Brezin, L., Korolev, K. S., Segre, D."
       ],
       "abstract": "Nature Methods, Published online: 08 October 2026; doi:10.1038/s41592-026-03254-z The tangermeme software package is a comprehensive, flexible and efficient Swiss Army knife for deep learning-based cis-regulatory pattern identification and analysis.",
       "url": "https://www.nature.com/articles/s41592-026-03254-z",
@@ -928,17 +960,17 @@
       "tier": "medium"
     },
     {
-      "id": "10.1016/j.molcel.2026.09.017",
-      "title": "A genome-scale adaptation map identifies the FANCM-RMI1/2 complex as an opposing modulator of cell fitness upon BRCA1 or BRCA2 loss",
+      "id": "10.64898/2026.10.09.757904",
+      "title": "MOFI reveals dynamic multi-omics coordination during cell fate progression",
       "authors": [
-        "François Dossin, Mikael Attia, Fabricio Montero Zúñiga, Daniel González-Acosta, Rachel Brough, Fei Fei Song, Dragomir B. Krastev, Maya Raghunandan, Stephen J. Pettitt, Aurélien Boré, Amaury Vaysse, Raphaël Margueron, Massimo Lopes, Andrew N.J. Tutt, Christopher J. Lord, Ludovic Deriano"
+        "Shen, J., Zhang, Z., Peng, H., Peng, Q., Wang, Z., Liu, R., Zhou, P."
       ],
-      "abstract": "Dossin et al. report that BRCA1 and BRCA2 deficiencies create distinct adaptive states. They identify FANCM-RMI1/2 as an opposing determinant of cell fitness: essential in BRCA1-deficient cells but toxic in BRCA2-deficient cells, where it drives replication fork degradation. Disrupting FANCM-RMI1/2 restores genome stability and promotes PARPi resistance in BRCA2-deficient cells.",
-      "url": "https://www.cell.com/molecular-cell/fulltext/S1097-2765(26)00660-X?rss=yes",
-      "journal": "Molecular Cell",
-      "source_weight": 1.0,
-      "published": "2026-10-06T00:00:00+00:00",
-      "doi": "10.1016/j.molcel.2026.09.017",
+      "abstract": "Cell fate decisions are shaped by dynamic coordination across transcriptomic, chromatin, and protein layers. Time-series single-cell multi-omics assays now enable these molecular layers to be profiled across developmental stages, yet each cell is still observed only once, and the continuous multi-omics trajectories connecting discrete snapshots remain unresolved. A central challenge is therefore to jointly integrate paired omics measurements while reconstructing their shared developmental progression. Here we present Multi-Omics Fate Inference (MOFI), a dynamically constrained multi-omics integration framework designed to reconstruct continuous cell fate transitions from paired multi-omics snapshots sampled across multiple time points. MOFI jointly models omics-specific state dynamics, cross-omics correspondence, and shared population growth within a unified framework, enabling cross-omics perturbation response analysis and identification of candidate cross-omics transformation programs. Across simulated benchmarks and paired RNA-ATAC/RNA-protein time-series datasets, MOFI reconstructed continuous fate transitions, population dynamics and cross-omics changes consistent with observed measurements. In kidney organoids, MOFI captured coordinated RNA-ATAC progression of nephron lineage specification. In hematopoietic progenitors, MOFI predicted perturbation-responsive lineage redistribution and nominated multi-omics transformation programs linking transcriptional modules with protein-level responses. In neural developmental systems, MOFI resolved gradual brain organoid maturation and interneuron lineage allocation during human cortical development. Together, MOFI provides a dynamics-grounded method for converting discrete paired multi-omics snapshots into interpretable models of cell fate progression, perturbation response, and cross-omics transformation analysis.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.10.09.757904v1?rss=1",
+      "journal": "bioRxiv Bioinformatics",
+      "source_weight": 0.76,
+      "published": "2026-10-16T00:00:00+00:00",
+      "doi": "10.64898/2026.10.09.757904",
       "arxiv_id": null,
       "final_score": 40.61,
       "embedding_score": 58.01,
@@ -1218,10 +1250,10 @@
       "tier": "medium"
     },
     {
-      "id": "10.1200/jco-26-01637",
-      "title": "Chemoimmunotherapy in Deficient DNA Mismatch Repair Metastatic Colorectal Cancer: What COMMIT Can and Cannot Tell Us",
+      "id": "10.64898/2026.10.13.758949",
+      "title": "Pervasive expression of early embryonic programs in cancer has stage-dependent survival impact",
       "authors": [
-        "Lars Henrik Jensen"
+        "Wang, T., Hernandez-Rodriguez, B., Seneviratne, J. A., Eckersley-Maslin, M. A."
       ],
       "abstract": "Journal of Clinical Oncology, Volume 44, Issue 29, Page 2765-2767, October 2026.",
       "url": "https://ascopubs.org/doi/abs/10.1200/JCO-26-01637?af=R",
@@ -1613,7 +1645,7 @@
       "max_cosine_weighted": 0.4232,
       "recency_weight_used": 0.926,
       "top_match_added_year": 2026,
-      "top_match_title": "Multimodal AI generates virtual population for tumor microenvironment modeling",
+      "top_match_title": "Building a translational cancer dependency map for The Cancer Genome Atlas",
       "matched_keywords": [],
       "auto_keywords": [
         "multimodal atlas",
@@ -2097,7 +2129,7 @@
       "max_cosine_weighted": 0.4839,
       "recency_weight_used": 0.926,
       "top_match_added_year": 2026,
-      "top_match_title": "Multimodal AI generates virtual population for tumor microenvironment modeling",
+      "top_match_title": "Building a translational cancer dependency map for The Cancer Genome Atlas",
       "matched_keywords": [],
       "auto_keywords": [
         "therapeutic response",
@@ -2291,7 +2323,7 @@
         "David B. Zhen",
         "E. Gabriela Chiorean"
       ],
-      "abstract": "Journal of Clinical Oncology, Ahead of Print.",
+      "abstract": "Journal of Clinical Oncology, Volume 44, Issue 30, Page 2886-2890, October 2026.",
       "url": "https://ascopubs.org/doi/abs/10.1200/JCO-26-01847?af=R",
       "journal": "Journal of Clinical Oncology",
       "source_weight": 1.0,
@@ -3129,17 +3161,17 @@
       "tier": "low"
     },
     {
-      "id": "10.1016/j.ccell.2026.09.004",
-      "title": "Chromatin accessibility trajectories reveal pre-cancerous epigenetic priming and an acid-driven immunotherapy-resistant gastric cancer subtype",
+      "id": "10.1038/d41586-026-03253-2",
+      "title": "PhD students who write dissertation with AI less likely to stay in academia",
       "authors": [
-        "Tao Wang, Junyu Xiang, Shuoran Tian, Xiangming Wang, Zhaole Chu, Zailiang Yang, Weiwu Gao, Xianfeng Li, Biying Liu, Qiang Ma, Zengjie Lei, Xiaochun Shen, Yinbin Zhou, Lei Wang, Linghong Wan, Quanyou Zheng, Wenkang Liu, Jinyang Li, Linyu Wu, Yongying Hou, Xipeng Zheng, Huilin Pan, Shixin Qin, Qin Liu, Mengting Sun, Xu Chen, Fanxuan Tian, Xiao Hu, Ziyi Peng, Zhaoyang Zhong, Chuan Chen, Fan Li, Shunan Wang, Dongfeng Chen, Liangzhi Wen, Ke Li, Qiaoqiao Zhang, Cheng Lin, Zhongyi Qin, Zhifeng Miao, Xiu-Wu Bian, Zhenning Wang, Fan Bai, Bin Wang"
+        "Mohana Basu"
       ],
-      "abstract": "Wang et al. build a chromatin accessibility atlas of 650 gastric tissue samples spanning pre-cancer to advanced cancer, revealing a cancer-like epigenetic priming state in metaplasia that licenses tumor initiation. Advanced cancers segregate into three epigenomic subtypes; the pseudo-gastric subtype resists immunotherapy via FOSL2-driven H+/K+ ATPase expression that acidifies the microenvironment and suppresses CD8+ T cells—a phenotype reversed by the acid blocker vonoprazan.",
-      "url": "https://www.cell.com/cancer-cell/fulltext/S1535-6108(26)00401-0?rss=yes",
-      "journal": "Cancer Cell",
+      "abstract": "Nature, Published online: 16 October 2026; doi:10.1038/d41586-026-03253-2 US PhD graduates who used artificial intelligence were more likely to work in industry.",
+      "url": "https://www.nature.com/articles/d41586-026-03253-2",
+      "journal": "Nature",
       "source_weight": 1.0,
-      "published": "2026-10-06T00:00:00+00:00",
-      "doi": "10.1016/j.ccell.2026.09.004",
+      "published": "2026-10-16T00:00:00+00:00",
+      "doi": "10.1038/d41586-026-03253-2",
       "arxiv_id": null,
       "final_score": 31.91,
       "embedding_score": 45.59,
@@ -3151,12 +3183,12 @@
       "top_match_title": "The pan-cancer proteome atlas, a mass spectrometry-based landscape for discovering tumor biology, biomarkers, and therap",
       "matched_keywords": [],
       "auto_keywords": [
-        "chromatin accessibility",
-        "epigenetic priming",
-        "gastric",
-        "cancer",
-        "subtype",
-        "trajectories"
+        "proteasome",
+        "proteasome composition",
+        "proteasome regulatory",
+        "non-catalytic proteasome",
+        "degradation",
+        "targeting"
       ],
       "llm_score": null,
       "raw_final_score": 31.91,
@@ -3464,23 +3496,17 @@
       "tier": "low"
     },
     {
-      "id": "10.1038/s41592-026-03265-w",
-      "title": "An integrated open-source acquisition and analysis ecosystem for high-throughput single-molecule imaging",
+      "id": "10.1038/d41591-026-00050-2",
+      "title": "Hidden race disparities in cancer treatment toxicity",
       "authors": [
-        "Daniel S. Terry",
-        "Roman Kiselev",
-        "Manuel F. Juette",
-        "Zeliha Kilic",
-        "Ryan A. Brady",
-        "Yuansheng Sun",
-        "Scott C. Blanchard"
+        "Karen O’Leary"
       ],
-      "abstract": "Nature Methods, Published online: 09 October 2026; doi:10.1038/s41592-026-03265-w An integrated open-source acquisition and analysis ecosystem for high-throughput single-molecule imaging",
-      "url": "https://www.nature.com/articles/s41592-026-03265-w",
-      "journal": "Nature Methods",
+      "abstract": "Nature Medicine, Published online: 15 October 2026; doi:10.1038/d41591-026-00050-2 Large-scale analysis of real-world data reveals racial disparities in the occurrence of immune-related adverse events during cancer immunotherapy — which were not evident in trial data, owing to the enrollment of mostly white patients.",
+      "url": "https://www.nature.com/articles/d41591-026-00050-2",
+      "journal": "Nature Medicine",
       "source_weight": 1.0,
-      "published": "2026-10-09T00:00:00+00:00",
-      "doi": "10.1038/s41592-026-03265-w",
+      "published": "2026-10-15T00:00:00+00:00",
+      "doi": "10.1038/d41591-026-00050-2",
       "arxiv_id": null,
       "final_score": 31.26,
       "embedding_score": 44.66,
@@ -3492,11 +3518,12 @@
       "top_match_title": "Foundation models in bioinformatics",
       "matched_keywords": [],
       "auto_keywords": [
-        "integrated open-source",
-        "open-source acquisition",
-        "high-throughput single-molecule",
-        "single-molecule imaging",
-        "ecosystem"
+        "disparities",
+        "cancer",
+        "hidden",
+        "race",
+        "treatment",
+        "toxicity"
       ],
       "llm_score": null,
       "raw_final_score": 31.26,
