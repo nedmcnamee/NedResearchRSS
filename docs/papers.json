@@ -596,6 +596,37 @@
       "tier": "medium"
     },
     {
+      "id": "10.1038/s41587-026-03353-4",
+      "title": "Tracing the origins of CRISPR–Cas",
+      "authors": [
+        "Dario Ummarino"
+      ],
+      "abstract": "Nature Biotechnology, Published online: 12 October 2026; doi:10.1038/s41587-026-03353-4 Tracing the origins of CRISPR–Cas",
+      "url": "https://www.nature.com/articles/s41587-026-03353-4",
+      "journal": "Nature Biotechnology",
+      "source_weight": 1.0,
+      "published": "2026-10-12T00:00:00+00:00",
+      "doi": "10.1038/s41587-026-03353-4",
+      "arxiv_id": null,
+      "final_score": 49.15,
+      "embedding_score": 70.21,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.5664,
+      "max_cosine_weighted": 0.51,
+      "recency_weight_used": 0.9,
+      "top_match_added_year": 2026,
+      "top_match_title": "A compendium of synthetic lethal gene pairs defined by extensive combinatorial pan-cancer CRISPR screening",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "origins crispr",
+        "crispr cas",
+        "tracing"
+      ],
+      "llm_score": null,
+      "raw_final_score": 49.15,
+      "tier": "medium"
+    },
+    {
       "id": "10.1200/jco-26-00742",
       "title": "Prognostic Impact of Telomere Maintenance Mechanisms in Neuroblastoma",
       "authors": [
@@ -1792,7 +1823,7 @@
       "max_cosine_weighted": 0.4923,
       "recency_weight_used": 0.926,
       "top_match_added_year": 2026,
-      "top_match_title": "Multimodal AI generates virtual population for tumor microenvironment modeling",
+      "top_match_title": "Building a translational cancer dependency map for The Cancer Genome Atlas",
       "matched_keywords": [],
       "auto_keywords": [
         "tissue time",
