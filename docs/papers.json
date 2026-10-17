@@ -627,6 +627,74 @@
       "tier": "medium"
     },
     {
+      "id": "10.64898/2026.10.09.757967",
+      "title": "NeoOmni Atlas: an integrated database for pan-cancer neoantigen derived from proteogenomics analysis",
+      "authors": [
+        "Zheng, T., Ran, Z., Zeng, J., Wang, T., Fu, S., Cai, L., Wu, D., Ding, J., Liu, T., Li, Z., Yuan, K., Lin, S., xu, h."
+      ],
+      "abstract": "Tumor neoantigens derived from diverse molecular aberrations are important targets for personalized cancer immunotherapy, but existing resources incompletely integrate mass-spectrometry-supported canonical and non-canonical antigen evidence across cancer types. NeoOmni Atlas is an interactive pan-cancer T-cell epitope resource, built via proteogenomic reanalysis of 7,561 immunopeptidomics datasets comprising 511 million raw spectra from 2,341 samples across 26 cancer types. The analysis yielded 872,414 eluted canonical peptides and 198,961 non-canonical peptides spanning 18 molecular alteration classes, along with 759,386 unique ligands presented by 322 human leukocyte antigen (HLA) alleles. Relative to existing repositories, NeoOmni Atlas covers a broader range of cancer types, includes 60 additional HLA alleles, and catalogs 369,781 novel ligands. A computational tumor-specific filtering framework identified 316,126 tumor-associated epitopes and 61,231 tumor-specific epitopes. Tumor-specific epitopes showed stronger predicted binding affinity than tumor-associated epitopes for HLA class I A and B alleles, and 65 conserved tumor-specific epitopes recurrent across more than 10 tumor types represent potential shared antigen candidates. NeoOmni Atlas also prioritizes candidate tumor-associated antigens including PMEL (gp100:209-217) and CSPG4, and supports browsing, searching, and downloading by cancer type, human leukocyte antigen allele, peptide sequence, and source event. NeoOmni Atlas is freely accessible at http://modinfor.com/NeoOmni-Atlas/.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.10.09.757967v1?rss=1",
+      "journal": "bioRxiv Bioinformatics",
+      "source_weight": 0.76,
+      "published": "2026-10-16T00:00:00+00:00",
+      "doi": "10.64898/2026.10.09.757967",
+      "arxiv_id": null,
+      "final_score": 49.19,
+      "embedding_score": 83.03,
+      "keyword_score": 22.0,
+      "max_cosine_raw": 0.6907,
+      "max_cosine_weighted": 0.5702,
+      "recency_weight_used": 0.826,
+      "top_match_added_year": 2025,
+      "top_match_title": "The pan-cancer proteome atlas, a mass spectrometry-based landscape for discovering tumor biology, biomarkers, and therap",
+      "matched_keywords": [
+        "pan-cancer",
+        "proteogenomics"
+      ],
+      "auto_keywords": [
+        "neoomni atlas",
+        "cancer types",
+        "tumor-specific epitopes",
+        "derived",
+        "human leukocyte",
+        "leukocyte antigen"
+      ],
+      "llm_score": null,
+      "raw_final_score": 64.72,
+      "tier": "medium"
+    },
+    {
+      "id": "10.1038/s41587-026-03353-4",
+      "title": "Tracing the origins of CRISPR–Cas",
+      "authors": [
+        "Dario Ummarino"
+      ],
+      "abstract": "Nature Biotechnology, Published online: 12 October 2026; doi:10.1038/s41587-026-03353-4 Tracing the origins of CRISPR–Cas",
+      "url": "https://www.nature.com/articles/s41587-026-03353-4",
+      "journal": "Nature Biotechnology",
+      "source_weight": 1.0,
+      "published": "2026-10-12T00:00:00+00:00",
+      "doi": "10.1038/s41587-026-03353-4",
+      "arxiv_id": null,
+      "final_score": 49.14,
+      "embedding_score": 70.2,
+      "keyword_score": 0.0,
+      "max_cosine_raw": 0.5664,
+      "max_cosine_weighted": 0.5099,
+      "recency_weight_used": 0.9,
+      "top_match_added_year": 2026,
+      "top_match_title": "A compendium of synthetic lethal gene pairs defined by extensive combinatorial pan-cancer CRISPR screening",
+      "matched_keywords": [],
+      "auto_keywords": [
+        "origins crispr",
+        "crispr cas",
+        "tracing"
+      ],
+      "llm_score": null,
+      "raw_final_score": 49.14,
+      "tier": "medium"
+    },
+    {
       "id": "10.1200/jco-26-00742",
       "title": "Prognostic Impact of Telomere Maintenance Mechanisms in Neuroblastoma",
       "authors": [
@@ -1010,15 +1078,15 @@
       "max_cosine_weighted": 0.4527,
       "recency_weight_used": 0.901,
       "top_match_added_year": 2026,
-      "top_match_title": "Combinatorial CRISPR screen identifies fitness effects of gene paralogues",
+      "top_match_title": "Advancing regulatory variant effect prediction with AlphaGenome",
       "matched_keywords": [],
       "auto_keywords": [
-        "deficient cells",
-        "cell fitness",
-        "fancm-",
-        "opposing",
-        "genome-scale",
-        "adaptation"
+        "transcript models",
+        "isomatch enables",
+        "transcript integration",
+        "transcript novelty",
+        "isomatch preserves",
+        "structural criteria"
       ],
       "llm_score": null,
       "raw_final_score": 40.61,
@@ -2719,15 +2787,17 @@
       "max_cosine_weighted": 0.4017,
       "recency_weight_used": 0.823,
       "top_match_added_year": 2025,
-      "top_match_title": "MIXL1 activation in endoderm differentiation of human induced pluripotent stem cells",
-      "matched_keywords": [],
+      "top_match_title": "Clinical applications of mass spectrometry-based proteomics in cancer: Where are we?",
+      "matched_keywords": [
+        "mass spectrometry"
+      ],
       "auto_keywords": [
-        "addendum aberrant",
-        "aberrant epithelial",
-        "epithelial expression",
-        "expression initiates",
-        "initiates colonic",
-        "colonic tumorigenesis"
+        "spatial tumour",
+        "tissue distribution",
+        "distribution dynamics",
+        "mmae distribution",
+        "tumour tissues",
+        "zelenectide pevedotin"
       ],
       "llm_score": null,
       "raw_final_score": 33.02,
